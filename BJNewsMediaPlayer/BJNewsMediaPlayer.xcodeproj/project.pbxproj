@@ -16,6 +16,19 @@
 		4FC3300D232736C300D5CA3B /* BJNewsMediaPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3300C232736C300D5CA3B /* BJNewsMediaPlayerTests.m */; };
 		4FC33018232736C300D5CA3B /* BJNewsMediaPlayerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC33017232736C300D5CA3B /* BJNewsMediaPlayerUITests.m */; };
 		4FC3302823273ABD00D5CA3B /* BJNewsMediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3302723273ABD00D5CA3B /* BJNewsMediaPlayer.m */; };
+		4FC3302C23279A0400D5CA3B /* BJNewsMediaPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3302B23279A0400D5CA3B /* BJNewsMediaPlayerView.m */; };
+		4FC330382327A03700D5CA3B /* BJNewsMediaBaseControllView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC330372327A03700D5CA3B /* BJNewsMediaBaseControllView.m */; };
+		4FC3303E2327A1AD00D5CA3B /* BJNewsMediaListContollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3303D2327A1AD00D5CA3B /* BJNewsMediaListContollView.m */; };
+		4FC330412327A1DC00D5CA3B /* BJNewsMediaShortVideoControllView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC330402327A1DC00D5CA3B /* BJNewsMediaShortVideoControllView.m */; };
+		4FC330442327A1EA00D5CA3B /* BJNewsMediaLandScapeControllView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC330432327A1EA00D5CA3B /* BJNewsMediaLandScapeControllView.m */; };
+		4FC330472327A1F700D5CA3B /* BJNewsMediaPortraitControllView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC330462327A1F700D5CA3B /* BJNewsMediaPortraitControllView.m */; };
+		4FC3304B2327A22600D5CA3B /* BJNewsMediaListContollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC3304A2327A22600D5CA3B /* BJNewsMediaListContollView.xib */; };
+		4FC3304D2327A24600D5CA3B /* BJNewsMediaShortVideoControllView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC3304C2327A24600D5CA3B /* BJNewsMediaShortVideoControllView.xib */; };
+		4FC3304F2327A26000D5CA3B /* BJNewsMediaLandScapeControllView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC3304E2327A26000D5CA3B /* BJNewsMediaLandScapeControllView.xib */; };
+		4FC330512327A27300D5CA3B /* BJNewsMediaPortraitControllView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC330502327A27300D5CA3B /* BJNewsMediaPortraitControllView.xib */; };
+		4FC330542327A81000D5CA3B /* BJNewsMediaPlayerSource.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC330532327A81000D5CA3B /* BJNewsMediaPlayerSource.xcassets */; };
+		4FC330582327A9BF00D5CA3B /* BJNewsMediaPreviewControllView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC330572327A9BF00D5CA3B /* BJNewsMediaPreviewControllView.m */; };
+		4FC3305A2327A9D700D5CA3B /* BJNewsMediaPreviewControllView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC330592327A9D700D5CA3B /* BJNewsMediaPreviewControllView.xib */; };
 		E42E8630A325623145ED5F46 /* libPods-BJNewsMediaPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A80F3A549A8E95F6BE1AEE7 /* libPods-BJNewsMediaPlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +70,26 @@
 		4FC33019232736C300D5CA3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FC3302623273ABD00D5CA3B /* BJNewsMediaPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BJNewsMediaPlayer.h; sourceTree = "<group>"; };
 		4FC3302723273ABD00D5CA3B /* BJNewsMediaPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJNewsMediaPlayer.m; sourceTree = "<group>"; };
+		4FC3302A23279A0400D5CA3B /* BJNewsMediaPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BJNewsMediaPlayerView.h; sourceTree = "<group>"; };
+		4FC3302B23279A0400D5CA3B /* BJNewsMediaPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJNewsMediaPlayerView.m; sourceTree = "<group>"; };
+		4FC330362327A03700D5CA3B /* BJNewsMediaBaseControllView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BJNewsMediaBaseControllView.h; sourceTree = "<group>"; };
+		4FC330372327A03700D5CA3B /* BJNewsMediaBaseControllView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJNewsMediaBaseControllView.m; sourceTree = "<group>"; };
+		4FC3303C2327A1AD00D5CA3B /* BJNewsMediaListContollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BJNewsMediaListContollView.h; sourceTree = "<group>"; };
+		4FC3303D2327A1AD00D5CA3B /* BJNewsMediaListContollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJNewsMediaListContollView.m; sourceTree = "<group>"; };
+		4FC3303F2327A1DC00D5CA3B /* BJNewsMediaShortVideoControllView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BJNewsMediaShortVideoControllView.h; sourceTree = "<group>"; };
+		4FC330402327A1DC00D5CA3B /* BJNewsMediaShortVideoControllView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJNewsMediaShortVideoControllView.m; sourceTree = "<group>"; };
+		4FC330422327A1EA00D5CA3B /* BJNewsMediaLandScapeControllView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BJNewsMediaLandScapeControllView.h; sourceTree = "<group>"; };
+		4FC330432327A1EA00D5CA3B /* BJNewsMediaLandScapeControllView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJNewsMediaLandScapeControllView.m; sourceTree = "<group>"; };
+		4FC330452327A1F700D5CA3B /* BJNewsMediaPortraitControllView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BJNewsMediaPortraitControllView.h; sourceTree = "<group>"; };
+		4FC330462327A1F700D5CA3B /* BJNewsMediaPortraitControllView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJNewsMediaPortraitControllView.m; sourceTree = "<group>"; };
+		4FC3304A2327A22600D5CA3B /* BJNewsMediaListContollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BJNewsMediaListContollView.xib; sourceTree = "<group>"; };
+		4FC3304C2327A24600D5CA3B /* BJNewsMediaShortVideoControllView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BJNewsMediaShortVideoControllView.xib; sourceTree = "<group>"; };
+		4FC3304E2327A26000D5CA3B /* BJNewsMediaLandScapeControllView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BJNewsMediaLandScapeControllView.xib; sourceTree = "<group>"; };
+		4FC330502327A27300D5CA3B /* BJNewsMediaPortraitControllView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BJNewsMediaPortraitControllView.xib; sourceTree = "<group>"; };
+		4FC330532327A81000D5CA3B /* BJNewsMediaPlayerSource.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BJNewsMediaPlayerSource.xcassets; sourceTree = "<group>"; };
+		4FC330562327A9BF00D5CA3B /* BJNewsMediaPreviewControllView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BJNewsMediaPreviewControllView.h; sourceTree = "<group>"; };
+		4FC330572327A9BF00D5CA3B /* BJNewsMediaPreviewControllView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJNewsMediaPreviewControllView.m; sourceTree = "<group>"; };
+		4FC330592327A9D700D5CA3B /* BJNewsMediaPreviewControllView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BJNewsMediaPreviewControllView.xib; sourceTree = "<group>"; };
 		D9707F7F2C046EB9650AE062 /* Pods-BJNewsMediaPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BJNewsMediaPlayer.release.xcconfig"; path = "Target Support Files/Pods-BJNewsMediaPlayer/Pods-BJNewsMediaPlayer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				4FC3302523273A7F00D5CA3B /* BJNewsMediaPlayer */,
+				4FC33029232799F200D5CA3B /* View */,
 				4FC32FF3232736C100D5CA3B /* AppDelegate.h */,
 				4FC32FF4232736C100D5CA3B /* AppDelegate.m */,
 				4FC32FF6232736C100D5CA3B /* ViewController.h */,
@@ -150,6 +184,97 @@
 				4FC3302723273ABD00D5CA3B /* BJNewsMediaPlayer.m */,
 			);
 			path = BJNewsMediaPlayer;
+			sourceTree = "<group>";
+		};
+		4FC33029232799F200D5CA3B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4FC3302A23279A0400D5CA3B /* BJNewsMediaPlayerView.h */,
+				4FC3302B23279A0400D5CA3B /* BJNewsMediaPlayerView.m */,
+				4FC3302D23279FBC00D5CA3B /* ControllView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4FC3302D23279FBC00D5CA3B /* ControllView */ = {
+			isa = PBXGroup;
+			children = (
+				4FC330522327A81000D5CA3B /* Resource */,
+				4FC330322327A00C00D5CA3B /* Base */,
+				4FC3303123279FEF00D5CA3B /* List */,
+				4FC3303B2327A17900D5CA3B /* ShortVideo */,
+				4FC3303A2327A17200D5CA3B /* LandScape */,
+				4FC330392327A15F00D5CA3B /* Portrait */,
+				4FC330552327A99900D5CA3B /* Preview */,
+			);
+			path = ControllView;
+			sourceTree = "<group>";
+		};
+		4FC3303123279FEF00D5CA3B /* List */ = {
+			isa = PBXGroup;
+			children = (
+				4FC3303C2327A1AD00D5CA3B /* BJNewsMediaListContollView.h */,
+				4FC3303D2327A1AD00D5CA3B /* BJNewsMediaListContollView.m */,
+				4FC3304A2327A22600D5CA3B /* BJNewsMediaListContollView.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		4FC330322327A00C00D5CA3B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4FC330362327A03700D5CA3B /* BJNewsMediaBaseControllView.h */,
+				4FC330372327A03700D5CA3B /* BJNewsMediaBaseControllView.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		4FC330392327A15F00D5CA3B /* Portrait */ = {
+			isa = PBXGroup;
+			children = (
+				4FC330452327A1F700D5CA3B /* BJNewsMediaPortraitControllView.h */,
+				4FC330462327A1F700D5CA3B /* BJNewsMediaPortraitControllView.m */,
+				4FC330502327A27300D5CA3B /* BJNewsMediaPortraitControllView.xib */,
+			);
+			path = Portrait;
+			sourceTree = "<group>";
+		};
+		4FC3303A2327A17200D5CA3B /* LandScape */ = {
+			isa = PBXGroup;
+			children = (
+				4FC330422327A1EA00D5CA3B /* BJNewsMediaLandScapeControllView.h */,
+				4FC330432327A1EA00D5CA3B /* BJNewsMediaLandScapeControllView.m */,
+				4FC3304E2327A26000D5CA3B /* BJNewsMediaLandScapeControllView.xib */,
+			);
+			path = LandScape;
+			sourceTree = "<group>";
+		};
+		4FC3303B2327A17900D5CA3B /* ShortVideo */ = {
+			isa = PBXGroup;
+			children = (
+				4FC3303F2327A1DC00D5CA3B /* BJNewsMediaShortVideoControllView.h */,
+				4FC330402327A1DC00D5CA3B /* BJNewsMediaShortVideoControllView.m */,
+				4FC3304C2327A24600D5CA3B /* BJNewsMediaShortVideoControllView.xib */,
+			);
+			path = ShortVideo;
+			sourceTree = "<group>";
+		};
+		4FC330522327A81000D5CA3B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4FC330532327A81000D5CA3B /* BJNewsMediaPlayerSource.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4FC330552327A99900D5CA3B /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				4FC330562327A9BF00D5CA3B /* BJNewsMediaPreviewControllView.h */,
+				4FC330572327A9BF00D5CA3B /* BJNewsMediaPreviewControllView.m */,
+				4FC330592327A9D700D5CA3B /* BJNewsMediaPreviewControllView.xib */,
+			);
+			path = Preview;
 			sourceTree = "<group>";
 		};
 		728259F01A8D4FC792826EF5 /* Frameworks */ = {
@@ -276,7 +401,13 @@
 			files = (
 				4FC33000232736C200D5CA3B /* LaunchScreen.storyboard in Resources */,
 				4FC32FFD232736C200D5CA3B /* Assets.xcassets in Resources */,
+				4FC3305A2327A9D700D5CA3B /* BJNewsMediaPreviewControllView.xib in Resources */,
+				4FC3304B2327A22600D5CA3B /* BJNewsMediaListContollView.xib in Resources */,
+				4FC3304F2327A26000D5CA3B /* BJNewsMediaLandScapeControllView.xib in Resources */,
 				4FC32FFB232736C100D5CA3B /* Main.storyboard in Resources */,
+				4FC3304D2327A24600D5CA3B /* BJNewsMediaShortVideoControllView.xib in Resources */,
+				4FC330542327A81000D5CA3B /* BJNewsMediaPlayerSource.xcassets in Resources */,
+				4FC330512327A27300D5CA3B /* BJNewsMediaPortraitControllView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,10 +487,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FC330382327A03700D5CA3B /* BJNewsMediaBaseControllView.m in Sources */,
 				4FC3302823273ABD00D5CA3B /* BJNewsMediaPlayer.m in Sources */,
+				4FC330582327A9BF00D5CA3B /* BJNewsMediaPreviewControllView.m in Sources */,
+				4FC330442327A1EA00D5CA3B /* BJNewsMediaLandScapeControllView.m in Sources */,
 				4FC32FF8232736C100D5CA3B /* ViewController.m in Sources */,
+				4FC3303E2327A1AD00D5CA3B /* BJNewsMediaListContollView.m in Sources */,
 				4FC33003232736C200D5CA3B /* main.m in Sources */,
+				4FC330472327A1F700D5CA3B /* BJNewsMediaPortraitControllView.m in Sources */,
 				4FC32FF5232736C100D5CA3B /* AppDelegate.m in Sources */,
+				4FC330412327A1DC00D5CA3B /* BJNewsMediaShortVideoControllView.m in Sources */,
+				4FC3302C23279A0400D5CA3B /* BJNewsMediaPlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

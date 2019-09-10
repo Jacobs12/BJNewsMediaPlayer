@@ -54,7 +54,7 @@ static BJNewsMediaPlayer * media_player = nil;
  @param url url description
  */
 - (void)playWithUrl:(NSString *)url{
-    self.state = BJNewsMediaPlayStateNone;
+    [self setPlayState:BJNewsMediaPlayStateNone];
     if(url == nil || [url isKindOfClass:[NSNull class]]){
         url = @"";
     }
@@ -70,7 +70,7 @@ static BJNewsMediaPlayer * media_player = nil;
  开始播放
  */
 - (void)play{
-    self.state = BJNewsMediaPlayStatePlaying;
+    [self setPlayState:BJNewsMediaPlayStatePlaying];
     [self.player start];
 }
 
@@ -78,7 +78,7 @@ static BJNewsMediaPlayer * media_player = nil;
  暂停播放
  */
 - (void)pause{
-    self.state = BJNewsMediaPlayStatePaused;
+    [self setPlayState:BJNewsMediaPlayStatePaused];
     [self.player pause];
 }
 
@@ -86,7 +86,7 @@ static BJNewsMediaPlayer * media_player = nil;
  停止播放
  */
 - (void)stop{
-    self.state = BJNewsMediaPlayStateEnded;
+    [self setPlayState:BJNewsMediaPlayStateEnded];
     [self.player stop];
 }
 
@@ -94,7 +94,7 @@ static BJNewsMediaPlayer * media_player = nil;
  销毁播放器
  */
 - (void)destroy{
-    self.state = BJNewsMediaPlayStateNone;
+    [self setPlayState:BJNewsMediaPlayStateNone];
     _player.playerView = nil;
     _player.delegate = nil;
     _player = nil;
@@ -107,7 +107,7 @@ static BJNewsMediaPlayer * media_player = nil;
  重置播放器
  */
 - (void)reset{
-    self.state = BJNewsMediaPlayStateNone;
+    [self setPlayState:BJNewsMediaPlayStateNone];
     [self.player reset];
 }
 
@@ -115,7 +115,7 @@ static BJNewsMediaPlayer * media_player = nil;
  重新加载。比如网络超时时，可以重新加载。
  */
 - (void)reload{
-    self.state = BJNewsMediaPlayStateNone;
+    [self setPlayState:BJNewsMediaPlayStateNone];
     [self.player reload];
 }
 
@@ -146,6 +146,13 @@ static BJNewsMediaPlayer * media_player = nil;
  */
 - (void)setMuteMode:(BOOL)isMute{
     [self.player setMuted:isMute];
+}
+
+- (void)setPlayState:(BJNewsMediaPlayState)state{
+    self.state = state;
+    if(self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayer:didUpdatePlayState:)]){
+        [self.delegate mediaPlayer:self didUpdatePlayState:self.state];
+    }
 }
 
 #pragma mark - getter
@@ -235,7 +242,7 @@ static BJNewsMediaPlayer * media_player = nil;
     if(player){
         [player stop];
     }
-    self.state = BJNewsMediaPlayStateError;
+    [self setPlayState:BJNewsMediaPlayStateError];
     if(self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayer:failedPlayWithError:)]){
         [self.delegate mediaPlayer:self failedPlayWithError:errorModel];
     }
@@ -273,7 +280,7 @@ static BJNewsMediaPlayer * media_player = nil;
             break;
         case AVPEventCompletion:
 //            播放完成
-            self.state = BJNewsMediaPlayStateEnded;
+            [self setPlayState:BJNewsMediaPlayStateEnded];
             if(self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayerDidEnded:)]){
                 [self.delegate mediaPlayerDidEnded:self];
             }

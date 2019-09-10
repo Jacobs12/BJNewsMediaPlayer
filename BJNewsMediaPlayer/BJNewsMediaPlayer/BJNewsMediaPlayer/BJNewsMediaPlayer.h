@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 #define IS_MEPLOG_PRINT 1
-#define MEPLog(info) if(IS_MEPLOG_PRINT){NSLog(@"Path:%s==line:%d==Info:%@",__PRETTY_FUNCTION__,__LINE__,info);}
+#define MEPLog(info) if(IS_MEPLOG_PRINT){NSLog(@"Path:%s => line:%d => Info:%@",__PRETTY_FUNCTION__,__LINE__,info);}
 
 @protocol BJNewsMediaPlayerDelegate;
 

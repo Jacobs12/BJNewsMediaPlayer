@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BJNewsMediaPreviewControllView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYd-Wp-dL3">
+                    <rect key="frame" x="165.5" y="83.5" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="tv2-FA-InG"/>
+                        <constraint firstAttribute="width" constant="44" id="yCb-A7-zYc"/>
+                    </constraints>
+                    <state key="normal" image="bjnews_media_play"/>
+                    <state key="selected" image="bjnews_media_pause"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2X-EB-gHu">
+                    <rect key="frame" x="10" y="157" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="JmT-MT-hXi"/>
+                        <constraint firstAttribute="width" constant="44" id="iWP-J3-JEZ"/>
+                    </constraints>
+                    <state key="normal" image="bjnews_media_sound"/>
+                    <state key="selected" image="bjnews_media_mute"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8do-co-CQG">
+                    <rect key="frame" x="54" y="157" width="54" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="gdO-2O-rmS"/>
+                        <constraint firstAttribute="width" constant="54" id="yCE-hV-98D"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TK1-2q-TUZ">
+                    <rect key="frame" x="321" y="157" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="bFe-tD-f8y"/>
+                        <constraint firstAttribute="height" constant="44" id="mKx-0a-lKy"/>
+                    </constraints>
+                    <state key="normal" image="bjnews_media_fullscreenlandscape"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKw-wD-vBr">
+                    <rect key="frame" x="267" y="157" width="54" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="RXH-1r-O7t"/>
+                        <constraint firstAttribute="width" constant="54" id="ueS-Wf-6pg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="TYd-Wp-dL3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1oc-6C-VLY"/>
+                <constraint firstItem="TK1-2q-TUZ" firstAttribute="leading" secondItem="UKw-wD-vBr" secondAttribute="trailing" id="7xW-2o-60W"/>
+                <constraint firstItem="UKw-wD-vBr" firstAttribute="centerY" secondItem="C2X-EB-gHu" secondAttribute="centerY" id="8tv-Oa-EaM"/>
+                <constraint firstItem="8do-co-CQG" firstAttribute="centerY" secondItem="C2X-EB-gHu" secondAttribute="centerY" id="FXO-d8-OPi"/>
+                <constraint firstItem="C2X-EB-gHu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="Lbu-hB-xJn"/>
+                <constraint firstItem="TYd-Wp-dL3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NpW-oV-SEx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TK1-2q-TUZ" secondAttribute="trailing" constant="10" id="hLg-mz-1ZZ"/>
+                <constraint firstItem="8do-co-CQG" firstAttribute="leading" secondItem="C2X-EB-gHu" secondAttribute="trailing" id="kTZ-sU-ZVV"/>
+                <constraint firstAttribute="bottom" secondItem="C2X-EB-gHu" secondAttribute="bottom" constant="10" id="yeh-MF-o9h"/>
+                <constraint firstItem="TK1-2q-TUZ" firstAttribute="centerY" secondItem="C2X-EB-gHu" secondAttribute="centerY" id="yry-zn-Kz7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="muteButton" destination="C2X-EB-gHu" id="har-Ov-8UI"/>
+                <outlet property="playButton" destination="TYd-Wp-dL3" id="lTG-Kg-dRk"/>
+                <outlet property="screenButton" destination="TK1-2q-TUZ" id="u2i-fL-rQJ"/>
+                <outlet property="timeLabel" destination="8do-co-CQG" id="gEf-84-sEG"/>
+                <outlet property="totalLabel" destination="UKw-wD-vBr" id="3Ib-mv-IPP"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="bjnews_media_fullscreenlandscape" width="16" height="16"/>
+        <image name="bjnews_media_mute" width="21" height="18"/>
+        <image name="bjnews_media_pause" width="29.5" height="34.5"/>
+        <image name="bjnews_media_play" width="33" height="37.5"/>
+        <image name="bjnews_media_sound" width="21" height="18"/>
+    </resources>
+</document>

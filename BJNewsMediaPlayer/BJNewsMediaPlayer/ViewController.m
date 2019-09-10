@@ -7,12 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "BJNewsMediaPlayer.h"
+#import "BJNewsMediaPlayerView.h"
 
-@interface ViewController () <BJNewsMediaPlayerDelegate>
+@interface ViewController ()
 
 @property (nonatomic,strong) IBOutlet UIView * playerView;
-@property (nonatomic,strong) BJNewsMediaPlayer * player;
+@property (nonatomic,strong) BJNewsMediaPlayerView * player;
 
 @end
 
@@ -21,10 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.player = [BJNewsMediaPlayer defaultPlayer];
-    self.player.delegate = self;
-    self.player.playerView = self.playerView;
+    self.player = [BJNewsMediaPlayerView defaultView];
+    [self.player moveToView:self.playerView type:MEPControllViewTypePreview];
     [self.player playWithUrl:@"https://test-bjnews.oss-cn-beijing.aliyuncs.com/video/2019/09/04/4833278034796609767.mp4"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.player moveToView:self.view type:MEPControllViewTypePortrait];
+    });
 }
 
 - (void)viewDidLayoutSubviews{
