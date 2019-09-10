@@ -15,6 +15,7 @@
 		4FC33003232736C200D5CA3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC33002232736C200D5CA3B /* main.m */; };
 		4FC3300D232736C300D5CA3B /* BJNewsMediaPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3300C232736C300D5CA3B /* BJNewsMediaPlayerTests.m */; };
 		4FC33018232736C300D5CA3B /* BJNewsMediaPlayerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC33017232736C300D5CA3B /* BJNewsMediaPlayerUITests.m */; };
+		4FC3302823273ABD00D5CA3B /* BJNewsMediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3302723273ABD00D5CA3B /* BJNewsMediaPlayer.m */; };
 		E42E8630A325623145ED5F46 /* libPods-BJNewsMediaPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A80F3A549A8E95F6BE1AEE7 /* libPods-BJNewsMediaPlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,8 @@
 		4FC33013232736C300D5CA3B /* BJNewsMediaPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BJNewsMediaPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC33017232736C300D5CA3B /* BJNewsMediaPlayerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJNewsMediaPlayerUITests.m; sourceTree = "<group>"; };
 		4FC33019232736C300D5CA3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FC3302623273ABD00D5CA3B /* BJNewsMediaPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BJNewsMediaPlayer.h; sourceTree = "<group>"; };
+		4FC3302723273ABD00D5CA3B /* BJNewsMediaPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJNewsMediaPlayer.m; sourceTree = "<group>"; };
 		D9707F7F2C046EB9650AE062 /* Pods-BJNewsMediaPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BJNewsMediaPlayer.release.xcconfig"; path = "Target Support Files/Pods-BJNewsMediaPlayer/Pods-BJNewsMediaPlayer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +111,7 @@
 		4FC32FF2232736C100D5CA3B /* BJNewsMediaPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				4FC3302523273A7F00D5CA3B /* BJNewsMediaPlayer */,
 				4FC32FF3232736C100D5CA3B /* AppDelegate.h */,
 				4FC32FF4232736C100D5CA3B /* AppDelegate.m */,
 				4FC32FF6232736C100D5CA3B /* ViewController.h */,
@@ -139,6 +143,15 @@
 			path = BJNewsMediaPlayerUITests;
 			sourceTree = "<group>";
 		};
+		4FC3302523273A7F00D5CA3B /* BJNewsMediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				4FC3302623273ABD00D5CA3B /* BJNewsMediaPlayer.h */,
+				4FC3302723273ABD00D5CA3B /* BJNewsMediaPlayer.m */,
+			);
+			path = BJNewsMediaPlayer;
+			sourceTree = "<group>";
+		};
 		728259F01A8D4FC792826EF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,7 +166,6 @@
 				1FBB8B13D7FF0482EA828B93 /* Pods-BJNewsMediaPlayer.debug.xcconfig */,
 				D9707F7F2C046EB9650AE062 /* Pods-BJNewsMediaPlayer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -344,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FC3302823273ABD00D5CA3B /* BJNewsMediaPlayer.m in Sources */,
 				4FC32FF8232736C100D5CA3B /* ViewController.m in Sources */,
 				4FC33003232736C200D5CA3B /* main.m in Sources */,
 				4FC32FF5232736C100D5CA3B /* AppDelegate.m in Sources */,
