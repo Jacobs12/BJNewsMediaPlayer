@@ -171,19 +171,29 @@ static BJNewsMediaPlayer * media_player = nil;
             break;
         case AVPEventSeekEnd:
 //            跳转完成
-     
-            if(self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayer:seekEnd:)]){
-                [self.delegate mediaPlayer:self seekEnd:self.seekTime];
-            }
-            if(self.seekTimeBlock){
-                self.seekTimeBlock(self.seekTime);
-            }
+            [self seekTimeEnd];
             break;
         case AVPEventLoopingStart:
 //            循环播放开始
             break;
         default:
             break;
+    }
+}
+
+/**
+ 跳转完成处理
+ */
+- (void)seekTimeEnd{
+    float dt = self.seekTime - self.player.currentPosition;
+    if(dt > 5000 || dt < -5000){
+        return;
+    }
+    if(self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayer:seekEnd:)]){
+        [self.delegate mediaPlayer:self seekEnd:self.seekTime];
+    }
+    if(self.seekTimeBlock){
+        self.seekTimeBlock(self.seekTime);
     }
 }
 
