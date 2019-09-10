@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		1D4DE9CF5F76A67817A1D76877B0716A /* AliPlayerSDK_iOS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B692F6C772378200709CF5AFAC12A0BF /* Build configuration list for PBXAggregateTarget "AliPlayerSDK_iOS" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = AliPlayerSDK_iOS;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		8E270CB1EAEE780879FF640C5DF07DD4 /* Pods-BJNewsMediaPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D65B2E88F8539AB0E91D57AF50F0E1 /* Pods-BJNewsMediaPlayer-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DED4FF4E8A45F0CB4F86DD7E303D74C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D4DE9CF5F76A67817A1D76877B0716A;
+			remoteInfo = AliPlayerSDK_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08D65B2E88F8539AB0E91D57AF50F0E1 /* Pods-BJNewsMediaPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BJNewsMediaPlayer-dummy.m"; sourceTree = "<group>"; };
+		22AC71D86404B026EF00F6130E7CF338 /* AliyunPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunPlayer.framework; sourceTree = "<group>"; };
+		2470F9EB9714AB6967292FDB83912E38 /* alivcffmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = alivcffmpeg.framework; sourceTree = "<group>"; };
+		37F2F28970E6BFC95584ECC569964837 /* AlivcConan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlivcConan.framework; sourceTree = "<group>"; };
+		3D4A82B9B9FDEA709C0AFE7903160869 /* Pods-BJNewsMediaPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BJNewsMediaPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		635A76CA8A98AEB8B337BD805A399EDA /* Pods-BJNewsMediaPlayer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BJNewsMediaPlayer-acknowledgements.plist"; sourceTree = "<group>"; };
+		6B301E30C1117CBE49DC721C90220465 /* libPods-BJNewsMediaPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-BJNewsMediaPlayer.a"; path = "libPods-BJNewsMediaPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A6682F18531A037869419640C2CEFDA6 /* Pods-BJNewsMediaPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BJNewsMediaPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		B76E4DBA38BCF60FCB89D5B7D8AED8AE /* Pods-BJNewsMediaPlayer-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BJNewsMediaPlayer-frameworks.sh"; sourceTree = "<group>"; };
+		C61BE64FA55DF5EB899995C34A4F674C /* artpSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = artpSource.framework; sourceTree = "<group>"; };
+		CB8A614701AC57A4C710CD1E9E865D9F /* Pods-BJNewsMediaPlayer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BJNewsMediaPlayer-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E515A4E331A8E1571A24618E581F8F95 /* AliPlayerSDK_iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AliPlayerSDK_iOS.xcconfig; sourceTree = "<group>"; };
+		E5D0976ACF83352CCB1B9363B0016F97 /* AliyunMediaDownloader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunMediaDownloader.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27D22341F93066710488A31EE5FA0309 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		221313A816E48A857A7BC4E291BF2D8B /* AliPlayerSDK_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A1165614FA66C05D6B22D9335F324364 /* AliPlayerSDK */,
+				AB17FC544F663243AA5590A2D0383B69 /* Support Files */,
+			);
+			name = AliPlayerSDK_iOS;
+			path = AliPlayerSDK_iOS;
+			sourceTree = "<group>";
+		};
+		45E824AB111BE47FC051155D91DDFE8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B301E30C1117CBE49DC721C90220465 /* libPods-BJNewsMediaPlayer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1165614FA66C05D6B22D9335F324364 /* AliPlayerSDK */ = {
+			isa = PBXGroup;
+			children = (
+				AF2CBF41AD6321832DC741A692E09E8C /* Frameworks */,
+			);
+			name = AliPlayerSDK;
+			sourceTree = "<group>";
+		};
+		AB17FC544F663243AA5590A2D0383B69 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E515A4E331A8E1571A24618E581F8F95 /* AliPlayerSDK_iOS.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AliPlayerSDK_iOS";
+			sourceTree = "<group>";
+		};
+		AF2CBF41AD6321832DC741A692E09E8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37F2F28970E6BFC95584ECC569964837 /* AlivcConan.framework */,
+				2470F9EB9714AB6967292FDB83912E38 /* alivcffmpeg.framework */,
+				E5D0976ACF83352CCB1B9363B0016F97 /* AliyunMediaDownloader.framework */,
+				22AC71D86404B026EF00F6130E7CF338 /* AliyunPlayer.framework */,
+				C61BE64FA55DF5EB899995C34A4F674C /* artpSource.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9F25DC3F8124D1FAD822DC805290442 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				221313A816E48A857A7BC4E291BF2D8B /* AliPlayerSDK_iOS */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
+				C9F25DC3F8124D1FAD822DC805290442 /* Pods */,
+				45E824AB111BE47FC051155D91DDFE8A /* Products */,
+				DB16CEBADEA0A6CD9AAD8589E2D51492 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D4804B41DD8850CC2AA07CB0180EDBFB /* Pods-BJNewsMediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				CB8A614701AC57A4C710CD1E9E865D9F /* Pods-BJNewsMediaPlayer-acknowledgements.markdown */,
+				635A76CA8A98AEB8B337BD805A399EDA /* Pods-BJNewsMediaPlayer-acknowledgements.plist */,
+				08D65B2E88F8539AB0E91D57AF50F0E1 /* Pods-BJNewsMediaPlayer-dummy.m */,
+				B76E4DBA38BCF60FCB89D5B7D8AED8AE /* Pods-BJNewsMediaPlayer-frameworks.sh */,
+				3D4A82B9B9FDEA709C0AFE7903160869 /* Pods-BJNewsMediaPlayer.debug.xcconfig */,
+				A6682F18531A037869419640C2CEFDA6 /* Pods-BJNewsMediaPlayer.release.xcconfig */,
+			);
+			name = "Pods-BJNewsMediaPlayer";
+			path = "Target Support Files/Pods-BJNewsMediaPlayer";
+			sourceTree = "<group>";
+		};
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB16CEBADEA0A6CD9AAD8589E2D51492 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4804B41DD8850CC2AA07CB0180EDBFB /* Pods-BJNewsMediaPlayer */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9325D69CCA8A692D64BACB2BAC9BAC40 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4CCBC6976293085A328714BDAE5FD098 /* Pods-BJNewsMediaPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 907A99DD7669F5D59206B5D38881D5DD /* Build configuration list for PBXNativeTarget "Pods-BJNewsMediaPlayer" */;
+			buildPhases = (
+				9325D69CCA8A692D64BACB2BAC9BAC40 /* Headers */,
+				BEC380BFE491DF9E6069AA2120951A05 /* Sources */,
+				27D22341F93066710488A31EE5FA0309 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				630ED2DE992B17A89D0F94E6E1906BEA /* PBXTargetDependency */,
+			);
+			name = "Pods-BJNewsMediaPlayer";
+			productName = "Pods-BJNewsMediaPlayer";
+			productReference = 6B301E30C1117CBE49DC721C90220465 /* libPods-BJNewsMediaPlayer.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 45E824AB111BE47FC051155D91DDFE8A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D4DE9CF5F76A67817A1D76877B0716A /* AliPlayerSDK_iOS */,
+				4CCBC6976293085A328714BDAE5FD098 /* Pods-BJNewsMediaPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BEC380BFE491DF9E6069AA2120951A05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E270CB1EAEE780879FF640C5DF07DD4 /* Pods-BJNewsMediaPlayer-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		630ED2DE992B17A89D0F94E6E1906BEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AliPlayerSDK_iOS;
+			target = 1D4DE9CF5F76A67817A1D76877B0716A /* AliPlayerSDK_iOS */;
+			targetProxy = DED4FF4E8A45F0CB4F86DD7E303D74C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09CBD70A6AC64DADF496459C184C65F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E515A4E331A8E1571A24618E581F8F95 /* AliPlayerSDK_iOS.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		17F1851C579382B8F51D558CB7B6B981 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6682F18531A037869419640C2CEFDA6 /* Pods-BJNewsMediaPlayer.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		23ED2E7CD08F84705526D46F74D2ED5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E515A4E331A8E1571A24618E581F8F95 /* AliPlayerSDK_iOS.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2668156CB3D720C4E0DCDA3990B9C944 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D4A82B9B9FDEA709C0AFE7903160869 /* Pods-BJNewsMediaPlayer.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				196DFA3E4A09A28224918543529A1885 /* Debug */,
+				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		907A99DD7669F5D59206B5D38881D5DD /* Build configuration list for PBXNativeTarget "Pods-BJNewsMediaPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2668156CB3D720C4E0DCDA3990B9C944 /* Debug */,
+				17F1851C579382B8F51D558CB7B6B981 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B692F6C772378200709CF5AFAC12A0BF /* Build configuration list for PBXAggregateTarget "AliPlayerSDK_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23ED2E7CD08F84705526D46F74D2ED5D /* Debug */,
+				09CBD70A6AC64DADF496459C184C65F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

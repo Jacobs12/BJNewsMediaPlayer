@@ -1,0 +1,668 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4FC32FF5232736C100D5CA3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC32FF4232736C100D5CA3B /* AppDelegate.m */; };
+		4FC32FF8232736C100D5CA3B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC32FF7232736C100D5CA3B /* ViewController.m */; };
+		4FC32FFB232736C100D5CA3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FC32FF9232736C100D5CA3B /* Main.storyboard */; };
+		4FC32FFD232736C200D5CA3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC32FFC232736C200D5CA3B /* Assets.xcassets */; };
+		4FC33000232736C200D5CA3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FC32FFE232736C200D5CA3B /* LaunchScreen.storyboard */; };
+		4FC33003232736C200D5CA3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC33002232736C200D5CA3B /* main.m */; };
+		4FC3300D232736C300D5CA3B /* BJNewsMediaPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3300C232736C300D5CA3B /* BJNewsMediaPlayerTests.m */; };
+		4FC33018232736C300D5CA3B /* BJNewsMediaPlayerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC33017232736C300D5CA3B /* BJNewsMediaPlayerUITests.m */; };
+		E42E8630A325623145ED5F46 /* libPods-BJNewsMediaPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A80F3A549A8E95F6BE1AEE7 /* libPods-BJNewsMediaPlayer.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4FC33009232736C300D5CA3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FC32FE8232736C100D5CA3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FC32FEF232736C100D5CA3B;
+			remoteInfo = BJNewsMediaPlayer;
+		};
+		4FC33014232736C300D5CA3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FC32FE8232736C100D5CA3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FC32FEF232736C100D5CA3B;
+			remoteInfo = BJNewsMediaPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1FBB8B13D7FF0482EA828B93 /* Pods-BJNewsMediaPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BJNewsMediaPlayer.debug.xcconfig"; path = "Target Support Files/Pods-BJNewsMediaPlayer/Pods-BJNewsMediaPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		4A80F3A549A8E95F6BE1AEE7 /* libPods-BJNewsMediaPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BJNewsMediaPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FC32FF0232736C100D5CA3B /* BJNewsMediaPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BJNewsMediaPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FC32FF3232736C100D5CA3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4FC32FF4232736C100D5CA3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4FC32FF6232736C100D5CA3B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4FC32FF7232736C100D5CA3B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4FC32FFA232736C100D5CA3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4FC32FFC232736C200D5CA3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4FC32FFF232736C200D5CA3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4FC33001232736C200D5CA3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FC33002232736C200D5CA3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4FC33008232736C300D5CA3B /* BJNewsMediaPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BJNewsMediaPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FC3300C232736C300D5CA3B /* BJNewsMediaPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJNewsMediaPlayerTests.m; sourceTree = "<group>"; };
+		4FC3300E232736C300D5CA3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FC33013232736C300D5CA3B /* BJNewsMediaPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BJNewsMediaPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FC33017232736C300D5CA3B /* BJNewsMediaPlayerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJNewsMediaPlayerUITests.m; sourceTree = "<group>"; };
+		4FC33019232736C300D5CA3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9707F7F2C046EB9650AE062 /* Pods-BJNewsMediaPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BJNewsMediaPlayer.release.xcconfig"; path = "Target Support Files/Pods-BJNewsMediaPlayer/Pods-BJNewsMediaPlayer.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4FC32FED232736C100D5CA3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E42E8630A325623145ED5F46 /* libPods-BJNewsMediaPlayer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FC33005232736C300D5CA3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FC33010232736C300D5CA3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4FC32FE7232736C100D5CA3B = {
+			isa = PBXGroup;
+			children = (
+				4FC32FF2232736C100D5CA3B /* BJNewsMediaPlayer */,
+				4FC3300B232736C300D5CA3B /* BJNewsMediaPlayerTests */,
+				4FC33016232736C300D5CA3B /* BJNewsMediaPlayerUITests */,
+				4FC32FF1232736C100D5CA3B /* Products */,
+				7871094615FAED9B396F707B /* Pods */,
+				728259F01A8D4FC792826EF5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4FC32FF1232736C100D5CA3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4FC32FF0232736C100D5CA3B /* BJNewsMediaPlayer.app */,
+				4FC33008232736C300D5CA3B /* BJNewsMediaPlayerTests.xctest */,
+				4FC33013232736C300D5CA3B /* BJNewsMediaPlayerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4FC32FF2232736C100D5CA3B /* BJNewsMediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				4FC32FF3232736C100D5CA3B /* AppDelegate.h */,
+				4FC32FF4232736C100D5CA3B /* AppDelegate.m */,
+				4FC32FF6232736C100D5CA3B /* ViewController.h */,
+				4FC32FF7232736C100D5CA3B /* ViewController.m */,
+				4FC32FF9232736C100D5CA3B /* Main.storyboard */,
+				4FC32FFC232736C200D5CA3B /* Assets.xcassets */,
+				4FC32FFE232736C200D5CA3B /* LaunchScreen.storyboard */,
+				4FC33001232736C200D5CA3B /* Info.plist */,
+				4FC33002232736C200D5CA3B /* main.m */,
+			);
+			path = BJNewsMediaPlayer;
+			sourceTree = "<group>";
+		};
+		4FC3300B232736C300D5CA3B /* BJNewsMediaPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				4FC3300C232736C300D5CA3B /* BJNewsMediaPlayerTests.m */,
+				4FC3300E232736C300D5CA3B /* Info.plist */,
+			);
+			path = BJNewsMediaPlayerTests;
+			sourceTree = "<group>";
+		};
+		4FC33016232736C300D5CA3B /* BJNewsMediaPlayerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4FC33017232736C300D5CA3B /* BJNewsMediaPlayerUITests.m */,
+				4FC33019232736C300D5CA3B /* Info.plist */,
+			);
+			path = BJNewsMediaPlayerUITests;
+			sourceTree = "<group>";
+		};
+		728259F01A8D4FC792826EF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A80F3A549A8E95F6BE1AEE7 /* libPods-BJNewsMediaPlayer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7871094615FAED9B396F707B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FBB8B13D7FF0482EA828B93 /* Pods-BJNewsMediaPlayer.debug.xcconfig */,
+				D9707F7F2C046EB9650AE062 /* Pods-BJNewsMediaPlayer.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4FC32FEF232736C100D5CA3B /* BJNewsMediaPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FC3301C232736C300D5CA3B /* Build configuration list for PBXNativeTarget "BJNewsMediaPlayer" */;
+			buildPhases = (
+				E74D40B93AA047E1190E0604 /* [CP] Check Pods Manifest.lock */,
+				4FC32FEC232736C100D5CA3B /* Sources */,
+				4FC32FED232736C100D5CA3B /* Frameworks */,
+				4FC32FEE232736C100D5CA3B /* Resources */,
+				815E7C83A3C20B37867DFBEC /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BJNewsMediaPlayer;
+			productName = BJNewsMediaPlayer;
+			productReference = 4FC32FF0232736C100D5CA3B /* BJNewsMediaPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4FC33007232736C300D5CA3B /* BJNewsMediaPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FC3301F232736C300D5CA3B /* Build configuration list for PBXNativeTarget "BJNewsMediaPlayerTests" */;
+			buildPhases = (
+				4FC33004232736C300D5CA3B /* Sources */,
+				4FC33005232736C300D5CA3B /* Frameworks */,
+				4FC33006232736C300D5CA3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FC3300A232736C300D5CA3B /* PBXTargetDependency */,
+			);
+			name = BJNewsMediaPlayerTests;
+			productName = BJNewsMediaPlayerTests;
+			productReference = 4FC33008232736C300D5CA3B /* BJNewsMediaPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4FC33012232736C300D5CA3B /* BJNewsMediaPlayerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FC33022232736C300D5CA3B /* Build configuration list for PBXNativeTarget "BJNewsMediaPlayerUITests" */;
+			buildPhases = (
+				4FC3300F232736C300D5CA3B /* Sources */,
+				4FC33010232736C300D5CA3B /* Frameworks */,
+				4FC33011232736C300D5CA3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FC33015232736C300D5CA3B /* PBXTargetDependency */,
+			);
+			name = BJNewsMediaPlayerUITests;
+			productName = BJNewsMediaPlayerUITests;
+			productReference = 4FC33013232736C300D5CA3B /* BJNewsMediaPlayerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4FC32FE8232736C100D5CA3B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "新京报社";
+				TargetAttributes = {
+					4FC32FEF232736C100D5CA3B = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					4FC33007232736C300D5CA3B = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 4FC32FEF232736C100D5CA3B;
+					};
+					4FC33012232736C300D5CA3B = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 4FC32FEF232736C100D5CA3B;
+					};
+				};
+			};
+			buildConfigurationList = 4FC32FEB232736C100D5CA3B /* Build configuration list for PBXProject "BJNewsMediaPlayer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4FC32FE7232736C100D5CA3B;
+			productRefGroup = 4FC32FF1232736C100D5CA3B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4FC32FEF232736C100D5CA3B /* BJNewsMediaPlayer */,
+				4FC33007232736C300D5CA3B /* BJNewsMediaPlayerTests */,
+				4FC33012232736C300D5CA3B /* BJNewsMediaPlayerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4FC32FEE232736C100D5CA3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FC33000232736C200D5CA3B /* LaunchScreen.storyboard in Resources */,
+				4FC32FFD232736C200D5CA3B /* Assets.xcassets in Resources */,
+				4FC32FFB232736C100D5CA3B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FC33006232736C300D5CA3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FC33011232736C300D5CA3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		815E7C83A3C20B37867DFBEC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BJNewsMediaPlayer/Pods-BJNewsMediaPlayer-frameworks.sh",
+				"${PODS_ROOT}/AliPlayerSDK_iOS/AliyunPlayer.framework",
+				"${PODS_ROOT}/AliPlayerSDK_iOS/alivcffmpeg.framework",
+				"${PODS_ROOT}/AliPlayerSDK_iOS/AlivcConan.framework",
+				"${PODS_ROOT}/AliPlayerSDK_iOS/AliyunMediaDownloader.framework",
+				"${PODS_ROOT}/AliPlayerSDK_iOS/artpSource.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/alivcffmpeg.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlivcConan.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunMediaDownloader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/artpSource.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BJNewsMediaPlayer/Pods-BJNewsMediaPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E74D40B93AA047E1190E0604 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BJNewsMediaPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4FC32FEC232736C100D5CA3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FC32FF8232736C100D5CA3B /* ViewController.m in Sources */,
+				4FC33003232736C200D5CA3B /* main.m in Sources */,
+				4FC32FF5232736C100D5CA3B /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FC33004232736C300D5CA3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FC3300D232736C300D5CA3B /* BJNewsMediaPlayerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FC3300F232736C300D5CA3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FC33018232736C300D5CA3B /* BJNewsMediaPlayerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4FC3300A232736C300D5CA3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FC32FEF232736C100D5CA3B /* BJNewsMediaPlayer */;
+			targetProxy = 4FC33009232736C300D5CA3B /* PBXContainerItemProxy */;
+		};
+		4FC33015232736C300D5CA3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FC32FEF232736C100D5CA3B /* BJNewsMediaPlayer */;
+			targetProxy = 4FC33014232736C300D5CA3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4FC32FF9232736C100D5CA3B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FC32FFA232736C100D5CA3B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4FC32FFE232736C200D5CA3B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FC32FFF232736C200D5CA3B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4FC3301A232736C300D5CA3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4FC3301B232736C300D5CA3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4FC3301D232736C300D5CA3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FBB8B13D7FF0482EA828B93 /* Pods-BJNewsMediaPlayer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42LRDW5LP3;
+				INFOPLIST_FILE = BJNewsMediaPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.bjnews.BJNewsMediaPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4FC3301E232736C300D5CA3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9707F7F2C046EB9650AE062 /* Pods-BJNewsMediaPlayer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42LRDW5LP3;
+				INFOPLIST_FILE = BJNewsMediaPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.bjnews.BJNewsMediaPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4FC33020232736C300D5CA3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42LRDW5LP3;
+				INFOPLIST_FILE = BJNewsMediaPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.bjnews.BJNewsMediaPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BJNewsMediaPlayer.app/BJNewsMediaPlayer";
+			};
+			name = Debug;
+		};
+		4FC33021232736C300D5CA3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42LRDW5LP3;
+				INFOPLIST_FILE = BJNewsMediaPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.bjnews.BJNewsMediaPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BJNewsMediaPlayer.app/BJNewsMediaPlayer";
+			};
+			name = Release;
+		};
+		4FC33023232736C300D5CA3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42LRDW5LP3;
+				INFOPLIST_FILE = BJNewsMediaPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.bjnews.BJNewsMediaPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BJNewsMediaPlayer;
+			};
+			name = Debug;
+		};
+		4FC33024232736C300D5CA3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42LRDW5LP3;
+				INFOPLIST_FILE = BJNewsMediaPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.bjnews.BJNewsMediaPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BJNewsMediaPlayer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FC32FEB232736C100D5CA3B /* Build configuration list for PBXProject "BJNewsMediaPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FC3301A232736C300D5CA3B /* Debug */,
+				4FC3301B232736C300D5CA3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FC3301C232736C300D5CA3B /* Build configuration list for PBXNativeTarget "BJNewsMediaPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FC3301D232736C300D5CA3B /* Debug */,
+				4FC3301E232736C300D5CA3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FC3301F232736C300D5CA3B /* Build configuration list for PBXNativeTarget "BJNewsMediaPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FC33020232736C300D5CA3B /* Debug */,
+				4FC33021232736C300D5CA3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FC33022232736C300D5CA3B /* Build configuration list for PBXNativeTarget "BJNewsMediaPlayerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FC33023232736C300D5CA3B /* Debug */,
+				4FC33024232736C300D5CA3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4FC32FE8232736C100D5CA3B /* Project object */;
+}
