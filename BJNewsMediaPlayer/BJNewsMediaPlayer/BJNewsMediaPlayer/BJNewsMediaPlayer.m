@@ -18,6 +18,9 @@ static BJNewsMediaPlayer * media_player = nil;
 
 + (BJNewsMediaPlayer *)defaultPlayer{
     if(media_player == nil){
+        [AliPlayer setLogCallbackInfo:LOG_LEVEL_NONE callbackBlock:^(AVPLogLevel logLevel, NSString *strLog) {
+            
+        }];
         media_player = [[BJNewsMediaPlayer alloc]init];
     }
     return media_player;
@@ -51,9 +54,12 @@ static BJNewsMediaPlayer * media_player = nil;
  @param url url description
  */
 - (void)playWithUrl:(NSString *)url{
+    self.state = BJNewsMediaPlayStateNone;
     if(url == nil || [url isKindOfClass:[NSNull class]]){
         url = @"";
     }
+    self.url = url;
+    url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLUserAllowedCharacterSet]];
     AVPUrlSource * source = [[AVPUrlSource alloc]init];
     source.playerUrl = [NSURL URLWithString:url];
     [self.player setUrlSource:source];
@@ -64,6 +70,7 @@ static BJNewsMediaPlayer * media_player = nil;
  开始播放
  */
 - (void)play{
+    self.state = BJNewsMediaPlayStatePlaying;
     [self.player start];
 }
 
@@ -71,6 +78,7 @@ static BJNewsMediaPlayer * media_player = nil;
  暂停播放
  */
 - (void)pause{
+    self.state = BJNewsMediaPlayStatePaused;
     [self.player pause];
 }
 
@@ -78,6 +86,7 @@ static BJNewsMediaPlayer * media_player = nil;
  停止播放
  */
 - (void)stop{
+    self.state = BJNewsMediaPlayStateEnded;
     [self.player stop];
 }
 
@@ -85,6 +94,7 @@ static BJNewsMediaPlayer * media_player = nil;
  销毁播放器
  */
 - (void)destroy{
+    self.state = BJNewsMediaPlayStateNone;
     _player.playerView = nil;
     _player.delegate = nil;
     _player = nil;
@@ -97,6 +107,7 @@ static BJNewsMediaPlayer * media_player = nil;
  重置播放器
  */
 - (void)reset{
+    self.state = BJNewsMediaPlayStateNone;
     [self.player reset];
 }
 
@@ -104,7 +115,15 @@ static BJNewsMediaPlayer * media_player = nil;
  重新加载。比如网络超时时，可以重新加载。
  */
 - (void)reload{
+    self.state = BJNewsMediaPlayStateNone;
     [self.player reload];
+}
+
+/**
+ @brief 刷新view，例如view size变化时。
+ */
+-(void)redraw{
+    [self.player redraw];
 }
 
 /**
@@ -116,7 +135,92 @@ static BJNewsMediaPlayer * media_player = nil;
 - (void)seekToTime:(NSTimeInterval)time completionHandler:(void (^) (NSTimeInterval seekTime))handler{
     self.seekTime = time;
     self.seekTimeBlock = handler;
+    [self pause];
     [self.player seekToTime:time seekMode:AVP_SEEKMODE_INACCURATE];
+}
+
+/**
+ 设置是否静音
+ 
+ @param isMute 是否静音
+ */
+- (void)setMuteMode:(BOOL)isMute{
+    [self.player setMuted:isMute];
+}
+
+#pragma mark - getter
+
+/**
+ 是否已经静音
+ 
+ @return 是否已经静音
+ */
+- (BOOL)isMuted{
+    BOOL isMuted = self.player.isMuted;
+    return isMuted;
+}
+
+/**
+ 判断是否正在播放
+ 
+ @return 是否正在播放
+ */
+- (BOOL)isPlaying{
+    BOOL isPlaying = NO;
+    if(self.state == BJNewsMediaPlayStatePlaying){
+        isPlaying = YES;
+    }
+    return isPlaying;
+}
+
+/**
+ 获取视频时长
+ 
+ @return 视频时长
+ */
+- (NSTimeInterval)totalDuration{
+    NSTimeInterval time = self.player.duration;
+    return time;
+}
+
+/**
+ 获取当前时间
+ 
+ @return 当前时间
+ */
+- (NSTimeInterval)duration{
+    NSTimeInterval duration = self.player.currentPosition;
+    return duration;
+}
+
+/**
+ 获取播放进度
+ 
+ @return 播放进度
+ */
+- (float)progress{
+    NSTimeInterval totalDuration = self.player.duration;
+    NSTimeInterval duration = self.player.currentPosition;
+    float progress = 0;
+    if(totalDuration != 0){
+        progress = duration / totalDuration;
+    }
+    return progress;
+}
+
+/**
+ 获取缓冲进度
+ 
+ @return 缓冲i进度
+ */
+- (float)bufferProgress{
+    NSTimeInterval totalDuration = self.player.duration;
+    NSTimeInterval duration = self.player.bufferedPosition;
+    float progress = 0;
+    if(totalDuration != 0){
+        progress = duration / totalDuration;
+    }
+    return progress;
 }
 
 #pragma mark - player delegate 播放器播放状态回调
@@ -131,7 +235,12 @@ static BJNewsMediaPlayer * media_player = nil;
     if(player){
         [player stop];
     }
-    MEPLog(@"播放错误");
+    self.state = BJNewsMediaPlayStateError;
+    if(self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayer:failedPlayWithError:)]){
+        [self.delegate mediaPlayer:self failedPlayWithError:errorModel];
+    }
+    NSString * log = [NSString stringWithFormat:@"播放错误:%@",self.url];
+    MEPLog(log);
 }
 
 /**
@@ -144,6 +253,11 @@ static BJNewsMediaPlayer * media_player = nil;
     switch (eventType) {
         case AVPEventPrepareDone:
 //           准备完成
+            if(self.state == BJNewsMediaPlayStatePaused){
+                
+            }else{
+                [self play];
+            }
             if(self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayerDidPrepared:)]){
                 [self.delegate mediaPlayerDidPrepared:self];
             }
@@ -159,6 +273,7 @@ static BJNewsMediaPlayer * media_player = nil;
             break;
         case AVPEventCompletion:
 //            播放完成
+            self.state = BJNewsMediaPlayStateEnded;
             if(self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayerDidEnded:)]){
                 [self.delegate mediaPlayerDidEnded:self];
             }
@@ -187,8 +302,10 @@ static BJNewsMediaPlayer * media_player = nil;
 - (void)seekTimeEnd{
     float dt = self.seekTime - self.player.currentPosition;
     if(dt > 5000 || dt < -5000){
+        [self seekToTime:self.seekTime completionHandler:self.seekTimeBlock];
         return;
     }
+    [self play];
     if(self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayer:seekEnd:)]){
         [self.delegate mediaPlayer:self seekEnd:self.seekTime];
     }
