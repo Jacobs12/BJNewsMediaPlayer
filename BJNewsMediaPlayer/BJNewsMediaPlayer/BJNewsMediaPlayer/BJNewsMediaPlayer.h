@@ -155,6 +155,13 @@ typedef NS_ENUM(NSInteger,BJNewsMediaPlayState){
  */
 - (float)bufferProgress;
 
+/**
+ 获取视频分辨率大小
+
+ @return 视频分辨率大小
+ */
+- (CGSize)videoSize;
+
 @end
 
 #pragma mark - =====================delegate

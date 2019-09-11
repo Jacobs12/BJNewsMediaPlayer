@@ -28,6 +28,14 @@ typedef NS_ENUM(NSInteger,MEPControllViewType){
 
 @property (nonatomic,strong) UIView * containerView;
 
+@property (nonatomic,strong) UIViewController * container;
+
+@property (nonatomic,strong) UIView * baseView;
+
+@property (nonatomic,copy) NSString * url;
+
+@property (nonatomic,assign) CGSize videoSize;
+
 /**
  切换播放视图
 

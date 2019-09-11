@@ -10,12 +10,15 @@
 
 @implementation BJNewsMediaLandScapeControllView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+/**
+ 全屏按钮点击
+ 
+ @param sender 全屏按钮
+ */
+- (IBAction)screenButtonClick:(id)sender{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(controllView:screenButtonClick:)]){
+        [self.delegate controllView:self screenButtonClick:NO];
+    }
 }
-*/
 
 @end

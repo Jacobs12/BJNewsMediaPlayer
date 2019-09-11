@@ -16,6 +16,28 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whX-Yj-7Mz">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCQ-xB-9RG">
+                            <rect key="frame" x="165.5" y="83.5" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="bWs-Mf-JdH"/>
+                                <constraint firstAttribute="width" constant="44" id="gXc-DC-afJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                            <state key="normal" image="bjnews_media_replay"/>
+                            <connections>
+                                <action selector="replayButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="5uU-Gt-dL7"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="gCQ-xB-9RG" firstAttribute="centerY" secondItem="whX-Yj-7Mz" secondAttribute="centerY" id="407-wu-awb"/>
+                        <constraint firstItem="gCQ-xB-9RG" firstAttribute="centerX" secondItem="whX-Yj-7Mz" secondAttribute="centerX" id="N4N-bx-rke"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYd-Wp-dL3">
                     <rect key="frame" x="165.5" y="83.5" width="44" height="44"/>
                     <constraints>
@@ -24,18 +46,24 @@
                     </constraints>
                     <state key="normal" image="bjnews_media_play"/>
                     <state key="selected" image="bjnews_media_pause"/>
+                    <connections>
+                        <action selector="playButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="O5H-Q1-JOo"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2X-EB-gHu">
-                    <rect key="frame" x="10" y="157" width="44" height="44"/>
+                    <rect key="frame" x="3" y="167" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="JmT-MT-hXi"/>
                         <constraint firstAttribute="width" constant="44" id="iWP-J3-JEZ"/>
                     </constraints>
                     <state key="normal" image="bjnews_media_sound"/>
                     <state key="selected" image="bjnews_media_mute"/>
+                    <connections>
+                        <action selector="muteButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="jJd-j8-YFQ"/>
+                    </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8do-co-CQG">
-                    <rect key="frame" x="54" y="157" width="54" height="44"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8do-co-CQG">
+                    <rect key="frame" x="47" y="167" width="54" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="gdO-2O-rmS"/>
                         <constraint firstAttribute="width" constant="54" id="yCE-hV-98D"/>
@@ -45,15 +73,18 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TK1-2q-TUZ">
-                    <rect key="frame" x="321" y="157" width="44" height="44"/>
+                    <rect key="frame" x="327" y="169" width="40" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="44" id="bFe-tD-f8y"/>
-                        <constraint firstAttribute="height" constant="44" id="mKx-0a-lKy"/>
+                        <constraint firstAttribute="width" constant="40" id="bFe-tD-f8y"/>
+                        <constraint firstAttribute="height" constant="40" id="mKx-0a-lKy"/>
                     </constraints>
                     <state key="normal" image="bjnews_media_fullscreenlandscape"/>
+                    <connections>
+                        <action selector="screenButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="hdq-V2-LGu"/>
+                    </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKw-wD-vBr">
-                    <rect key="frame" x="267" y="157" width="54" height="44"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKw-wD-vBr">
+                    <rect key="frame" x="273" y="167" width="54" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="RXH-1r-O7t"/>
                         <constraint firstAttribute="width" constant="54" id="ueS-Wf-6pg"/>
@@ -62,6 +93,13 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgI-gZ-r6K">
+                    <rect key="frame" x="174.5" y="92.5" width="26" height="26"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="dgI-gZ-r6K" secondAttribute="height" multiplier="1:1" id="6cW-Is-VU9"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -69,22 +107,32 @@
                 <constraint firstItem="TK1-2q-TUZ" firstAttribute="leading" secondItem="UKw-wD-vBr" secondAttribute="trailing" id="7xW-2o-60W"/>
                 <constraint firstItem="UKw-wD-vBr" firstAttribute="centerY" secondItem="C2X-EB-gHu" secondAttribute="centerY" id="8tv-Oa-EaM"/>
                 <constraint firstItem="8do-co-CQG" firstAttribute="centerY" secondItem="C2X-EB-gHu" secondAttribute="centerY" id="FXO-d8-OPi"/>
-                <constraint firstItem="C2X-EB-gHu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="Lbu-hB-xJn"/>
+                <constraint firstItem="C2X-EB-gHu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="3" id="Lbu-hB-xJn"/>
                 <constraint firstItem="TYd-Wp-dL3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NpW-oV-SEx"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TK1-2q-TUZ" secondAttribute="trailing" constant="10" id="hLg-mz-1ZZ"/>
+                <constraint firstItem="dgI-gZ-r6K" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PQR-01-XWs"/>
+                <constraint firstAttribute="bottom" secondItem="whX-Yj-7Mz" secondAttribute="bottom" id="dZ8-5B-dbd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="whX-Yj-7Mz" secondAttribute="trailing" id="fFC-KU-OZa"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TK1-2q-TUZ" secondAttribute="trailing" constant="8" id="hLg-mz-1ZZ"/>
+                <constraint firstItem="dgI-gZ-r6K" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="iiX-Ag-w0s"/>
                 <constraint firstItem="8do-co-CQG" firstAttribute="leading" secondItem="C2X-EB-gHu" secondAttribute="trailing" id="kTZ-sU-ZVV"/>
-                <constraint firstAttribute="bottom" secondItem="C2X-EB-gHu" secondAttribute="bottom" constant="10" id="yeh-MF-o9h"/>
+                <constraint firstItem="dgI-gZ-r6K" firstAttribute="width" secondItem="whX-Yj-7Mz" secondAttribute="width" multiplier="0.0693333" id="mA6-DU-0MY"/>
+                <constraint firstItem="whX-Yj-7Mz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tZ1-RX-brL"/>
+                <constraint firstAttribute="bottom" secondItem="C2X-EB-gHu" secondAttribute="bottom" id="yeh-MF-o9h"/>
                 <constraint firstItem="TK1-2q-TUZ" firstAttribute="centerY" secondItem="C2X-EB-gHu" secondAttribute="centerY" id="yry-zn-Kz7"/>
+                <constraint firstItem="whX-Yj-7Mz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yv4-Xi-Ipk"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="loadingView" destination="dgI-gZ-r6K" id="jvH-Cj-aR3"/>
                 <outlet property="muteButton" destination="C2X-EB-gHu" id="har-Ov-8UI"/>
                 <outlet property="playButton" destination="TYd-Wp-dL3" id="lTG-Kg-dRk"/>
+                <outlet property="replayButton" destination="gCQ-xB-9RG" id="Fj1-bU-tYQ"/>
                 <outlet property="screenButton" destination="TK1-2q-TUZ" id="u2i-fL-rQJ"/>
                 <outlet property="timeLabel" destination="8do-co-CQG" id="gEf-84-sEG"/>
                 <outlet property="totalLabel" destination="UKw-wD-vBr" id="3Ib-mv-IPP"/>
             </connections>
+            <point key="canvasLocation" x="48.550724637681164" y="35.825892857142854"/>
         </view>
     </objects>
     <resources>
@@ -92,6 +140,7 @@
         <image name="bjnews_media_mute" width="21" height="18"/>
         <image name="bjnews_media_pause" width="29.5" height="34.5"/>
         <image name="bjnews_media_play" width="33" height="37.5"/>
+        <image name="bjnews_media_replay" width="43.5" height="43.5"/>
         <image name="bjnews_media_sound" width="21" height="18"/>
     </resources>
 </document>

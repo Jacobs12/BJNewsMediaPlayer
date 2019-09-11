@@ -22,17 +22,49 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.player = [BJNewsMediaPlayerView defaultView];
+    self.player.container = self;
     [self.player moveToView:self.playerView type:MEPControllViewTypePreview];
     [self.player playWithUrl:@"https://test-bjnews.oss-cn-beijing.aliyuncs.com/video/2019/09/04/4833278034796609767.mp4"];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self.player moveToView:self.view type:MEPControllViewTypePortrait];
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.player moveToView:self.view type:MEPControllViewTypePreview];
+//    });
 }
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    [self.player redraw];
+    if(self.player.superview == self.playerView){
+        [self.player redraw];
+    }
 }
+
+////必须返回YES
+- (BOOL)shouldAutorotate{
+    return NO;
+}
+////旋转方向
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+////状态栏样式
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    
+    return UIStatusBarStyleDefault;
+}
+////状态栏显示／隐藏
+-(BOOL)prefersStatusBarHidden{
+//    if(_isHideStatusBar == NO){
+//        return NO;
+//    }else{
+//        return YES;
+//    }
+    return NO;
+}
+
+- (BOOL)prefersHomeIndicatorAutoHidden{
+    return YES;
+}
+
 
 /**
  播放器已经做好播放准备回调

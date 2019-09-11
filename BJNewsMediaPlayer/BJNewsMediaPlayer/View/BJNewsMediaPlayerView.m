@@ -13,13 +13,15 @@
 #import "BJNewsMediaLandScapeControllView.h"
 #import "BJNewsMediaPortraitControllView.h"
 #import "BJNewsMediaPreviewControllView.h"
+#import "BJNewsMediaOrientationManager.h"
 
 static BJNewsMediaPlayerView * player_view = nil;
 
-@interface BJNewsMediaPlayerView () <BJNewsMediaPlayerDelegate>
+@interface BJNewsMediaPlayerView () <BJNewsMediaPlayerDelegate,BJNewsMeidaBaseControllViewDelegate>
 
 @property (nonatomic,strong) NSMutableArray * controllArray;
 @property (nonatomic,strong) BJNewsMediaBaseControllView * controllView;
+@property (nonatomic,strong) BJNewsMediaOrientationManager * orientationManager;
 
 @end
 
@@ -47,6 +49,13 @@ static BJNewsMediaPlayerView * player_view = nil;
     return _controllArray;
 }
 
+- (BJNewsMediaOrientationManager *)orientationManager{
+    if(_orientationManager == nil){
+        _orientationManager = [[BJNewsMediaOrientationManager alloc]init];
+    }
+    return _orientationManager;
+}
+
 /**
  切换播放视图
  
@@ -54,6 +63,7 @@ static BJNewsMediaPlayerView * player_view = nil;
  */
 - (void)moveToView:(UIView *)view type:(MEPControllViewType)type{
     self.containerView = view;
+    self.baseView = self.containerView;
     [view addSubview:self];
     self.player.playerView = self;
     if(self.controllView){
@@ -63,14 +73,56 @@ static BJNewsMediaPlayerView * player_view = nil;
     if(self.controllView){
         [self addSubview:self.controllView];
     }
+    [self resetControllView];
     [self redraw];
+}
+
+- (void)switchFullScreenModeToView:(UIView *)view type:(MEPControllViewType)type{
+    self.baseView = view;
+    if(type == MEPControllViewTypePortrait){
+        CGPoint center = [self convertPoint:self.center toView:view];
+        self.center = center;
+    }else if (type == MEPControllViewTypeLandScape){
+//            横屏全屏
+        self.orientationManager.playerView = self;
+        self.orientationManager.superView = self.baseView;
+        [self.orientationManager setFullScreen:YES interfaceOrientation:UIInterfaceOrientationLandscapeLeft fromFrame:self.frame toFrame:view.bounds animated:YES completion:^(CGRect toFrame) {
+            [self.container setNeedsStatusBarAppearanceUpdate];
+            [UIViewController attemptRotationToDeviceOrientation];
+        }];
+    }else if (type == MEPControllViewTypePreview){
+        self.orientationManager.playerView = self;
+        self.orientationManager.superView = self.baseView;
+        [self.orientationManager setFullScreen:NO interfaceOrientation:UIInterfaceOrientationPortrait fromFrame:self.frame toFrame:view.bounds animated:YES completion:^(CGRect toFrame) {
+            
+        }];
+    }
+    [view addSubview:self];
+    self.player.playerView = self;
+    if(self.controllView){
+        [self.controllView removeFromSuperview];
+    }
+    self.controllView = [self controllViewWithType:type];
+    if(self.controllView){
+        [self addSubview:self.controllView];
+    }
+    [self resetControllView];
+    [UIView animateWithDuration:0.2 animations:^{
+        [self redraw];
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+- (void)resetControllView{
+    
 }
 
 /**
  @brief 刷新view，例如view size变化时。
  */
 - (void)redraw{
-    self.frame = self.containerView.bounds;
+    self.frame = self.baseView.bounds;
     [self.player redraw];
     if(self.controllView){
         self.controllView.frame = self.bounds;
@@ -106,6 +158,7 @@ static BJNewsMediaPlayerView * player_view = nil;
     }
     if(controllView == nil){
         controllView = [[[NSBundle mainBundle] loadNibNamed:nibName owner:self options:nil] firstObject];
+        controllView.delegate = self;
         [self.controllArray addObject:controllView];
     }
     return controllView;
@@ -119,6 +172,10 @@ static BJNewsMediaPlayerView * player_view = nil;
  @param url url description
  */
 - (void)playWithUrl:(NSString *)url{
+    if(self.controllView){
+        [self.controllView setPlayState:MCPlayStateNone];
+    }
+    self.url = url;
     [self.player playWithUrl:url];
 }
 
@@ -157,7 +214,9 @@ static BJNewsMediaPlayerView * player_view = nil;
  @param mediaPlayer 播放器
  */
 - (void)mediaPlayer:(BJNewsMediaPlayer *)mediaPlayer failedPlayWithError:(AVPErrorModel *)error{
-    
+    if(self.controllView){
+        [self.controllView setPlayState:MCPlayStateError];
+    }
 }
 
 /**
@@ -167,7 +226,7 @@ static BJNewsMediaPlayerView * player_view = nil;
  */
 - (void)mediaPlayerWillStartLoading:(BJNewsMediaPlayer *)mediaPlayer{
     if(self.controllView){
-        [self.controllView setPlayState:MCPlayStateLoading];
+        [self.controllView setPlayState:MCPlayStateLoadingStart];
     }
 }
 
@@ -178,7 +237,7 @@ static BJNewsMediaPlayerView * player_view = nil;
  */
 - (void)mediaPlayerDidStopLoading:(BJNewsMediaPlayer *)mediaPlayer{
     if(self.controllView){
-        [self.controllView setPlayState:MCPlayStatePlaying];
+        [self.controllView setPlayState:MCPlayStateLoadingEnded];
     }
 }
 
@@ -235,5 +294,71 @@ static BJNewsMediaPlayerView * player_view = nil;
 }
 
 #pragma mark - delegate 控制面板回调
+
+/**
+ 播放、暂停按钮点击回调
+ 
+ @param controllView 控制面板
+ @param isPlaying 是否是播放事件
+ */
+- (void)controllView:(BJNewsMediaBaseControllView *)controllView playButtonClick:(BOOL)isPlaying{
+    if(isPlaying){
+        [self.player play];
+    }else{
+        [self.player pause];
+    }
+}
+
+/**
+ 重新播放按钮点击
+ 
+ @param controllView 控制面板
+ @param isError 播放是否出错
+ */
+- (void)controllView:(BJNewsMediaBaseControllView *)controllView replayButtonClick:(BOOL)isError{
+    [self playWithUrl:self.url];
+}
+
+/**
+ 静音按钮点击回调
+ 
+ @param controllView 控制面板
+ @param isMute 是否静音
+ */
+- (void)controllView:(BJNewsMediaBaseControllView *)controllView muteButtonClick:(BOOL)isMute{
+    [self.player setMuteMode:isMute];
+}
+
+/**
+ 全屏按钮点击回调
+ 
+ @param controllView 控制面板
+ @param isFullScreen 是否全屏
+ */
+- (void)controllView:(BJNewsMediaBaseControllView *)controllView screenButtonClick:(BOOL)isFullScreen{
+    if(self.containerView == nil){
+        return;
+    }
+    if(isFullScreen){
+        float width = self.videoSize.width;
+        float height = self.videoSize.height;
+        if(width < 10 || height < 10){
+            width = [self.player videoSize].width;
+            height = [self.player videoSize].height;
+        }
+//        if(width - height > -10){
+        if(1){
+            UIView * view = [UIApplication sharedApplication].keyWindow.rootViewController.view;
+            [self switchFullScreenModeToView:view type:MEPControllViewTypeLandScape];
+        }else{
+//            竖屏全屏
+            UIView * view = [UIApplication sharedApplication].keyWindow.rootViewController.view;
+            [self switchFullScreenModeToView:view type:MEPControllViewTypePortrait];
+        }
+    }else{
+        UIView * view = self.containerView;
+        [self switchFullScreenModeToView:view type:MEPControllViewTypePreview];
+    }
+}
 
 @end

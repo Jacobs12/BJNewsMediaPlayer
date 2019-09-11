@@ -230,6 +230,16 @@ static BJNewsMediaPlayer * media_player = nil;
     return progress;
 }
 
+/**
+ 获取视频分辨率大小
+ 
+ @return 视频分辨率大小
+ */
+- (CGSize)videoSize{
+    CGSize size = CGSizeMake(self.player.width, self.player.height);
+    return size;
+}
+
 #pragma mark - player delegate 播放器播放状态回调
 
 /**
@@ -289,6 +299,11 @@ static BJNewsMediaPlayer * media_player = nil;
 //            缓冲开始
             if(self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayerWillStartLoading:)]){
                 [self.delegate mediaPlayerWillStartLoading:self];
+            }
+            break;
+        case AVPEventLoadingEnd:
+            if(self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayerDidStopLoading:)]){
+                [self.delegate mediaPlayerDidStopLoading:self];
             }
             break;
         case AVPEventSeekEnd:
