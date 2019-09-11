@@ -18,8 +18,16 @@
 }
 */
 
-- (void)setPlayState:(BOOL)isPlaying{
-    self.playButton.selected = isPlaying;
+- (void)setPlayState:(MCPlayState)state{
+    if(state == MCPlayStatePlaying){
+        self.playButton.selected = YES;
+    }else if(state == MCPlayStatePaused){
+        self.playButton.selected = NO;
+    }else if (state == MCPlayStateLoading){
+
+    }else if (state == MCPlayStateEnded){
+        
+    }
 }
 
 - (void)updateProgress:(float)progress duration:(NSTimeInterval)duration totalDuration:(NSTimeInterval)totalDuration{

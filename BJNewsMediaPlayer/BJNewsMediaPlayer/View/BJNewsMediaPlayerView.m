@@ -166,7 +166,9 @@ static BJNewsMediaPlayerView * player_view = nil;
  @param mediaPlayer 播放器
  */
 - (void)mediaPlayerWillStartLoading:(BJNewsMediaPlayer *)mediaPlayer{
-    
+    if(self.controllView){
+        [self.controllView setPlayState:MCPlayStateLoading];
+    }
 }
 
 /**
@@ -175,7 +177,9 @@ static BJNewsMediaPlayerView * player_view = nil;
  @param mediaPlayer 播放器
  */
 - (void)mediaPlayerDidStopLoading:(BJNewsMediaPlayer *)mediaPlayer{
-    
+    if(self.controllView){
+        [self.controllView setPlayState:MCPlayStatePlaying];
+    }
 }
 
 /**
@@ -221,9 +225,11 @@ static BJNewsMediaPlayerView * player_view = nil;
 - (void)mediaPlayer:(BJNewsMediaPlayer *)mediaPlayer didUpdatePlayState:(BJNewsMediaPlayState)playState{
     if(self.controllView){
         if(playState == BJNewsMediaPlayStatePlaying){
-            [self.controllView setPlayState:YES];
-        }else{
-            [self.controllView setPlayState:NO];
+            [self.controllView setPlayState:MCPlayStatePlaying];
+        }else if(playState == BJNewsMediaPlayStateEnded){
+            [self.controllView setPlayState:MCPlayStateEnded];
+        }else if (playState == BJNewsMediaPlayStatePaused){
+            [self.controllView setPlayState:MCPlayStatePaused];
         }
     }
 }

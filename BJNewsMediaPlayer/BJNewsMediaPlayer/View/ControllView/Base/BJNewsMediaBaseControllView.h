@@ -12,13 +12,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BJNewsMediaBaseControllView : UIView
 
+typedef NS_ENUM(NSInteger,MCPlayState){
+    MCPlayStatePaused,
+    MCPlayStatePlaying,
+    MCPlayStateLoading,
+    MCPlayStateEnded
+};
+
 @property (nonatomic,strong) IBOutlet UIButton * playButton;
 @property (nonatomic,strong) IBOutlet UIButton * muteButton;
 @property (nonatomic,strong) IBOutlet UILabel * timeLabel;
 @property (nonatomic,strong) IBOutlet UILabel * totalLabel;
 @property (nonatomic,strong) IBOutlet UIButton * screenButton;
 
-- (void)setPlayState:(BOOL)isPlaying;
+- (void)setPlayState:(MCPlayState)state;
 
 - (void)updateProgress:(float)progress duration:(NSTimeInterval)duration totalDuration:(NSTimeInterval)totalDuration;
 
