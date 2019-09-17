@@ -28,6 +28,9 @@ typedef NS_ENUM(NSInteger,MEPControllViewType){
 
 @property (nonatomic,strong) UIView * containerView;
 
+/**
+ 用于屏幕旋转
+ */
 @property (nonatomic,strong) UIViewController * container;
 
 @property (nonatomic,strong) UIView * baseView;

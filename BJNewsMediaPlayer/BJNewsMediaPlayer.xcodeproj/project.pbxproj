@@ -142,8 +142,8 @@
 		4FAB131F2328EE3C00BFF7B9 /* 屏幕旋转控制 */ = {
 			isa = PBXGroup;
 			children = (
-				4FAB13202328EE3C00BFF7B9 /* BJNewsMediaOrientationManager.m */,
 				4FAB13212328EE3C00BFF7B9 /* BJNewsMediaOrientationManager.h */,
+				4FAB13202328EE3C00BFF7B9 /* BJNewsMediaOrientationManager.m */,
 			);
 			path = "屏幕旋转控制";
 			sourceTree = "<group>";

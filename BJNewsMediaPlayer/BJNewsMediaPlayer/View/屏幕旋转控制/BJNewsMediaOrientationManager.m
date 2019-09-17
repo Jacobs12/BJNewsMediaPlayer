@@ -22,6 +22,7 @@
                 if(self.orientationWillChange){
                     self.orientationWillChange(orientation);
                 }
+//                要实现旋转，必须在viewcontroller里实现相应的statusbar方法
                 [UIApplication sharedApplication].statusBarOrientation = orientation;
                 [UIView animateWithDuration:0.3 animations:^{
                     self.playerView.frame = CGRectMake(0, 0, [self screenHeight], [self screenWidth]);

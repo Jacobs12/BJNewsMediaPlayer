@@ -79,6 +79,7 @@ static BJNewsMediaPlayerView * player_view = nil;
 
 - (void)switchFullScreenModeToView:(UIView *)view type:(MEPControllViewType)type{
     self.baseView = view;
+    __weak typeof(self) weak_self = self;
     if(type == MEPControllViewTypePortrait){
         CGPoint center = [self convertPoint:self.center toView:view];
         self.center = center;
@@ -86,15 +87,16 @@ static BJNewsMediaPlayerView * player_view = nil;
 //            横屏全屏
         self.orientationManager.playerView = self;
         self.orientationManager.superView = self.baseView;
-        [self.orientationManager setFullScreen:YES interfaceOrientation:UIInterfaceOrientationLandscapeLeft fromFrame:self.frame toFrame:view.bounds animated:YES completion:^(CGRect toFrame) {
-            [self.container setNeedsStatusBarAppearanceUpdate];
+        [self.orientationManager setFullScreen:YES interfaceOrientation:UIInterfaceOrientationLandscapeRight fromFrame:self.frame toFrame:view.bounds animated:YES completion:^(CGRect toFrame) {
+            [weak_self.container setNeedsStatusBarAppearanceUpdate];
             [UIViewController attemptRotationToDeviceOrientation];
         }];
     }else if (type == MEPControllViewTypePreview){
         self.orientationManager.playerView = self;
         self.orientationManager.superView = self.baseView;
         [self.orientationManager setFullScreen:NO interfaceOrientation:UIInterfaceOrientationPortrait fromFrame:self.frame toFrame:view.bounds animated:YES completion:^(CGRect toFrame) {
-            
+            [weak_self.container setNeedsStatusBarAppearanceUpdate];
+            [UIViewController attemptRotationToDeviceOrientation];
         }];
     }
     [view addSubview:self];
@@ -346,8 +348,8 @@ static BJNewsMediaPlayerView * player_view = nil;
             width = [self.player videoSize].width;
             height = [self.player videoSize].height;
         }
-//        if(width - height > -10){
-        if(1){
+        if(width - height > -10){
+//        if(1){
             UIView * view = [UIApplication sharedApplication].keyWindow.rootViewController.view;
             [self switchFullScreenModeToView:view type:MEPControllViewTypeLandScape];
         }else{

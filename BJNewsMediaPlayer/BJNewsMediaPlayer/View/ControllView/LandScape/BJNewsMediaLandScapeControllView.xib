@@ -15,9 +15,25 @@
         <view alpha="0.5" contentMode="scaleToFill" id="iN0-l3-epB" customClass="BJNewsMediaLandScapeControllView">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qo-r0-uTI">
+                    <rect key="frame" x="184" y="433" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="screenButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="5Qy-69-lxp"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8qo-r0-uTI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Qtg-nU-khq"/>
+                <constraint firstItem="8qo-r0-uTI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="abz-l3-AUV"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="screenButton" destination="8qo-r0-uTI" id="8Rp-d4-YyQ"/>
+            </connections>
         </view>
     </objects>
 </document>
