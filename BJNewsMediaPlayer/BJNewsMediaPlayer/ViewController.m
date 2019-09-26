@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "BJNewsMediaPlayerView.h"
 
-@interface ViewController (){
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>{
     BOOL _isStatusBarHidden;
 }
 
@@ -27,8 +27,8 @@
     // Do any additional setup after loading the view.
     self.player = [BJNewsMediaPlayerView defaultView];
     [self.player moveToView:self.playerView type:MEPControllViewTypePreview];
-//    [self.player playWithUrl:@"https://test-bjnews.oss-cn-beijing.aliyuncs.com/video/2019/09/04/4833278034796609767.mp4"];
-    [self.player playWithUrl:@"http://tb-video.bdstatic.com/tieba-smallvideo-transcode-cae/3721866_1fa5e31aad50cf3eb3b9dd3288cebdae_0_cae.mp4"];
+    [self.player playWithUrl:@"https://test-bjnews.oss-cn-beijing.aliyuncs.com/video/2019/09/04/4833278034796609767.mp4"];
+//    [self.player playWithUrl:@"http://tb-video.bdstatic.com/tieba-smallvideo-transcode-cae/3721866_1fa5e31aad50cf3eb3b9dd3288cebdae_0_cae.mp4"];
     __weak typeof(self) weak_self = self;
 //    self.player.screenWillRotateBlock = ^id _Nonnull(BOOL isPortrait) {
 //        self->_isStatusBarHidden = isPortrait;
@@ -38,6 +38,14 @@
     self.playerView.frame = CGRectMake(0, 0, 375, 211);
     [self.player redraw];
     self.tableView.tableHeaderView = self.playerView;
+    
+    
+    
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(300, 0, 0, 0);
 }
 
 //- (void)viewDidLayoutSubviews{
@@ -150,6 +158,22 @@
  */
 - (void)mediaPlayer:(BJNewsMediaPlayer *)mediaPlayer updateBufferProgress:(float)progress bufferDuration:(NSTimeInterval)duration{
     
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 100;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ID"];
+    if(cell == nil){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ID"];
+    }
+    return cell;
 }
 
 @end
