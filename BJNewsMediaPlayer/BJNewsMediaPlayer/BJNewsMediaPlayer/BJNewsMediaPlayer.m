@@ -297,11 +297,13 @@ static BJNewsMediaPlayer * media_player = nil;
             break;
         case AVPEventLoadingStart:
 //            缓冲开始
+            [self setPlayState:BJNewsMediaPlayStateLoading];
             if(self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayerWillStartLoading:)]){
                 [self.delegate mediaPlayerWillStartLoading:self];
             }
             break;
         case AVPEventLoadingEnd:
+            [self setPlayState:BJNewsMediaPlayStatePlaying];
             if(self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayerDidStopLoading:)]){
                 [self.delegate mediaPlayerDidStopLoading:self];
             }

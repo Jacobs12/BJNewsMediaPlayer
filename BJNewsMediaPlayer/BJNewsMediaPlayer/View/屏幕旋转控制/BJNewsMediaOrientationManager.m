@@ -14,75 +14,111 @@
 
 @implementation BJNewsMediaOrientationManager
 
-- (void)setFullScreen:(BOOL)isFullScreen interfaceOrientation:(UIInterfaceOrientation)orientation fromFrame:(CGRect)fromFrame toFrame:(CGRect)toFrame animated:(BOOL)isAnimate  completion:(void (^) (CGRect toFrame))competionHandler{
-    if(isFullScreen){
-        if(UIInterfaceOrientationIsLandscape(orientation)){// 切换为全屏横屏
-            [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self.playerView];
-            if([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait){
-                if(self.orientationWillChange){
-                    self.orientationWillChange(orientation);
-                }
-//                要实现旋转，必须在viewcontroller里实现相应的statusbar方法
-                [UIApplication sharedApplication].statusBarOrientation = orientation;
-                [UIView animateWithDuration:0.3 animations:^{
-                    self.playerView.frame = CGRectMake(0, 0, [self screenHeight], [self screenWidth]);
-                    self.playerView.transform = CGAffineTransformMakeRotation(M_PI / 2.0);
-                    self.playerView.center = CGPointMake([self screenWidth] / 2.0, [self screenHeight] / 2.0);
-                } completion:^(BOOL finished) {
-                    if(self.orientationDidChanged){
-                        self.orientationDidChanged(orientation);
-                    }
-                }];
+/**
+ 播放器旋转至横屏
+ 
+ @param rotateView 要旋转的view
+ @param handler 完成回调
+ */
+- (void)rotateToLandScapeWithView:(UIView *)rotateView completionHandler:(void (^)(void))handler{
+    UIView * toView = [UIApplication sharedApplication].keyWindow.rootViewController.view;
+    
+    UIView * blackView = [[UIView alloc]initWithFrame:toView.bounds];
+    blackView.backgroundColor = [UIColor blackColor];
+    [toView addSubview:blackView];
+    
+    [toView addSubview:rotateView];
+//     若要实现横屏全屏播放,在viewController中实现- (BOOL)shouldAutorotate方法，建议return NO；
+    [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationLandscapeRight;
+    [UIView animateWithDuration:0.3 animations:^{
+        rotateView.frame = CGRectMake(0, 0, [self screenHeight], [self screenWidth]);
+        rotateView.transform = CGAffineTransformMakeRotation(M_PI / 2.0);
+        rotateView.center = CGPointMake([self screenWidth] / 2.0, [self screenHeight] / 2.0);
+    } completion:^(BOOL finished) {
+        [blackView removeFromSuperview];
+        if(handler){
+            handler();
+        }
+    }];
+}
+
+/**
+ 播放器切换到竖屏全屏播放
+ 
+ @param scaleView 缩放的view
+ @param handler 完成回调
+ */
+- (void)scaleToPortraitWithView:(UIView *)scaleView completionHandler:(void (^) (void))handler{
+    UIView * toView = [UIApplication sharedApplication].keyWindow.rootViewController.view;
+//    先将View移动superView对应的位置
+    CGPoint center = [scaleView convertPoint:scaleView.center toView:toView];
+//
+    UIView * tempView = [[UIView alloc]initWithFrame:scaleView.bounds];
+    tempView.center = CGPointMake(center.x, center.y);
+    tempView.layer.masksToBounds = YES;
+    [toView addSubview:tempView];
+    
+    scaleView.frame = toView.bounds;
+
+    [tempView addSubview:scaleView];
+    scaleView.center = CGPointMake(tempView.bounds.size.width / 2.0, tempView.bounds.size.height / 2.0);
+
+    [UIView animateWithDuration:0.3 animations:^{
+        tempView.frame = toView.bounds;
+        scaleView.center = CGPointMake(tempView.bounds.size.width / 2.0, tempView.bounds.size.height / 2.0);
+    } completion:^(BOOL finished) {
+        [toView addSubview:scaleView];
+        scaleView.center = CGPointMake(toView.bounds.size.width / 2.0, toView.bounds.size.height / 2.0);
+        [tempView removeFromSuperview];
+    }];
+}
+
+/**
+ 恢复播放器原先位置
+ 
+ @param resumeView 要恢复的view
+ @param toView 恢复到superView
+ @param handler 完成回调
+ */
+- (void)resumeWithView:(UIView *)resumeView toView:(UIView *)toView completionHandler:(void (^) (void))handler{
+    if(UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation) == NO){
+        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
+        [toView addSubview:resumeView];
+        [UIView animateWithDuration:0.3 animations:^{
+//            必须是修改transform在前，修改frame在后
+            resumeView.transform = CGAffineTransformMakeRotation(0);
+            resumeView.frame = toView.bounds;
+        } completion:^(BOOL finished) {
+            if(handler){
+                handler();
             }
-        }else{ // 切换为全屏竖屏
-            [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self.playerView];
-            if(self.orientationWillChange){
-                self.orientationWillChange(orientation);
-            }
-            [UIView animateWithDuration:0.2 animations:^{
-                self.playerView.frame = CGRectMake(0, 0, [self screenWidth], [self screenHeight]);
-            } completion:^(BOOL finished) {
-                if(self.orientationDidChanged){
-                    self.orientationDidChanged(orientation);
-                }
-                if(competionHandler){
-                    competionHandler(toFrame);
-                }
-            }];
+        }];
+    }else{
+        UIView * windowView = [UIApplication sharedApplication].keyWindow.rootViewController.view;
+        CGPoint center = [toView convertPoint:toView.center toView:windowView];
+        if(toView.superview == windowView){
+            center = toView.center;
         }
 
-    }else{ // 切换到预览状态
-        if(self.orientationWillChange){
-            self.orientationWillChange(orientation);
-        }
-        if([UIApplication sharedApplication].statusBarOrientation != UIInterfaceOrientationPortrait){
-//            横屏切换到预览状态
-            [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
-            [self.superView addSubview:self.playerView];
-            [UIView animateWithDuration:0.3 animations:^{
-                self.playerView.transform = CGAffineTransformMakeRotation(0);
-                self.playerView.frame = toFrame;
-            } completion:^(BOOL finished) {
-                if(self.orientationDidChanged){
-                    self.orientationDidChanged(orientation);
-                }
-            }];
-        }else if(isAnimate){
-            [self.superView addSubview:self.playerView];
-            [UIView animateWithDuration:0.2 animations:^{
-                self.playerView.frame = toFrame;
-            } completion:^(BOOL finished) {
-                if(self.orientationDidChanged){
-                    self.orientationDidChanged(orientation);
-                }
-            }];
-        }else{
-            self.playerView.frame = toFrame;
-            [self.superView addSubview:self.playerView];
-            if(self.orientationDidChanged){
-                self.orientationDidChanged(orientation);
+        UIView * tempView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, resumeView.bounds.size.width, resumeView.bounds.size.height)];
+        tempView.layer.masksToBounds = YES;
+        [windowView addSubview:tempView];
+        
+        [tempView addSubview:resumeView];
+        resumeView.center = CGPointMake(tempView.bounds.size.width / 2.0, tempView.bounds.size.height / 2.0);
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            tempView.frame = toView.bounds;
+            tempView.center = CGPointMake(center.x, center.y);
+            resumeView.center = CGPointMake(tempView.bounds.size.width / 2.0, tempView.bounds.size.height / 2.0);
+        } completion:^(BOOL finished) {
+            resumeView.bounds = toView.bounds;
+            [toView addSubview:resumeView];
+            [tempView removeFromSuperview];
+            if(handler){
+                handler();
             }
-        }
+        }];
     }
 }
 

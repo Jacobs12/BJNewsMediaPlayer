@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BJNewsMediaUtils.h"
+#import "BJNewsMediaPlayer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,17 +30,25 @@ typedef NS_ENUM(NSInteger,MCPlayState){
 
 @property (nonatomic,strong) IBOutlet UIButton * playButton;
 @property (nonatomic,strong) IBOutlet UIButton * replayButton;
+@property (nonatomic,strong) IBOutlet UIButton * backButton;
 @property (nonatomic,strong) IBOutlet UIButton * muteButton;
 @property (nonatomic,strong) IBOutlet UILabel * timeLabel;
 @property (nonatomic,strong) IBOutlet UILabel * totalLabel;
+@property (nonatomic,strong) IBOutlet UILabel * titleLabel;
 @property (nonatomic,strong) IBOutlet UIButton * screenButton;
 @property (nonatomic,strong) IBOutlet UIView * loadingView;
+@property (nonatomic,strong) IBOutlet UISlider * slider;
 
 @property (nonatomic,assign) MCPlayState state;
 
 - (void)setPlayState:(MCPlayState)state;
 
 - (void)updateProgress:(float)progress duration:(NSTimeInterval)duration totalDuration:(NSTimeInterval)totalDuration;
+
+/**
+ 更新控制面板
+ */
+- (void)refreshControllViewWithPlayer:(BJNewsMediaPlayer *)player;
 
 /**
  设置是否静音

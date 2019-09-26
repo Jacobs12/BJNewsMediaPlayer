@@ -18,25 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-Fa-K1n">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-Fa-K1n">
                                 <rect key="frame" x="0.0" y="64" width="414" height="233"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="C8L-Fa-K1n" secondAttribute="height" multiplier="16:9" id="epG-qr-ecR"/>
-                                </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tRp-dt-gfT">
+                                <rect key="frame" x="0.0" y="305" width="414" height="557"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="C8L-Fa-K1n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="8EV-f7-r62"/>
-                            <constraint firstItem="C8L-Fa-K1n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SyG-1J-0qq"/>
-                            <constraint firstItem="C8L-Fa-K1n" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rHP-Yk-vdp"/>
-                            <constraint firstItem="C8L-Fa-K1n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ztH-V1-q33"/>
+                            <constraint firstItem="tRp-dt-gfT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2ea-vw-TSn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tRp-dt-gfT" secondAttribute="bottom" id="5bp-oJ-DaJ"/>
+                            <constraint firstItem="tRp-dt-gfT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="261" id="93M-et-UMi"/>
+                            <constraint firstItem="tRp-dt-gfT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fm2-3j-JVQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="playerView" destination="C8L-Fa-K1n" id="yCp-2t-iUt"/>
+                        <outlet property="tableView" destination="tRp-dt-gfT" id="Zph-ao-FCj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

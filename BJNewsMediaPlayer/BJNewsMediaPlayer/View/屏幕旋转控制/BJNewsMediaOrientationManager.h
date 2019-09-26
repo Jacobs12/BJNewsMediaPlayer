@@ -12,20 +12,29 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BJNewsMediaOrientationManager : NSObject
 
-@property (nonatomic,strong) UIView * superView;
-@property (nonatomic,strong) UIView * playerView;
+/**
+ 播放器旋转至横屏
+
+ @param rotateView 要旋转的view
+ @param handler 完成回调
+ */
+- (void)rotateToLandScapeWithView:(UIView *)rotateView completionHandler:(void (^) (void))handler;
 
 /**
- 即将全屏旋转回调
+ 播放器切换到竖屏全屏播放
+
+ @param scaleView 缩放的view
  */
-@property (nonatomic,copy) void (^orientationWillChange) (UIInterfaceOrientation orientation);
+- (void)scaleToPortraitWithView:(UIView *)scaleView completionHandler:(void (^) (void))handler;
 
 /**
- 全屏旋转回调完成回调
- */
-@property (nonatomic,copy) void (^orientationDidChanged) (UIInterfaceOrientation orientation);
+ 恢复播放器原先位置
 
-- (void)setFullScreen:(BOOL)isFullScreen interfaceOrientation:(UIInterfaceOrientation)orientation fromFrame:(CGRect)fromFrame toFrame:(CGRect)toFrame animated:(BOOL)isAnimate completion:(void (^) (CGRect toFrame))competionHandler;
+ @param resumeView 要恢复的view
+ @param toView 恢复到superView
+ @param handler 完成回调
+ */
+- (void)resumeWithView:(UIView *)resumeView toView:(UIView *)toView completionHandler:(void (^) (void))handler;
 
 @end
 

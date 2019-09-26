@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger,BJNewsMediaPlayState){
     BJNewsMediaPlayStatePlaying,
     BJNewsMediaPlayStatePaused,
     BJNewsMediaPlayStateEnded,
+    BJNewsMediaPlayStateLoading,
     BJNewsMediaPlayStateError
 };
 

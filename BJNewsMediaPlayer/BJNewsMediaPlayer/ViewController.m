@@ -9,10 +9,13 @@
 #import "ViewController.h"
 #import "BJNewsMediaPlayerView.h"
 
-@interface ViewController ()
+@interface ViewController (){
+    BOOL _isStatusBarHidden;
+}
 
 @property (nonatomic,strong) IBOutlet UIView * playerView;
 @property (nonatomic,strong) BJNewsMediaPlayerView * player;
+@property (nonatomic,strong) IBOutlet UITableView * tableView;
 
 @end
 
@@ -20,45 +23,51 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    self.view.backgroundColor = [UIColor blackColor];
     // Do any additional setup after loading the view.
     self.player = [BJNewsMediaPlayerView defaultView];
-    self.player.container = self;
     [self.player moveToView:self.playerView type:MEPControllViewTypePreview];
-    [self.player playWithUrl:@"https://test-bjnews.oss-cn-beijing.aliyuncs.com/video/2019/09/04/4833278034796609767.mp4"];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self.player moveToView:self.view type:MEPControllViewTypePreview];
-//    });
+//    [self.player playWithUrl:@"https://test-bjnews.oss-cn-beijing.aliyuncs.com/video/2019/09/04/4833278034796609767.mp4"];
+    [self.player playWithUrl:@"http://tb-video.bdstatic.com/tieba-smallvideo-transcode-cae/3721866_1fa5e31aad50cf3eb3b9dd3288cebdae_0_cae.mp4"];
+    __weak typeof(self) weak_self = self;
+//    self.player.screenWillRotateBlock = ^id _Nonnull(BOOL isPortrait) {
+//        self->_isStatusBarHidden = isPortrait;
+//        NSLog(@"sadasdasdasd");
+//        return weak_self;
+//    };
+    self.playerView.frame = CGRectMake(0, 0, 375, 211);
+    [self.player redraw];
+    self.tableView.tableHeaderView = self.playerView;
 }
 
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    if(self.player.superview == self.playerView){
-        [self.player redraw];
-    }
-}
+//- (void)viewDidLayoutSubviews{
+//    [super viewDidLayoutSubviews];
+//    if(self.player.superview == self.playerView){
+//        [self.player redraw];
+//    }
+//}
 
-////必须返回YES
 - (BOOL)shouldAutorotate{
     return NO;
 }
-////旋转方向
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-////状态栏样式
+//////旋转方向
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+//    return UIInterfaceOrientationMaskPortrait;
+//}
+//
+//////状态栏样式
 - (UIStatusBarStyle)preferredStatusBarStyle{
-    
-    return UIStatusBarStyleDefault;
+    return UIStatusBarStyleLightContent;
 }
-////状态栏显示／隐藏
+//////状态栏显示／隐藏
 -(BOOL)prefersStatusBarHidden{
-//    if(_isHideStatusBar == NO){
-//        return NO;
-//    }else{
-//        return YES;
-//    }
-    return NO;
+    return YES;
+    if(_isStatusBarHidden == NO){
+        return NO;
+    }else{
+        return YES;
+    }
+    return YES;
 }
 
 - (BOOL)prefersHomeIndicatorAutoHidden{

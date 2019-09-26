@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F2A32EA233B3D6D0025CAD1 /* BJNewsMediaUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A32E9233B3D6D0025CAD1 /* BJNewsMediaUtils.m */; };
 		4FAB13192328BF6900BFF7B9 /* AILoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAB13152328BF6900BFF7B9 /* AILoadingView.m */; };
 		4FAB131A2328BF6900BFF7B9 /* UIView+AISetRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAB13182328BF6900BFF7B9 /* UIView+AISetRect.m */; };
 		4FAB13222328EE3D00BFF7B9 /* BJNewsMediaOrientationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAB13202328EE3C00BFF7B9 /* BJNewsMediaOrientationManager.m */; };
@@ -55,6 +56,8 @@
 /* Begin PBXFileReference section */
 		1FBB8B13D7FF0482EA828B93 /* Pods-BJNewsMediaPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BJNewsMediaPlayer.debug.xcconfig"; path = "Target Support Files/Pods-BJNewsMediaPlayer/Pods-BJNewsMediaPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		4A80F3A549A8E95F6BE1AEE7 /* libPods-BJNewsMediaPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BJNewsMediaPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F2A32E8233B3D6D0025CAD1 /* BJNewsMediaUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BJNewsMediaUtils.h; sourceTree = "<group>"; };
+		4F2A32E9233B3D6D0025CAD1 /* BJNewsMediaUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BJNewsMediaUtils.m; sourceTree = "<group>"; };
 		4FAB13152328BF6900BFF7B9 /* AILoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AILoadingView.m; sourceTree = "<group>"; };
 		4FAB13162328BF6900BFF7B9 /* UIView+AISetRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AISetRect.h"; sourceTree = "<group>"; };
 		4FAB13172328BF6900BFF7B9 /* AILoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AILoadingView.h; sourceTree = "<group>"; };
@@ -128,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F2A32E7233B3D5F0025CAD1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4F2A32E8233B3D6D0025CAD1 /* BJNewsMediaUtils.h */,
+				4F2A32E9233B3D6D0025CAD1 /* BJNewsMediaUtils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		4FAB13142328BF6900BFF7B9 /* 加载 */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +224,7 @@
 			children = (
 				4FC3302623273ABD00D5CA3B /* BJNewsMediaPlayer.h */,
 				4FC3302723273ABD00D5CA3B /* BJNewsMediaPlayer.m */,
+				4F2A32E7233B3D5F0025CAD1 /* Utils */,
 			);
 			path = BJNewsMediaPlayer;
 			sourceTree = "<group>";
@@ -528,6 +541,7 @@
 				4FAB13192328BF6900BFF7B9 /* AILoadingView.m in Sources */,
 				4FC3303E2327A1AD00D5CA3B /* BJNewsMediaListContollView.m in Sources */,
 				4FC33003232736C200D5CA3B /* main.m in Sources */,
+				4F2A32EA233B3D6D0025CAD1 /* BJNewsMediaUtils.m in Sources */,
 				4FC330472327A1F700D5CA3B /* BJNewsMediaPortraitControllView.m in Sources */,
 				4FC32FF5232736C100D5CA3B /* AppDelegate.m in Sources */,
 				4FC330412327A1DC00D5CA3B /* BJNewsMediaShortVideoControllView.m in Sources */,

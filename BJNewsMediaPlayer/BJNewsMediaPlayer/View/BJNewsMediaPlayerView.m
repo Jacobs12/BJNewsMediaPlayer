@@ -19,9 +19,24 @@ static BJNewsMediaPlayerView * player_view = nil;
 
 @interface BJNewsMediaPlayerView () <BJNewsMediaPlayerDelegate,BJNewsMeidaBaseControllViewDelegate>
 
+/**
+ 控制面板数组
+ */
 @property (nonatomic,strong) NSMutableArray * controllArray;
+
+/**
+ 当前控制面板
+ */
 @property (nonatomic,strong) BJNewsMediaBaseControllView * controllView;
+
+/**
+ 屏幕旋转控制
+ */
 @property (nonatomic,strong) BJNewsMediaOrientationManager * orientationManager;
+
+@property (nonatomic,strong) UIView * containerView;
+
+@property (nonatomic,strong) UIView * baseView;
 
 @end
 
@@ -30,6 +45,7 @@ static BJNewsMediaPlayerView * player_view = nil;
 + (BJNewsMediaPlayerView *)defaultView{
     if(player_view == nil){
         player_view = [[BJNewsMediaPlayerView alloc]init];
+        player_view.backgroundColor = [UIColor blackColor];
     }
     return player_view;
 }
@@ -73,33 +89,12 @@ static BJNewsMediaPlayerView * player_view = nil;
     if(self.controllView){
         [self addSubview:self.controllView];
     }
-    [self resetControllView];
+    [self resetControllViewWithPlayer:self.player];
     [self redraw];
 }
 
 - (void)switchFullScreenModeToView:(UIView *)view type:(MEPControllViewType)type{
     self.baseView = view;
-    __weak typeof(self) weak_self = self;
-    if(type == MEPControllViewTypePortrait){
-        CGPoint center = [self convertPoint:self.center toView:view];
-        self.center = center;
-    }else if (type == MEPControllViewTypeLandScape){
-//            横屏全屏
-        self.orientationManager.playerView = self;
-        self.orientationManager.superView = self.baseView;
-        [self.orientationManager setFullScreen:YES interfaceOrientation:UIInterfaceOrientationLandscapeRight fromFrame:self.frame toFrame:view.bounds animated:YES completion:^(CGRect toFrame) {
-            [weak_self.container setNeedsStatusBarAppearanceUpdate];
-            [UIViewController attemptRotationToDeviceOrientation];
-        }];
-    }else if (type == MEPControllViewTypePreview){
-        self.orientationManager.playerView = self;
-        self.orientationManager.superView = self.baseView;
-        [self.orientationManager setFullScreen:NO interfaceOrientation:UIInterfaceOrientationPortrait fromFrame:self.frame toFrame:view.bounds animated:YES completion:^(CGRect toFrame) {
-            [weak_self.container setNeedsStatusBarAppearanceUpdate];
-            [UIViewController attemptRotationToDeviceOrientation];
-        }];
-    }
-    [view addSubview:self];
     self.player.playerView = self;
     if(self.controllView){
         [self.controllView removeFromSuperview];
@@ -108,16 +103,55 @@ static BJNewsMediaPlayerView * player_view = nil;
     if(self.controllView){
         [self addSubview:self.controllView];
     }
-    [self resetControllView];
-    [UIView animateWithDuration:0.2 animations:^{
+    
+    [self resetControllViewWithPlayer:self.player];
+    __weak typeof(self) weak_self = self;
+    if(type == MEPControllViewTypePortrait){
+//        CGPoint center = [self convertPoint:self.center toView:view];
+//        self.center = center;
+        [self.orientationManager scaleToPortraitWithView:self completionHandler:^{
+            
+        }];
         [self redraw];
-    } completion:^(BOOL finished) {
-        
-    }];
+    }else if (type == MEPControllViewTypeLandScape){
+//            横屏全屏
+//        self.orientationManager.playerView = self;
+//        self.orientationManager.superView = self.baseView;
+//        [self.orientationManager setFullScreen:YES interfaceOrientation:UIInterfaceOrientationLandscapeRight fromFrame:self.frame toFrame:view.bounds animated:YES completion:^(CGRect toFrame) {
+////            [weak_self.container setNeedsStatusBarAppearanceUpdate];
+////            [UIViewController attemptRotationToDeviceOrientation];
+//        }];
+        [self.orientationManager rotateToLandScapeWithView:self completionHandler:^{
+            
+        }];
+        [self redraw];
+    }else if (type == MEPControllViewTypePreview){
+//        self.orientationManager.playerView = self;
+//        self.orientationManager.superView = self.baseView;
+//        [self.orientationManager setFullScreen:NO interfaceOrientation:UIInterfaceOrientationPortrait fromFrame:self.frame toFrame:view.bounds animated:YES completion:^(CGRect toFrame) {
+//
+//        }];
+//        if(UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation) == NO){
+//            [UIView animateWithDuration:0.3 animations:^{
+//                [self redraw];
+//            }];
+//        }
+        [self.orientationManager resumeWithView:self toView:self.baseView completionHandler:^{
+            [self redraw];
+        }];
+    }
+//    [view addSubview:self];
+//    [self redraw];
+
+//    [UIView animateWithDuration:3.0 animations:^{
+//        [self redraw];
+//    } completion:^(BOOL finished) {
+//
+//    }];
 }
 
-- (void)resetControllView{
-    
+- (void)resetControllViewWithPlayer:(BJNewsMediaPlayer *)player{
+    [self.controllView refreshControllViewWithPlayer:player];
 }
 
 /**
@@ -135,8 +169,9 @@ static BJNewsMediaPlayerView * player_view = nil;
 
 - (BJNewsMediaBaseControllView *)controllViewWithType:(MEPControllViewType)type{
     NSString * nibName = nil;
+
     if(type == MEPControllViewTypeNone){
-        
+
     }else if (type == MEPControllViewTypeList){
         nibName = @"BJNewsMediaListContollView";
     }else if (type == MEPControllViewTypePortrait){

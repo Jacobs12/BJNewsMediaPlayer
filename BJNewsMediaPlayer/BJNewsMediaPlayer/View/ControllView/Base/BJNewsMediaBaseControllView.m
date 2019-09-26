@@ -26,6 +26,7 @@
 - (void)awakeFromNib{
     [super awakeFromNib];
     [self setReplayMode:NO];
+    [self setupSubviews];
     [self autoHideControllView];
     [self setPlayState:MCPlayStateNone];
 }
@@ -45,6 +46,14 @@
     return _activity;
 }
 
+- (void)setupSubviews{
+    if(self.slider){
+        [self.slider setThumbImage:[UIImage imageNamed:@"bjnews_media_thumb"] forState:UIControlStateNormal];
+        [self.slider setThumbImage:[UIImage imageNamed:@"bjnews_media_thumb"] forState:UIControlStateSelected];
+        [self.slider setThumbImage:[UIImage imageNamed:@"bjnews_media_thumb"] forState:UIControlStateHighlighted];
+    }
+}
+
 #pragma mark - 播放状态控制
 
 - (void)setPlayState:(MCPlayState)state{
@@ -52,6 +61,7 @@
     if(state == MCPlayStateNone){
         [self startLoading];
         self.replayButton.hidden = YES;
+        self.playButton.hidden = YES;
     }else if(state == MCPlayStatePlaying){
         self.playButton.selected = YES;
         self.replayButton.hidden = YES;
@@ -59,6 +69,7 @@
     }else if(state == MCPlayStatePaused){
         self.playButton.selected = NO;
         self.replayButton.hidden = YES;
+        [self endLoading];
     }else if (state == MCPlayStateLoadingStart){
         self.playButton.hidden = YES;
         self.replayButton.hidden = YES;
@@ -68,8 +79,9 @@
         [self endLoading];
     }else if (state == MCPlayStateEnded){
         [self setReplayMode:YES];
+        [self endLoading];
     }else if (state == MCPlayStateError){
-        
+        [self endLoading];
     }
 }
 
@@ -83,6 +95,54 @@
     NSString * totalTime = [self convertTimeSecond:totalDuration / 1000];
     self.timeLabel.text = time;
     self.totalLabel.text = totalTime;
+    self.slider.value = progress;
+}
+
+/**
+ 更新控制面板
+ */
+- (void)refreshControllViewWithPlayer:(BJNewsMediaPlayer *)player{
+    BJNewsMediaPlayState state = player.state;
+    switch (state) {
+        case BJNewsMediaPlayStateNone:{
+            [self setPlayState:MCPlayStateLoadingStart];
+            }
+            break;
+        case BJNewsMediaPlayStatePrepared:{
+            
+        }
+            break;
+        case BJNewsMediaPlayStatePlaying:{
+            [self setPlayState:MCPlayStatePlaying];
+        }
+            break;
+        case BJNewsMediaPlayStatePaused:{
+            [self setPlayState:MCPlayStatePaused];
+        }
+            break;
+        case BJNewsMediaPlayStateEnded:{
+            [self setPlayState:MCPlayStateEnded];
+        }
+            break;
+        case BJNewsMediaPlayStateLoading:{
+            [self setPlayState:MCPlayStateLoadingStart];
+        }
+            break;
+        case BJNewsMediaPlayStateError:{
+            [self setPlayState:MCPlayStateError];
+        }
+            break;
+        default:
+            break;
+    }
+    float progress = 0.0f;
+    if(player.totalDuration > 0){
+        progress = player.duration / player.totalDuration;
+    }
+    [self updateProgress:progress duration:player.duration totalDuration:player.totalDuration];
+    [self setMuteMode:player.isMuted];
+    [self showControllViewAnimated:NO];
+    [self autoHideControllView];
 }
 
 #pragma mark - setter
@@ -102,6 +162,10 @@
  开始加载动画
  */
 - (void)startLoading{
+    if(_activity){
+        [_activity stopAnimation];
+        _activity = nil;
+    }
     if(self.loadingView.subviews.count >0){
         for (UIView * subView in self.loadingView.subviews) {
             [subView removeFromSuperview];
@@ -119,6 +183,9 @@
  结束加载动画
  */
 - (void)endLoading{
+    if(_activity == nil){
+        return;
+    }
     [self.activity stopAnimation];
     [self.activity removeFromSuperview];
     _activity = nil;
@@ -224,7 +291,7 @@
  */
 - (void)setControllViewHidden:(BOOL)isHidden{
     self.isControllViewHidden = isHidden;
-    if(self.state == MCPlayStateLoadingStart || self.state == MCPlayStateEnded){
+    if(self.state == MCPlayStateLoadingStart || self.state == MCPlayStateEnded || self.state == MCPlayStateNone){
         self.playButton.hidden = YES;
     }else{
         self.playButton.hidden = isHidden;
@@ -233,6 +300,9 @@
     self.timeLabel.hidden = isHidden;
     self.totalLabel.hidden = isHidden;
     self.screenButton.hidden = isHidden;
+    self.backButton.hidden = isHidden;
+    self.titleLabel.hidden = isHidden;
+    self.slider.hidden = isHidden;
 }
 
 /**
@@ -246,6 +316,9 @@
     self.timeLabel.alpha = alpha;
     self.totalLabel.alpha = alpha;
     self.screenButton.alpha = alpha;
+    self.backButton.alpha = alpha;
+    self.titleLabel.alpha = alpha;
+    self.slider.alpha = alpha;
 }
 
 #pragma mark - 按钮点击事件

@@ -22,26 +22,30 @@ typedef NS_ENUM(NSInteger,MEPControllViewType){
     MEPControllViewTypeShortVideo    // 小视频控制面板
 };
 
+/**
+ 初始化，单例
+ 若要实现横屏全屏播放,在viewController中实现- (BOOL)shouldAutorotate方法，建议return NO；
+ @return 播放器
+ */
 + (BJNewsMediaPlayerView *)defaultView;
 
-@property (nonatomic,strong) BJNewsMediaPlayer * player;
-
-@property (nonatomic,strong) UIView * containerView;
+@property (nonatomic,copy,nullable) id (^screenWillRotateBlock) (BOOL isPortrait);
 
 /**
- 用于屏幕旋转
+ 当前播放器
  */
-@property (nonatomic,strong) UIViewController * container;
+@property (nonatomic,strong) BJNewsMediaPlayer * player;
 
-@property (nonatomic,strong) UIView * baseView;
-
+/**
+ 视频播放地址
+ */
 @property (nonatomic,copy) NSString * url;
 
-@property (nonatomic,assign) CGSize videoSize;
+#pragma mark - 初始化播放器视图
 
 /**
  切换播放视图
-
+ 
  @param view 播放视图
  */
 - (void)moveToView:(UIView *)view type:(MEPControllViewType)type;
@@ -59,6 +63,13 @@ typedef NS_ENUM(NSInteger,MEPControllViewType){
  @param url url description
  */
 - (void)playWithUrl:(NSString *)url;
+
+#pragma mark - 视频属性
+
+/**
+ 视频宽高
+ */
+@property (nonatomic,assign) CGSize videoSize;
 
 @end
 
