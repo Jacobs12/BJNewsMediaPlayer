@@ -384,7 +384,6 @@ static BJNewsMediaPlayerView * player_view = nil;
             height = [self.player videoSize].height;
         }
         if(width - height > -10){
-//        if(1){
             UIView * view = [UIApplication sharedApplication].keyWindow.rootViewController.view;
             [self switchFullScreenModeToView:view type:MEPControllViewTypeLandScape];
         }else{
@@ -396,6 +395,21 @@ static BJNewsMediaPlayerView * player_view = nil;
         UIView * view = self.containerView;
         [self switchFullScreenModeToView:view type:MEPControllViewTypePreview];
     }
+}
+
+/**
+ 跳转到指定的播放进度回调
+ 
+ @param controllView 控制面板
+ @param progress 指定的播放进度
+ */
+- (void)controllView:(BJNewsMediaBaseControllView *)controllView seekToProgress:(float)progress{
+    NSTimeInterval duration = self.player.totalDuration * progress;
+    NSLog(@"%f",duration);
+    [self.player play];
+    [self.player seekToTime:duration completionHandler:^(NSTimeInterval seekTime) {
+        
+    }];
 }
 
 @end

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D4DE9CF5F76A67817A1D76877B0716A"
+               BlueprintIdentifier = "849570DFC27665175463482CD1A7929F"
                BuildableName = "AliPlayerSDK_iOS"
                BlueprintName = "AliPlayerSDK_iOS"
                ReferencedContainer = "container:Pods.xcodeproj">

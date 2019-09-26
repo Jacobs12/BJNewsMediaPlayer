@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-Fa-K1n">
-                                <rect key="frame" x="0.0" y="64" width="414" height="233"/>
+                                <rect key="frame" x="0.0" y="203" width="414" height="233"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -27,13 +27,39 @@
                                 <rect key="frame" x="0.0" y="305" width="414" height="557"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ev-ev-4du">
+                                <rect key="frame" x="20" y="58" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YRn-Sg-fvW"/>
+                                </constraints>
+                                <state key="normal" title="横视频"/>
+                                <connections>
+                                    <action selector="button1Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GIH-2G-Riy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xec-Il-n3e">
+                                <rect key="frame" x="20" y="107" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="iUQ-8a-je4"/>
+                                </constraints>
+                                <state key="normal" title="竖视频"/>
+                                <connections>
+                                    <action selector="button2Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n0I-iz-NfE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tRp-dt-gfT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2ea-vw-TSn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tRp-dt-gfT" secondAttribute="bottom" id="5bp-oJ-DaJ"/>
                             <constraint firstItem="tRp-dt-gfT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="261" id="93M-et-UMi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xec-Il-n3e" secondAttribute="trailing" symbolic="YES" id="CXz-cA-eif"/>
+                            <constraint firstItem="6Ev-ev-4du" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SP3-gn-NNM"/>
+                            <constraint firstItem="Xec-Il-n3e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bKW-rm-Orj"/>
+                            <constraint firstItem="Xec-Il-n3e" firstAttribute="top" secondItem="6Ev-ev-4du" secondAttribute="bottom" constant="19" id="eVi-KT-MqY"/>
                             <constraint firstItem="tRp-dt-gfT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fm2-3j-JVQ"/>
+                            <constraint firstItem="6Ev-ev-4du" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="gij-oD-LSO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Ev-ev-4du" secondAttribute="trailing" symbolic="YES" id="ldf-S1-G7s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

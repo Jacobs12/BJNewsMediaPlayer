@@ -1,5 +1,6 @@
 platform :ios, '10.0'
 
 target 'BJNewsMediaPlayer' do
-    pod 'AliPlayerSDK_iOS'
+  #pod 'JPush'
+  pod 'AliPlayerSDK_iOS'
 end

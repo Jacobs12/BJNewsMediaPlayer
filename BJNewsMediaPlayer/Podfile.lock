@@ -1,18 +1,18 @@
 PODS:
-  - AliPlayerSDK_iOS (4.6.0):
-    - AliPlayerSDK_iOS/AliPlayerSDK (= 4.6.0)
-  - AliPlayerSDK_iOS/AliPlayerSDK (4.6.0)
+  - AliPlayerSDK_iOS (4.7.1):
+    - AliPlayerSDK_iOS/AliPlayerSDK (= 4.7.1)
+  - AliPlayerSDK_iOS/AliPlayerSDK (4.7.1)
 
 DEPENDENCIES:
   - AliPlayerSDK_iOS
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AliPlayerSDK_iOS
 
 SPEC CHECKSUMS:
-  AliPlayerSDK_iOS: 566c4361fcd4f56bd5a8ea78ad20c507e90433ee
+  AliPlayerSDK_iOS: 8f35af9bcfb0a271d720af092ac2eb1ca49d615c
 
-PODFILE CHECKSUM: 38adb5b0119780cbb96c8440fb6437b9c15b4ec1
+PODFILE CHECKSUM: 3d91cc7113fbdbc1e2375e446ed61d8c03e85ffb
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.0

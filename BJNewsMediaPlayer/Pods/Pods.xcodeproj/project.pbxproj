@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		1D4DE9CF5F76A67817A1D76877B0716A /* AliPlayerSDK_iOS */ = {
+		849570DFC27665175463482CD1A7929F /* AliPlayerSDK_iOS */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = B692F6C772378200709CF5AFAC12A0BF /* Build configuration list for PBXAggregateTarget "AliPlayerSDK_iOS" */;
 			buildPhases = (
@@ -19,7 +19,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		8E270CB1EAEE780879FF640C5DF07DD4 /* Pods-BJNewsMediaPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D65B2E88F8539AB0E91D57AF50F0E1 /* Pods-BJNewsMediaPlayer-dummy.m */; };
+		8E270CB1EAEE780879FF640C5DF07DD4 /* Pods-BJNewsMediaPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C59A7A32A9889348D4344F6B7B0C16 /* Pods-BJNewsMediaPlayer-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,26 +27,26 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1D4DE9CF5F76A67817A1D76877B0716A;
+			remoteGlobalIDString = 849570DFC27665175463482CD1A7929F;
 			remoteInfo = AliPlayerSDK_iOS;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08D65B2E88F8539AB0E91D57AF50F0E1 /* Pods-BJNewsMediaPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BJNewsMediaPlayer-dummy.m"; sourceTree = "<group>"; };
-		22AC71D86404B026EF00F6130E7CF338 /* AliyunPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunPlayer.framework; sourceTree = "<group>"; };
-		2470F9EB9714AB6967292FDB83912E38 /* alivcffmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = alivcffmpeg.framework; sourceTree = "<group>"; };
-		37F2F28970E6BFC95584ECC569964837 /* AlivcConan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlivcConan.framework; sourceTree = "<group>"; };
-		3D4A82B9B9FDEA709C0AFE7903160869 /* Pods-BJNewsMediaPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BJNewsMediaPlayer.debug.xcconfig"; sourceTree = "<group>"; };
-		635A76CA8A98AEB8B337BD805A399EDA /* Pods-BJNewsMediaPlayer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BJNewsMediaPlayer-acknowledgements.plist"; sourceTree = "<group>"; };
-		6B301E30C1117CBE49DC721C90220465 /* libPods-BJNewsMediaPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-BJNewsMediaPlayer.a"; path = "libPods-BJNewsMediaPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3505D4D1DF3B6BD2E03AC50810F076E5 /* Pods-BJNewsMediaPlayer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BJNewsMediaPlayer-acknowledgements.markdown"; sourceTree = "<group>"; };
+		470134310914C46A53E1F713F4255FA9 /* AliyunMediaDownloader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunMediaDownloader.framework; sourceTree = "<group>"; };
+		5493919BC9F5965E865B16B6E3B8B471 /* Pods-BJNewsMediaPlayer-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BJNewsMediaPlayer-frameworks.sh"; sourceTree = "<group>"; };
+		6391D8386109851D734620BE20AE6E52 /* libPods-BJNewsMediaPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-BJNewsMediaPlayer.a"; path = "libPods-BJNewsMediaPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81C59A7A32A9889348D4344F6B7B0C16 /* Pods-BJNewsMediaPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BJNewsMediaPlayer-dummy.m"; sourceTree = "<group>"; };
+		84092F55333852E48539949D234F0133 /* artpSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = artpSource.framework; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A6682F18531A037869419640C2CEFDA6 /* Pods-BJNewsMediaPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BJNewsMediaPlayer.release.xcconfig"; sourceTree = "<group>"; };
-		B76E4DBA38BCF60FCB89D5B7D8AED8AE /* Pods-BJNewsMediaPlayer-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BJNewsMediaPlayer-frameworks.sh"; sourceTree = "<group>"; };
-		C61BE64FA55DF5EB899995C34A4F674C /* artpSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = artpSource.framework; sourceTree = "<group>"; };
-		CB8A614701AC57A4C710CD1E9E865D9F /* Pods-BJNewsMediaPlayer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BJNewsMediaPlayer-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AE647A269FEED331AE03094CA1A40D70 /* Pods-BJNewsMediaPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BJNewsMediaPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		B9C62DC21B0B4663F790BB3B5AEA46DA /* alivcffmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = alivcffmpeg.framework; sourceTree = "<group>"; };
+		BA7FDC4CF793B74FD781ABD44D401199 /* AliyunPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunPlayer.framework; sourceTree = "<group>"; };
 		E515A4E331A8E1571A24618E581F8F95 /* AliPlayerSDK_iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AliPlayerSDK_iOS.xcconfig; sourceTree = "<group>"; };
-		E5D0976ACF83352CCB1B9363B0016F97 /* AliyunMediaDownloader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunMediaDownloader.framework; sourceTree = "<group>"; };
+		E92203BEFCAE06C30BB5775EB2CB9E4D /* Pods-BJNewsMediaPlayer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BJNewsMediaPlayer-acknowledgements.plist"; sourceTree = "<group>"; };
+		F3E6219AFB17838A7448FB2289F0EF2E /* Pods-BJNewsMediaPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BJNewsMediaPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		FA1B1ACFEC2BB3052F9E0A22745739DE /* AlivcConan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlivcConan.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +60,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1880B7CAE5444F9D736889257D239BC0 /* Pods-BJNewsMediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				3505D4D1DF3B6BD2E03AC50810F076E5 /* Pods-BJNewsMediaPlayer-acknowledgements.markdown */,
+				E92203BEFCAE06C30BB5775EB2CB9E4D /* Pods-BJNewsMediaPlayer-acknowledgements.plist */,
+				81C59A7A32A9889348D4344F6B7B0C16 /* Pods-BJNewsMediaPlayer-dummy.m */,
+				5493919BC9F5965E865B16B6E3B8B471 /* Pods-BJNewsMediaPlayer-frameworks.sh */,
+				F3E6219AFB17838A7448FB2289F0EF2E /* Pods-BJNewsMediaPlayer.debug.xcconfig */,
+				AE647A269FEED331AE03094CA1A40D70 /* Pods-BJNewsMediaPlayer.release.xcconfig */,
+			);
+			name = "Pods-BJNewsMediaPlayer";
+			path = "Target Support Files/Pods-BJNewsMediaPlayer";
+			sourceTree = "<group>";
+		};
 		221313A816E48A857A7BC4E291BF2D8B /* AliPlayerSDK_iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,15 +87,27 @@
 		45E824AB111BE47FC051155D91DDFE8A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6B301E30C1117CBE49DC721C90220465 /* libPods-BJNewsMediaPlayer.a */,
+				6391D8386109851D734620BE20AE6E52 /* libPods-BJNewsMediaPlayer.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5E06D86D1373D049C083DFCA0417FA8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA1B1ACFEC2BB3052F9E0A22745739DE /* AlivcConan.framework */,
+				B9C62DC21B0B4663F790BB3B5AEA46DA /* alivcffmpeg.framework */,
+				470134310914C46A53E1F713F4255FA9 /* AliyunMediaDownloader.framework */,
+				BA7FDC4CF793B74FD781ABD44D401199 /* AliyunPlayer.framework */,
+				84092F55333852E48539949D234F0133 /* artpSource.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A1165614FA66C05D6B22D9335F324364 /* AliPlayerSDK */ = {
 			isa = PBXGroup;
 			children = (
-				AF2CBF41AD6321832DC741A692E09E8C /* Frameworks */,
+				5E06D86D1373D049C083DFCA0417FA8E /* Frameworks */,
 			);
 			name = AliPlayerSDK;
 			sourceTree = "<group>";
@@ -93,18 +119,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/AliPlayerSDK_iOS";
-			sourceTree = "<group>";
-		};
-		AF2CBF41AD6321832DC741A692E09E8C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				37F2F28970E6BFC95584ECC569964837 /* AlivcConan.framework */,
-				2470F9EB9714AB6967292FDB83912E38 /* alivcffmpeg.framework */,
-				E5D0976ACF83352CCB1B9363B0016F97 /* AliyunMediaDownloader.framework */,
-				22AC71D86404B026EF00F6130E7CF338 /* AliyunPlayer.framework */,
-				C61BE64FA55DF5EB899995C34A4F674C /* artpSource.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C9F25DC3F8124D1FAD822DC805290442 /* Pods */ = {
@@ -126,20 +140,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		D4804B41DD8850CC2AA07CB0180EDBFB /* Pods-BJNewsMediaPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				CB8A614701AC57A4C710CD1E9E865D9F /* Pods-BJNewsMediaPlayer-acknowledgements.markdown */,
-				635A76CA8A98AEB8B337BD805A399EDA /* Pods-BJNewsMediaPlayer-acknowledgements.plist */,
-				08D65B2E88F8539AB0E91D57AF50F0E1 /* Pods-BJNewsMediaPlayer-dummy.m */,
-				B76E4DBA38BCF60FCB89D5B7D8AED8AE /* Pods-BJNewsMediaPlayer-frameworks.sh */,
-				3D4A82B9B9FDEA709C0AFE7903160869 /* Pods-BJNewsMediaPlayer.debug.xcconfig */,
-				A6682F18531A037869419640C2CEFDA6 /* Pods-BJNewsMediaPlayer.release.xcconfig */,
-			);
-			name = "Pods-BJNewsMediaPlayer";
-			path = "Target Support Files/Pods-BJNewsMediaPlayer";
-			sourceTree = "<group>";
-		};
 		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,7 +150,7 @@
 		DB16CEBADEA0A6CD9AAD8589E2D51492 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D4804B41DD8850CC2AA07CB0180EDBFB /* Pods-BJNewsMediaPlayer */,
+				1880B7CAE5444F9D736889257D239BC0 /* Pods-BJNewsMediaPlayer */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4CCBC6976293085A328714BDAE5FD098 /* Pods-BJNewsMediaPlayer */ = {
+		03D3085C78DCD49CFEC0FA2FC8216E23 /* Pods-BJNewsMediaPlayer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 907A99DD7669F5D59206B5D38881D5DD /* Build configuration list for PBXNativeTarget "Pods-BJNewsMediaPlayer" */;
 			buildPhases = (
@@ -183,7 +183,7 @@
 			);
 			name = "Pods-BJNewsMediaPlayer";
 			productName = "Pods-BJNewsMediaPlayer";
-			productReference = 6B301E30C1117CBE49DC721C90220465 /* libPods-BJNewsMediaPlayer.a */;
+			productReference = 6391D8386109851D734620BE20AE6E52 /* libPods-BJNewsMediaPlayer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -207,8 +207,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D4DE9CF5F76A67817A1D76877B0716A /* AliPlayerSDK_iOS */,
-				4CCBC6976293085A328714BDAE5FD098 /* Pods-BJNewsMediaPlayer */,
+				849570DFC27665175463482CD1A7929F /* AliPlayerSDK_iOS */,
+				03D3085C78DCD49CFEC0FA2FC8216E23 /* Pods-BJNewsMediaPlayer */,
 			);
 		};
 /* End PBXProject section */
@@ -228,7 +228,7 @@
 		630ED2DE992B17A89D0F94E6E1906BEA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AliPlayerSDK_iOS;
-			target = 1D4DE9CF5F76A67817A1D76877B0716A /* AliPlayerSDK_iOS */;
+			target = 849570DFC27665175463482CD1A7929F /* AliPlayerSDK_iOS */;
 			targetProxy = DED4FF4E8A45F0CB4F86DD7E303D74C9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -253,7 +253,7 @@
 		};
 		17F1851C579382B8F51D558CB7B6B981 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6682F18531A037869419640C2CEFDA6 /* Pods-BJNewsMediaPlayer.release.xcconfig */;
+			baseConfigurationReference = AE647A269FEED331AE03094CA1A40D70 /* Pods-BJNewsMediaPlayer.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -356,7 +356,7 @@
 		};
 		2668156CB3D720C4E0DCDA3990B9C944 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D4A82B9B9FDEA709C0AFE7903160869 /* Pods-BJNewsMediaPlayer.debug.xcconfig */;
+			baseConfigurationReference = F3E6219AFB17838A7448FB2289F0EF2E /* Pods-BJNewsMediaPlayer.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;

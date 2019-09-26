@@ -51,6 +51,12 @@
         [self.slider setThumbImage:[UIImage imageNamed:@"bjnews_media_thumb"] forState:UIControlStateNormal];
         [self.slider setThumbImage:[UIImage imageNamed:@"bjnews_media_thumb"] forState:UIControlStateSelected];
         [self.slider setThumbImage:[UIImage imageNamed:@"bjnews_media_thumb"] forState:UIControlStateHighlighted];
+        
+        UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(sliderPan:)];
+        [self.slider addGestureRecognizer:pan];
+        
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(sliderTap:)];
+        [self.slider addGestureRecognizer:tap];
     }
 }
 
@@ -91,6 +97,7 @@
 }
 
 - (void)updateProgress:(float)progress duration:(NSTimeInterval)duration totalDuration:(NSTimeInterval)totalDuration{
+    self.totalTime = totalDuration;
     NSString * time = [self convertTimeSecond:duration / 1000];
     NSString * totalTime = [self convertTimeSecond:totalDuration / 1000];
     self.timeLabel.text = time;
@@ -217,6 +224,59 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self showControllViewAnimated:YES];
     [self autoHideControllView];
+}
+
+/**
+ 滑动条平移手势
+
+ @param pan 平移手势
+ */
+- (void)sliderPan:(UIPanGestureRecognizer *)pan{
+    [self autoHideControllView];
+    if(self.slider.userInteractionEnabled == NO){
+        return;
+    }
+    if(pan.state == UIGestureRecognizerStateBegan){
+//        暂停播放
+        if(self.delegate && [self.delegate respondsToSelector:@selector(controllView:playButtonClick:)]){
+            [self.delegate controllView:self playButtonClick:NO];
+        }
+    }else if (pan.state == UIGestureRecognizerStateChanged){
+        CGFloat x = [pan locationInView:self.slider].x;
+        float progress = x / self.slider.bounds.size.width;
+        self.slider.value = progress;
+        NSInteger second = self.totalTime * self.slider.value / 1000;
+        if(second < 0){
+            second = 0;
+        }
+//        暂停播放
+        if(self.delegate && [self.delegate respondsToSelector:@selector(controllView:playButtonClick:)]){
+            [self.delegate controllView:self playButtonClick:NO];
+        }
+        NSString * time = [self convertTimeSecond:second];
+        self.timeLabel.text = [NSString stringWithFormat:@"%@",time];
+    }else if (pan.state == UIGestureRecognizerStateEnded){
+        CGFloat x = [pan locationInView:self.slider].x;
+        float progress = x / self.slider.bounds.size.width;
+        self.slider.value = progress;
+        [self sliderValueChanged:nil];
+    }
+}
+
+/**
+ 滑动条轻触手势
+
+ @param tap 轻触手势
+ */
+- (void)sliderTap:(UITapGestureRecognizer *)tap{
+    [self autoHideControllView];
+    if(self.slider.userInteractionEnabled == NO){
+        return;
+    }
+    CGFloat x = [tap locationInView:self.slider].x;
+    float progress = x / self.slider.bounds.size.width;
+    self.slider.value = progress;
+    [self sliderValueChanged:nil];
 }
 
 #pragma mark - 显示、隐藏控制面板
@@ -373,7 +433,16 @@
  @param sender 全屏按钮
  */
 - (IBAction)screenButtonClick:(id)sender{
-    
+    [self autoHideControllView];
+
+}
+
+- (void)sliderValueChanged:(id)sender{
+    float progress = self.slider.value;
+    NSLog(@"%f",progress);
+    if(self.delegate && [self.delegate respondsToSelector:@selector(controllView:seekToProgress:)]){
+        [self.delegate controllView:self seekToProgress:progress];
+    }
 }
 
 @end

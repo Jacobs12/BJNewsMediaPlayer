@@ -349,7 +349,7 @@
 				4FC32FEC232736C100D5CA3B /* Sources */,
 				4FC32FED232736C100D5CA3B /* Frameworks */,
 				4FC32FEE232736C100D5CA3B /* Resources */,
-				815E7C83A3C20B37867DFBEC /* [CP] Embed Pods Frameworks */,
+				8D5305461CEB720AE2D913A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -472,30 +472,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		815E7C83A3C20B37867DFBEC /* [CP] Embed Pods Frameworks */ = {
+		8D5305461CEB720AE2D913A1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BJNewsMediaPlayer/Pods-BJNewsMediaPlayer-frameworks.sh",
-				"${PODS_ROOT}/AliPlayerSDK_iOS/AliyunPlayer.framework",
-				"${PODS_ROOT}/AliPlayerSDK_iOS/alivcffmpeg.framework",
-				"${PODS_ROOT}/AliPlayerSDK_iOS/AlivcConan.framework",
-				"${PODS_ROOT}/AliPlayerSDK_iOS/AliyunMediaDownloader.framework",
-				"${PODS_ROOT}/AliPlayerSDK_iOS/artpSource.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-BJNewsMediaPlayer/Pods-BJNewsMediaPlayer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunPlayer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/alivcffmpeg.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlivcConan.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunMediaDownloader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/artpSource.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-BJNewsMediaPlayer/Pods-BJNewsMediaPlayer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

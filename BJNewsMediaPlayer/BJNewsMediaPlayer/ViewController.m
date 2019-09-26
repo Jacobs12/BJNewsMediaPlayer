@@ -176,4 +176,12 @@
     return cell;
 }
 
+- (IBAction)button1Click:(id)sender{
+    [self.player playWithUrl:@"http://tb-video.bdstatic.com/tieba-smallvideo-transcode-cae/3721866_1fa5e31aad50cf3eb3b9dd3288cebdae_0_cae.mp4"];
+}
+
+- (IBAction)button2Click:(id)sender{
+    [self.player playWithUrl:@"https://test-bjnews.oss-cn-beijing.aliyuncs.com/video/2019/09/04/4833278034796609767.mp4"];
+}
+
 @end

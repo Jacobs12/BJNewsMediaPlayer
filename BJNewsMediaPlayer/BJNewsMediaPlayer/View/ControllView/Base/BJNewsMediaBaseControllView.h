@@ -28,25 +28,90 @@ typedef NS_ENUM(NSInteger,MCPlayState){
 
 @property (nullable,weak,nonatomic) id <BJNewsMeidaBaseControllViewDelegate>delegate;
 
+#pragma mark - UI属性
+
+/**
+ 播放按钮
+ */
 @property (nonatomic,strong) IBOutlet UIButton * playButton;
+
+/**
+ 重播按钮
+ */
 @property (nonatomic,strong) IBOutlet UIButton * replayButton;
+
+/**
+ 返回按钮
+ */
 @property (nonatomic,strong) IBOutlet UIButton * backButton;
+
+/**
+ 静音按钮
+ */
 @property (nonatomic,strong) IBOutlet UIButton * muteButton;
+
+/**
+ 当前播放时间Label
+ */
 @property (nonatomic,strong) IBOutlet UILabel * timeLabel;
+
+/**
+ 总播放时间Label
+ */
 @property (nonatomic,strong) IBOutlet UILabel * totalLabel;
+
+/**
+ 标题
+ */
 @property (nonatomic,strong) IBOutlet UILabel * titleLabel;
+
+/**
+ 全屏按钮
+ */
 @property (nonatomic,strong) IBOutlet UIButton * screenButton;
+
+/**
+ loading动画
+ */
 @property (nonatomic,strong) IBOutlet UIView * loadingView;
+
+/**
+ 滑动条
+ */
 @property (nonatomic,strong) IBOutlet UISlider * slider;
 
+#pragma mark - 播放相关属性
+
+/**
+ 当前播放状态
+ */
 @property (nonatomic,assign) MCPlayState state;
 
+/**
+ 总播放时间
+ */
+@property (nonatomic,assign) NSTimeInterval totalTime;
+
+/**
+ 设置当前播放状态
+
+ @param state 当前播放状态
+ */
 - (void)setPlayState:(MCPlayState)state;
 
+#pragma mark - 刷新控制面板
+
+/**
+ 刷新播放进度
+
+ @param progress 播放进度
+ @param duration 当前播放时间
+ @param totalDuration 总播放时间
+ */
 - (void)updateProgress:(float)progress duration:(NSTimeInterval)duration totalDuration:(NSTimeInterval)totalDuration;
 
 /**
- 更新控制面板
+  初始化/更新控制面板
  */
 - (void)refreshControllViewWithPlayer:(BJNewsMediaPlayer *)player;
 
@@ -127,6 +192,8 @@ typedef NS_ENUM(NSInteger,MCPlayState){
 
 @end
 
+#pragma mark - 代理
+
 @protocol BJNewsMeidaBaseControllViewDelegate <NSObject>
 
 /**
@@ -160,6 +227,14 @@ typedef NS_ENUM(NSInteger,MCPlayState){
  @param isFullScreen 是否全屏
  */
 - (void)controllView:(BJNewsMediaBaseControllView *)controllView screenButtonClick:(BOOL)isFullScreen;
+
+/**
+ 跳转到指定的播放进度回调
+
+ @param controllView 控制面板
+ @param progress 指定的播放进度
+ */
+- (void)controllView:(BJNewsMediaBaseControllView *)controllView seekToProgress:(float)progress;
 
 @end
 

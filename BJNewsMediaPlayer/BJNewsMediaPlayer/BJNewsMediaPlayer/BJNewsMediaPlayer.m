@@ -54,6 +54,9 @@ static BJNewsMediaPlayer * media_player = nil;
  @param url url description
  */
 - (void)playWithUrl:(NSString *)url{
+    if(_player){
+        [_player stop];
+    }
     [self setPlayState:BJNewsMediaPlayStateNone];
     if(url == nil || [url isKindOfClass:[NSNull class]]){
         url = @"";
@@ -135,8 +138,10 @@ static BJNewsMediaPlayer * media_player = nil;
 - (void)seekToTime:(NSTimeInterval)time completionHandler:(void (^) (NSTimeInterval seekTime))handler{
     self.seekTime = time;
     self.seekTimeBlock = handler;
-    [self pause];
-    [self.player seekToTime:time seekMode:AVP_SEEKMODE_INACCURATE];
+//    [self pause];
+    int64_t duration = time;
+    NSLog(@"seek to time:%lld",duration);
+    [self.player seekToTime:duration seekMode:AVP_SEEKMODE_ACCURATE];
 }
 
 /**
