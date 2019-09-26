@@ -57,10 +57,20 @@
         
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(sliderTap:)];
         [self.slider addGestureRecognizer:tap];
+        
+        self.slider.minimumTrackTintColor = [BJNewsMediaUtils sliderColor];
     }
 }
 
 #pragma mark - 播放状态控制
+
+- (void)setTitle:(NSString *)title{
+    _title = title;
+    if(title == nil || title.length == 0){
+        title = BJNEWS_MEDIA_PLACHOLDERTEXT;
+    }
+    self.titleLabel.text = title;
+}
 
 - (void)setPlayState:(MCPlayState)state{
     self.state = state;
@@ -89,6 +99,16 @@
     }else if (state == MCPlayStateError){
         [self endLoading];
     }
+}
+
+/**
+ 设置是否为直播
+ 
+ @param isLive 是否为直播
+ */
+- (void)setLiveBroadcast:(BOOL)isLive{
+    self.isLive = isLive;
+#warning 做直播相关操作
 }
 
 - (void)setReplayMode:(BOOL)isReplay{

@@ -149,6 +149,8 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="backButton" destination="HYB-z3-24i" id="Ugf-re-Btd"/>
+                <outlet property="backButtonTop" destination="lIo-0j-l1l" id="rVz-8U-OGR"/>
+                <outlet property="bottomViewBottom" destination="nKP-zG-ZtS" id="LaZ-NX-jll"/>
                 <outlet property="loadingView" destination="uAU-a8-gAV" id="oIA-92-1zW"/>
                 <outlet property="muteButton" destination="AsG-YN-DN3" id="v7h-ML-aG1"/>
                 <outlet property="playButton" destination="EOt-yc-lA3" id="Spo-6x-JQW"/>

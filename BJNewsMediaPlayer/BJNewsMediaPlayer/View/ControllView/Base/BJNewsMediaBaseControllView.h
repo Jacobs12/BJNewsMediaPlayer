@@ -83,6 +83,11 @@ typedef NS_ENUM(NSInteger,MCPlayState){
 #pragma mark - 播放相关属性
 
 /**
+ 是否为直播
+ */
+@property (nonatomic,assign) BOOL isLive;
+
+/**
  当前播放状态
  */
 @property (nonatomic,assign) MCPlayState state;
@@ -93,11 +98,23 @@ typedef NS_ENUM(NSInteger,MCPlayState){
 @property (nonatomic,assign) NSTimeInterval totalTime;
 
 /**
+ 标题
+ */
+@property (nonatomic,copy) NSString * title;
+
+/**
  设置当前播放状态
 
  @param state 当前播放状态
  */
 - (void)setPlayState:(MCPlayState)state;
+
+/**
+ 设置是否为直播
+
+ @param isLive 是否为直播
+ */
+- (void)setLiveBroadcast:(BOOL)isLive;
 
 #pragma mark - 刷新控制面板
 

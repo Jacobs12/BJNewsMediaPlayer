@@ -67,4 +67,14 @@
     return scale;
 }
 
+/**
+ 滑动块颜色
+ 
+ @return return value description
+ */
++ (UIColor *)sliderColor{
+    UIColor * color = UIColorFromRGB(0xB81C22);
+    return color;
+}
+
 @end

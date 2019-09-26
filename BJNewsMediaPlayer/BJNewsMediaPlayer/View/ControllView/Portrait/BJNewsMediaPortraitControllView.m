@@ -8,8 +8,26 @@
 
 #import "BJNewsMediaPortraitControllView.h"
 
+@interface BJNewsMediaPortraitControllView ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *backButtonTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewBottom;
+
+@end
+
 @implementation BJNewsMediaPortraitControllView
 
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    if([UIDevice currentDevice].systemVersion.floatValue < 11.0){
+        self.backButtonTop.constant = 20;
+        self.bottomViewBottom.constant = 0;
+    }else if([BJNewsMediaUtils isHaveSafeArea] == NO){
+        self.backButtonTop.constant = 20;
+        self.bottomViewBottom.constant = 0;
+    }else{
+        
+    }
+}
 /**
  全屏按钮点击
  

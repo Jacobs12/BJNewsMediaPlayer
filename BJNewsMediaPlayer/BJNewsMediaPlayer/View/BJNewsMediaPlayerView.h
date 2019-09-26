@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger,MEPControllViewType){
  */
 + (BJNewsMediaPlayerView *)defaultView;
 
-@property (nonatomic,copy,nullable) id (^screenWillRotateBlock) (BOOL isPortrait);
+//@property (nonatomic,copy,nullable) id (^screenWillRotateBlock) (BOOL isPortrait);
 
 /**
  当前播放器
@@ -48,7 +48,7 @@ typedef NS_ENUM(NSInteger,MEPControllViewType){
  
  @param view 播放视图
  */
-- (void)moveToView:(UIView *)view type:(MEPControllViewType)type;
+- (void)moveToView:(UIView *)view type:(MEPControllViewType)type isLive:(BOOL)isLive;
 
 /**
  @brief 刷新view，例如view size变化时。
@@ -67,9 +67,41 @@ typedef NS_ENUM(NSInteger,MEPControllViewType){
 #pragma mark - 视频属性
 
 /**
+ 是否为直播
+ */
+@property (nonatomic,assign) BOOL isLive;
+
+/**
+ 视频标题
+ */
+@property (nonatomic,copy) NSString * title;
+
+/**
+ 视频预览图
+ */
+@property (nonatomic,copy) NSString * coverImage;
+
+/**
  视频宽高
  */
 @property (nonatomic,assign) CGSize videoSize;
+
+/**
+ 设置标题、预览图
+ 
+ @param title 标题
+ @param coverImage 预览图
+ */
+- (void)setPlayerTitle:(NSString *)title coverImage:(NSString *)coverImage;
+
+/**
+ 设置标题、预览图、视频大小
+ 
+ @param title 标题
+ @param coverImage 预览图
+ @param videoSize 视频大小
+ */
+- (void)setPlayerTitle:(NSString *)title coverImage:(NSString *)coverImage videoSize:(CGSize)videoSize;
 
 @end
 

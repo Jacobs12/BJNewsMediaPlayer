@@ -77,7 +77,8 @@ static BJNewsMediaPlayerView * player_view = nil;
  
  @param view 播放视图
  */
-- (void)moveToView:(UIView *)view type:(MEPControllViewType)type{
+- (void)moveToView:(UIView *)view type:(MEPControllViewType)type isLive:(BOOL)isLive{
+    self.isLive = isLive;
     self.containerView = view;
     self.baseView = self.containerView;
     [view addSubview:self];
@@ -107,8 +108,6 @@ static BJNewsMediaPlayerView * player_view = nil;
     [self resetControllViewWithPlayer:self.player];
     __weak typeof(self) weak_self = self;
     if(type == MEPControllViewTypePortrait){
-//        CGPoint center = [self convertPoint:self.center toView:view];
-//        self.center = center;
         [self.orientationManager scaleToPortraitWithView:self completionHandler:^{
             
         }];
@@ -126,28 +125,10 @@ static BJNewsMediaPlayerView * player_view = nil;
         }];
         [self redraw];
     }else if (type == MEPControllViewTypePreview){
-//        self.orientationManager.playerView = self;
-//        self.orientationManager.superView = self.baseView;
-//        [self.orientationManager setFullScreen:NO interfaceOrientation:UIInterfaceOrientationPortrait fromFrame:self.frame toFrame:view.bounds animated:YES completion:^(CGRect toFrame) {
-//
-//        }];
-//        if(UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation) == NO){
-//            [UIView animateWithDuration:0.3 animations:^{
-//                [self redraw];
-//            }];
-//        }
         [self.orientationManager resumeWithView:self toView:self.baseView completionHandler:^{
             [self redraw];
         }];
     }
-//    [view addSubview:self];
-//    [self redraw];
-
-//    [UIView animateWithDuration:3.0 animations:^{
-//        [self redraw];
-//    } completion:^(BOOL finished) {
-//
-//    }];
 }
 
 - (void)resetControllViewWithPlayer:(BJNewsMediaPlayer *)player{
@@ -198,6 +179,8 @@ static BJNewsMediaPlayerView * player_view = nil;
         controllView.delegate = self;
         [self.controllArray addObject:controllView];
     }
+    [controllView setLiveBroadcast:self.isLive];
+    controllView.title = self.title;
     return controllView;
 }
 
@@ -214,6 +197,30 @@ static BJNewsMediaPlayerView * player_view = nil;
     }
     self.url = url;
     [self.player playWithUrl:url];
+}
+
+/**
+ 设置标题、预览图
+ 
+ @param title 标题
+ @param coverImage 预览图
+ */
+- (void)setPlayerTitle:(NSString *)title coverImage:(NSString *)coverImage{
+    self.title = title;
+    self.controllView.title = title;
+    self.coverImage = coverImage;
+}
+
+/**
+ 设置标题、预览图、视频大小
+ 
+ @param title 标题
+ @param coverImage 预览图
+ @param videoSize 视频大小
+ */
+- (void)setPlayerTitle:(NSString *)title coverImage:(NSString *)coverImage videoSize:(CGSize)videoSize{
+    self.videoSize = videoSize;
+    [self setPlayerTitle:title coverImage:coverImage];
 }
 
 #pragma mark - delegate 播放器回调

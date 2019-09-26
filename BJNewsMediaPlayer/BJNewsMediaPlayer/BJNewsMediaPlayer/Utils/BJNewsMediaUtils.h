@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 #define BJNEWS_MEDIA_SCALE [BJNewsMediaUtils screenScale]
 
+#define BJNEWS_MEDIA_PLACHOLDERTEXT @"新京报 - 好新闻 无纸境"
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 /**
  判断是否为全面屏手机
 
@@ -36,6 +40,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (CGFloat)bottomSafeAreaHeight;
 
 + (float)screenScale;
+
+/**
+ 滑动块颜色
+
+ @return return value description
+ */
++ (UIColor *)sliderColor;
 
 @end
 
