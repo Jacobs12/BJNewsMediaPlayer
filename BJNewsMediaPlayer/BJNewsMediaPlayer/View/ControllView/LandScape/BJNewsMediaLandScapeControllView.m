@@ -47,7 +47,7 @@
         bottomArea = [BJNewsMediaUtils bottomSafeAreaHeight];
     }
     self.bgView.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
-    self.bottomView.frame = CGRectMake([BJNewsMediaUtils statusBarHeight] - 20, frame.size.height - 44, frame.size.width, 44);
+    self.bottomView.frame = CGRectMake([BJNewsMediaUtils statusBarHeight] - 20, frame.size.height - 44,frame.size.width - ([BJNewsMediaUtils statusBarHeight] - 20) - bottomArea, 44);
 //    顶部
     self.backButton.frame = CGRectMake([BJNewsMediaUtils statusBarHeight] - 20, 20, 44, 44);
     self.titleLabel.frame = CGRectMake(self.backButton.frame.origin.x + self.backButton.bounds.size.width, self.backButton.frame.origin.y, 0.6 * frame.size.width, self.backButton.bounds.size.height);
@@ -62,7 +62,7 @@
 //    底部
     self.muteButton.frame = CGRectMake(0, 0, 44, 44);
     self.timeLabel.frame = CGRectMake(self.muteButton.frame.origin.x + self.muteButton.bounds.size.width, 0, timeWidth, 44);
-    self.screenButton.frame = CGRectMake(frame.size.width - 44 - bottomArea,0 , 44, 44);
+    self.screenButton.frame = CGRectMake(self.bottomView.bounds.size.width - 44 ,0 , 44, 44);
     self.totalLabel.frame = CGRectMake(self.screenButton.frame.origin.x - timeWidth, 0,timeWidth, 44);
     self.slider.frame = CGRectMake(self.timeLabel.frame.origin.x + self.timeLabel.bounds.size.width - 18, 0, self.totalLabel.frame.origin.x - (self.timeLabel.frame.origin.x + self.timeLabel.bounds.size.width) + 18 * 2, 44);
 }
