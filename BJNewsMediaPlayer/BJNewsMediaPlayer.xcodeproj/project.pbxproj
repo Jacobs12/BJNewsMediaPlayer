@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -407,6 +407,11 @@
 				TargetAttributes = {
 					4FC32FEF232736C100D5CA3B = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					4FC33007232736C300D5CA3B = {
 						CreatedOnToolsVersion = 10.3;

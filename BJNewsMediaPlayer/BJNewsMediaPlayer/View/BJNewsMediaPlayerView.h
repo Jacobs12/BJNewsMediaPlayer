@@ -103,6 +103,13 @@ typedef NS_ENUM(NSInteger,MEPControllViewType){
  */
 - (void)setPlayerTitle:(NSString *)title coverImage:(NSString *)coverImage videoSize:(CGSize)videoSize;
 
+#pragma mark - 销毁播放器
+
+/**
+ 销毁播放器
+ */
+- (void)destroy;
+
 @end
 
 NS_ASSUME_NONNULL_END

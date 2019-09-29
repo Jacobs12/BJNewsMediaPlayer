@@ -18,4 +18,8 @@
 }
 */
 
+- (void)hideControllViewAnimated:(BOOL)isAnimate{
+    
+}
+
 @end

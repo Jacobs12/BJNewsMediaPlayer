@@ -38,6 +38,8 @@ static BJNewsMediaPlayerView * player_view = nil;
 
 @property (nonatomic,strong) UIView * baseView;
 
+@property (nonatomic,assign) BOOL isContinuePlay;
+
 @end
 
 @implementation BJNewsMediaPlayerView
@@ -49,6 +51,40 @@ static BJNewsMediaPlayerView * player_view = nil;
     }
     return player_view;
 }
+
+- (instancetype)init{
+    self = [super init];
+    if(self){
+        [self addNotifications];
+    }
+    return self;
+}
+
+#pragma mark - 接收通知
+
+- (void)addNotifications{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerApplicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerApplicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
+- (void)playerApplicationWillResignActive:(NSNotification *)noti{
+    if(_player && _player.isPlaying){
+        self.isContinuePlay = YES;
+    }else{
+        self.isContinuePlay = NO;
+    }
+    if(_player){
+        [self.player pause];
+    }
+}
+
+- (void)playerApplicationDidBecomeActive:(NSNotification *)noti{
+    if(self.isContinuePlay && _player){
+        [self.player play];
+    }
+}
+
+#pragma mark - getter
 
 - (BJNewsMediaPlayer *)player{
     if(_player == nil){
@@ -72,6 +108,8 @@ static BJNewsMediaPlayerView * player_view = nil;
     return _orientationManager;
 }
 
+#pragma mark - View
+
 /**
  切换播放视图
  
@@ -94,6 +132,12 @@ static BJNewsMediaPlayerView * player_view = nil;
     [self redraw];
 }
 
+/**
+ 切换控制面板
+
+ @param view 父视图
+ @param type 类型
+ */
 - (void)switchFullScreenModeToView:(UIView *)view type:(MEPControllViewType)type{
     self.baseView = view;
     self.player.playerView = self;
@@ -417,6 +461,22 @@ static BJNewsMediaPlayerView * player_view = nil;
     [self.player seekToTime:duration completionHandler:^(NSTimeInterval seekTime) {
         
     }];
+}
+
+#pragma mark - 销毁播放器
+
+/**
+ 销毁播放器
+ */
+- (void)destroy{
+    if(_player){
+        [_player destroy];
+        _player = nil;
+    }
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillResignActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
+    [self removeFromSuperview];
+    player_view = nil;
 }
 
 @end
