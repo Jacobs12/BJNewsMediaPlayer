@@ -13,6 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BJNewsMediaListContollView : BJNewsMediaBaseControllView
 
+@property (nonatomic,strong) IBOutlet UIView * timeBgView;
+
+@property (nonatomic,strong) IBOutlet UIImageView * liveImageView;
+@property (nonatomic,strong) IBOutlet UIView * liveBgView;
+@property (nonatomic,strong) IBOutlet UILabel * liveLabel;
+
 @end
 
 NS_ASSUME_NONNULL_END

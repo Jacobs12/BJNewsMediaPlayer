@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 #define BJNEWS_MEDIA_PLACHOLDERTEXT @"新京报 - 好新闻 无纸境"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-
 /**
  判断是否为全面屏手机
 
@@ -47,6 +46,8 @@ NS_ASSUME_NONNULL_BEGIN
  @return return value description
  */
 + (UIColor *)sliderColor;
+
++ (UIColor *)colorWithHex:(NSInteger)rgbValue alpha:(float)alpha;
 
 @end
 

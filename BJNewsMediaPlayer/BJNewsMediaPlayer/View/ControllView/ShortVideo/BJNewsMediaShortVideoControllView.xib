@@ -12,12 +12,37 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view alpha="0.5" contentMode="scaleToFill" id="iN0-l3-epB" customClass="BJNewsMediaShortVideoControllView">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BJNewsMediaShortVideoControllView">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXO-Hf-Gd0">
+                    <rect key="frame" x="185" y="426" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="9J3-Uk-U8X"/>
+                        <constraint firstAttribute="width" constant="44" id="Lai-nO-Uap"/>
+                    </constraints>
+                    <state key="normal" image="bjnews_media_play"/>
+                    <state key="selected" image="bjnews_media_pause"/>
+                    <connections>
+                        <action selector="playButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="3da-6t-nvL"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="pXO-Hf-Gd0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="JK5-ip-rkH"/>
+                <constraint firstItem="pXO-Hf-Gd0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zlf-hI-rGx"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="playButton" destination="pXO-Hf-Gd0" id="XjP-0H-Z2t"/>
+            </connections>
         </view>
     </objects>
+    <resources>
+        <image name="bjnews_media_pause" width="29.5" height="34.5"/>
+        <image name="bjnews_media_play" width="33" height="37.5"/>
+    </resources>
 </document>

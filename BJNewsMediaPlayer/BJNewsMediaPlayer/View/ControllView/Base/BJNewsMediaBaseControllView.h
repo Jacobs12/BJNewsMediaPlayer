@@ -26,6 +26,12 @@ typedef NS_ENUM(NSInteger,MCPlayState){
     MCPlayStateError
 };
 
+typedef NS_ENUM(NSInteger,MCSourceType){
+    MCSourceTypeVideo,     // 普通视频
+    MCSourceTypeLive,      // 直播
+    MCSourceTypePlayback   // 回放
+};
+
 @property (nullable,weak,nonatomic) id <BJNewsMeidaBaseControllViewDelegate>delegate;
 
 #pragma mark - UI属性
@@ -80,12 +86,20 @@ typedef NS_ENUM(NSInteger,MCPlayState){
  */
 @property (nonatomic,strong) IBOutlet UISlider * slider;
 
+@property (nonatomic,strong) IBOutlet UIView * errorBg;
+
+@property (nonatomic,strong) IBOutlet UILabel * errorLabel;
+
+@property (nonatomic,strong) IBOutlet UIButton * errorButton;
+
+@property (nonatomic,strong) IBOutlet UIImageView * errorImageView;
+
 #pragma mark - 播放相关属性
 
 /**
- 是否为直播
+ 播放源属性 视频/直播/回放
  */
-@property (nonatomic,assign) BOOL isLive;
+@property (nonatomic,assign) MCSourceType sourceType;
 
 /**
  当前播放状态
@@ -110,11 +124,18 @@ typedef NS_ENUM(NSInteger,MCPlayState){
 - (void)setPlayState:(MCPlayState)state;
 
 /**
- 设置是否为直播
+ 设置播放源属性 视频/直播/回放
 
- @param isLive 是否为直播
+ @param sourceType 播放源属性
  */
-- (void)setLiveBroadcast:(BOOL)isLive;
+- (void)setVideoSourceType:(MCSourceType)sourceType;
+
+/**
+ 设置是否播放出错
+
+ @param isError 是否播放出错
+ */
+- (void)setError:(BOOL)isError;
 
 #pragma mark - 刷新控制面板
 
@@ -176,6 +197,11 @@ typedef NS_ENUM(NSInteger,MCPlayState){
  @param alpha 设置控制面板透明度
  */
 - (void)setControllViewAlpha:(float)alpha;
+
+/**
+ 将时间转换为字符串
+ */
+-(NSString *)convertTimeSecond:(NSInteger)timeSecond;
 
 #pragma mark - 按钮点击事件
 

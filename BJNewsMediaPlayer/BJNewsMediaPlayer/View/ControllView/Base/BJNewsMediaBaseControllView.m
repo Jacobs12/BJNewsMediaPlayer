@@ -29,12 +29,17 @@
     [self setupSubviews];
     [self autoHideControllView];
     [self setPlayState:MCPlayStateNone];
+    [self setError:NO];
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
     [self.loadingView addSubview:self.activity];
     self.activity.frame = self.loadingView.bounds;
+    if(self.errorButton){
+        self.errorButton.layer.cornerRadius = self.errorButton.bounds.size.height / 2.0;
+        self.errorButton.layer.masksToBounds = YES;
+    }
 }
 
 - (AILoadingView *)activity{
@@ -74,6 +79,9 @@
 
 - (void)setPlayState:(MCPlayState)state{
     self.state = state;
+    if(state != MCPlayStateError){
+        [self setError:NO];
+    }
     if(state == MCPlayStateNone){
         [self startLoading];
         self.replayButton.hidden = YES;
@@ -98,22 +106,49 @@
         [self endLoading];
     }else if (state == MCPlayStateError){
         [self endLoading];
+        [self setError:YES];
     }
 }
 
 /**
- 设置是否为直播
+ 设置播放源属性 视频/直播/回放
  
- @param isLive 是否为直播
+ @param sourceType 播放源属性
  */
-- (void)setLiveBroadcast:(BOOL)isLive{
-    self.isLive = isLive;
-#warning 做直播相关操作
+- (void)setVideoSourceType:(MCSourceType)sourceType{
+    self.sourceType = sourceType;
 }
 
 - (void)setReplayMode:(BOOL)isReplay{
     self.playButton.hidden = isReplay;
     self.replayButton.hidden = !isReplay;
+}
+
+/**
+ 设置是否播放出错
+ 
+ @param isError 是否播放出错
+ */
+- (void)setError:(BOOL)isError{
+    if(self.errorBg){
+        self.errorBg.hidden = !isError;
+    }
+    if(self.errorLabel){
+        self.errorLabel.hidden = !isError;
+    }
+    if(self.errorButton){
+        self.errorButton.hidden = !isError;
+    }
+    if(self.errorImageView){
+        self.errorImageView.hidden = !isError;
+    }
+    if(isError){
+        self.replayButton.hidden = YES;
+        self.playButton.hidden = YES;
+        self.backgroundColor = [UIColor blackColor];
+    }else{
+        self.backgroundColor = [UIColor clearColor];
+    }
 }
 
 - (void)updateProgress:(float)progress duration:(NSTimeInterval)duration totalDuration:(NSTimeInterval)totalDuration{
@@ -371,7 +406,7 @@
  */
 - (void)setControllViewHidden:(BOOL)isHidden{
     self.isControllViewHidden = isHidden;
-    if(self.state == MCPlayStateLoadingStart || self.state == MCPlayStateEnded || self.state == MCPlayStateNone){
+    if(self.state == MCPlayStateLoadingStart || self.state == MCPlayStateEnded || self.state == MCPlayStateNone || self.state == MCPlayStateError){
         self.playButton.hidden = YES;
     }else{
         self.playButton.hidden = isHidden;

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BJNewsMediaPlayer.h"
+#import "BJNewsMediaBaseControllView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -48,7 +49,7 @@ typedef NS_ENUM(NSInteger,MEPControllViewType){
  
  @param view 播放视图
  */
-- (void)moveToView:(UIView *)view type:(MEPControllViewType)type isLive:(BOOL)isLive;
+- (void)moveToView:(UIView *)view controllViewtype:(MEPControllViewType)controllType sourceType:(MCSourceType)sourceType;
 
 /**
  @brief 刷新view，例如view size变化时。
@@ -69,7 +70,7 @@ typedef NS_ENUM(NSInteger,MEPControllViewType){
 /**
  是否为直播
  */
-@property (nonatomic,assign) BOOL isLive;
+@property (nonatomic,assign) MCSourceType sourceType;
 
 /**
  视频标题

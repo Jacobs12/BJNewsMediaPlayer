@@ -26,7 +26,7 @@
 //    self.view.backgroundColor = [UIColor blackColor];
     // Do any additional setup after loading the view.
     self.player = [BJNewsMediaPlayerView defaultView];
-    [self.player moveToView:self.playerView type:MEPControllViewTypePreview isLive:NO];
+    [self.player moveToView:self.playerView controllViewtype:MEPControllViewTypePreview sourceType:MCSourceTypeLive];
 //    [self.player moveToView:self.playerView type:MEPControllViewTypeList isLive:NO];
     [self.player playWithUrl:@"https://test-bjnews.oss-cn-beijing.aliyuncs.com/video/2019/09/04/4833278034796609767.mp4"];
 //    [self.player playWithUrl:@"http://tb-video.bdstatic.com/tieba-smallvideo-transcode-cae/3721866_1fa5e31aad50cf3eb3b9dd3288cebdae_0_cae.mp4"];
@@ -183,6 +183,10 @@
 
 - (IBAction)button2Click:(id)sender{
     [self.player playWithUrl:@"https://test-bjnews.oss-cn-beijing.aliyuncs.com/video/2019/09/04/4833278034796609767.mp4"];
+}
+
+- (IBAction)button3Click:(id)sender{
+    [self.player playWithUrl:@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"];
 }
 
 @end

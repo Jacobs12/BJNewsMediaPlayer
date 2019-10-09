@@ -7,7 +7,6 @@
 //
 
 #import "BJNewsMediaPlayerView.h"
-#import "BJNewsMediaBaseControllView.h"
 #import "BJNewsMediaListContollView.h"
 #import "BJNewsMediaShortVideoControllView.h"
 #import "BJNewsMediaLandScapeControllView.h"
@@ -115,8 +114,8 @@ static BJNewsMediaPlayerView * player_view = nil;
  
  @param view 播放视图
  */
-- (void)moveToView:(UIView *)view type:(MEPControllViewType)type isLive:(BOOL)isLive{
-    self.isLive = isLive;
+- (void)moveToView:(UIView *)view controllViewtype:(MEPControllViewType)controllType sourceType:(MCSourceType)sourceType{
+    self.sourceType = sourceType;
     self.containerView = view;
     self.baseView = self.containerView;
     [view addSubview:self];
@@ -124,7 +123,7 @@ static BJNewsMediaPlayerView * player_view = nil;
     if(self.controllView){
         [self.controllView removeFromSuperview];
     }
-    self.controllView = [self controllViewWithType:type];
+    self.controllView = [self controllViewWithType:controllType];
     if(self.controllView){
         [self addSubview:self.controllView];
     }
@@ -136,27 +135,26 @@ static BJNewsMediaPlayerView * player_view = nil;
  切换控制面板
 
  @param view 父视图
- @param type 类型
+ @param controllType 类型
  */
-- (void)switchFullScreenModeToView:(UIView *)view type:(MEPControllViewType)type{
+- (void)switchFullScreenModeToView:(UIView *)view controllType:(MEPControllViewType)controllType{
     self.baseView = view;
     self.player.playerView = self;
     if(self.controllView){
         [self.controllView removeFromSuperview];
     }
-    self.controllView = [self controllViewWithType:type];
+    self.controllView = [self controllViewWithType:controllType];
     if(self.controllView){
         [self addSubview:self.controllView];
     }
     
     [self resetControllViewWithPlayer:self.player];
-    __weak typeof(self) weak_self = self;
-    if(type == MEPControllViewTypePortrait){
+    if(controllType == MEPControllViewTypePortrait){
         [self.orientationManager scaleToPortraitWithView:self completionHandler:^{
             
         }];
         [self redraw];
-    }else if (type == MEPControllViewTypeLandScape){
+    }else if (controllType == MEPControllViewTypeLandScape){
 //            横屏全屏
 //        self.orientationManager.playerView = self;
 //        self.orientationManager.superView = self.baseView;
@@ -168,7 +166,7 @@ static BJNewsMediaPlayerView * player_view = nil;
             
         }];
         [self redraw];
-    }else if (type == MEPControllViewTypePreview){
+    }else if (controllType == MEPControllViewTypePreview){
         [self.orientationManager resumeWithView:self toView:self.baseView completionHandler:^{
             [self redraw];
         }];
@@ -223,7 +221,7 @@ static BJNewsMediaPlayerView * player_view = nil;
         controllView.delegate = self;
         [self.controllArray addObject:controllView];
     }
-    [controllView setLiveBroadcast:self.isLive];
+    [controllView setVideoSourceType:self.sourceType];
     controllView.title = self.title;
     return controllView;
 }
@@ -436,15 +434,15 @@ static BJNewsMediaPlayerView * player_view = nil;
         }
         if(width - height > -10){
             UIView * view = [UIApplication sharedApplication].keyWindow.rootViewController.view;
-            [self switchFullScreenModeToView:view type:MEPControllViewTypeLandScape];
+            [self switchFullScreenModeToView:view controllType:MEPControllViewTypeLandScape];
         }else{
 //            竖屏全屏
             UIView * view = [UIApplication sharedApplication].keyWindow.rootViewController.view;
-            [self switchFullScreenModeToView:view type:MEPControllViewTypePortrait];
+            [self switchFullScreenModeToView:view controllType:MEPControllViewTypePortrait];
         }
     }else{
         UIView * view = self.containerView;
-        [self switchFullScreenModeToView:view type:MEPControllViewTypePreview];
+        [self switchFullScreenModeToView:view controllType:MEPControllViewTypePreview];
     }
 }
 

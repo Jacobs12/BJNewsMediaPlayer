@@ -16,6 +16,19 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faJ-Z5-aKA">
+                    <rect key="frame" x="15" y="0.0" width="345" height="211"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bjnews_media_errorpreview" translatesAutoresizingMaskIntoConstraints="NO" id="G02-uL-Jg4">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频加载失败，重新加载试试" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzC-Dq-bRy">
+                    <rect key="frame" x="74.5" y="60" width="226" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whX-Yj-7Mz">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                     <subviews>
@@ -31,11 +44,28 @@
                                 <action selector="replayButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="5uU-Gt-dL7"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz7-oN-kxM">
+                            <rect key="frame" x="126.5" y="116.5" width="122" height="38"/>
+                            <color key="backgroundColor" red="0.81568627449999997" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="122" id="f4X-Fu-5nR"/>
+                                <constraint firstAttribute="height" constant="38" id="jPl-rZ-AR4"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="重新加载">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="replayButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Pdi-Eh-AJE"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="Gz7-oN-kxM" firstAttribute="centerX" secondItem="whX-Yj-7Mz" secondAttribute="centerX" id="2vy-xn-MBf"/>
                         <constraint firstItem="gCQ-xB-9RG" firstAttribute="centerY" secondItem="whX-Yj-7Mz" secondAttribute="centerY" id="407-wu-awb"/>
                         <constraint firstItem="gCQ-xB-9RG" firstAttribute="centerX" secondItem="whX-Yj-7Mz" secondAttribute="centerX" id="N4N-bx-rke"/>
+                        <constraint firstItem="Gz7-oN-kxM" firstAttribute="centerY" secondItem="whX-Yj-7Mz" secondAttribute="centerY" constant="30" id="dus-9o-SvU"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYd-Wp-dL3">
@@ -103,19 +133,29 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="faJ-Z5-aKA" secondAttribute="trailing" constant="15" id="18d-yO-mJS"/>
                 <constraint firstItem="TYd-Wp-dL3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1oc-6C-VLY"/>
                 <constraint firstItem="TK1-2q-TUZ" firstAttribute="leading" secondItem="UKw-wD-vBr" secondAttribute="trailing" id="7xW-2o-60W"/>
+                <constraint firstAttribute="bottom" secondItem="G02-uL-Jg4" secondAttribute="bottom" id="87v-0A-k7U"/>
                 <constraint firstItem="UKw-wD-vBr" firstAttribute="centerY" secondItem="C2X-EB-gHu" secondAttribute="centerY" id="8tv-Oa-EaM"/>
                 <constraint firstItem="8do-co-CQG" firstAttribute="centerY" secondItem="C2X-EB-gHu" secondAttribute="centerY" id="FXO-d8-OPi"/>
                 <constraint firstItem="C2X-EB-gHu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="3" id="Lbu-hB-xJn"/>
+                <constraint firstItem="gzC-Dq-bRy" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Mum-ye-p8w"/>
                 <constraint firstItem="TYd-Wp-dL3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NpW-oV-SEx"/>
+                <constraint firstItem="faJ-Z5-aKA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="P8H-7C-f1I"/>
                 <constraint firstItem="dgI-gZ-r6K" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PQR-01-XWs"/>
+                <constraint firstAttribute="trailing" secondItem="G02-uL-Jg4" secondAttribute="trailing" id="XtX-DA-n93"/>
+                <constraint firstItem="G02-uL-Jg4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YwU-kt-UOz"/>
+                <constraint firstItem="gzC-Dq-bRy" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-35" id="ZzR-cF-Pdx"/>
                 <constraint firstAttribute="bottom" secondItem="whX-Yj-7Mz" secondAttribute="bottom" id="dZ8-5B-dbd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="whX-Yj-7Mz" secondAttribute="trailing" id="fFC-KU-OZa"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TK1-2q-TUZ" secondAttribute="trailing" constant="8" id="hLg-mz-1ZZ"/>
                 <constraint firstItem="dgI-gZ-r6K" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="iiX-Ag-w0s"/>
+                <constraint firstAttribute="bottom" secondItem="faJ-Z5-aKA" secondAttribute="bottom" id="kPc-xe-OBG"/>
                 <constraint firstItem="8do-co-CQG" firstAttribute="leading" secondItem="C2X-EB-gHu" secondAttribute="trailing" id="kTZ-sU-ZVV"/>
                 <constraint firstItem="dgI-gZ-r6K" firstAttribute="width" secondItem="whX-Yj-7Mz" secondAttribute="width" multiplier="0.0693333" id="mA6-DU-0MY"/>
+                <constraint firstItem="faJ-Z5-aKA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="mnA-iM-IgU"/>
+                <constraint firstItem="G02-uL-Jg4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="myK-zW-8Yj"/>
                 <constraint firstItem="whX-Yj-7Mz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tZ1-RX-brL"/>
                 <constraint firstAttribute="bottom" secondItem="C2X-EB-gHu" secondAttribute="bottom" id="yeh-MF-o9h"/>
                 <constraint firstItem="TK1-2q-TUZ" firstAttribute="centerY" secondItem="C2X-EB-gHu" secondAttribute="centerY" id="yry-zn-Kz7"/>
@@ -124,6 +164,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="errorBg" destination="faJ-Z5-aKA" id="XTi-TL-7GJ"/>
+                <outlet property="errorButton" destination="Gz7-oN-kxM" id="bVa-73-SQW"/>
+                <outlet property="errorImageView" destination="G02-uL-Jg4" id="PEf-oi-Rqt"/>
+                <outlet property="errorLabel" destination="gzC-Dq-bRy" id="BTS-uV-Y45"/>
                 <outlet property="loadingView" destination="dgI-gZ-r6K" id="jvH-Cj-aR3"/>
                 <outlet property="muteButton" destination="C2X-EB-gHu" id="har-Ov-8UI"/>
                 <outlet property="playButton" destination="TYd-Wp-dL3" id="lTG-Kg-dRk"/>
@@ -136,6 +180,7 @@
         </view>
     </objects>
     <resources>
+        <image name="bjnews_media_errorpreview" width="375" height="211"/>
         <image name="bjnews_media_fullscreenlandscape" width="16" height="16"/>
         <image name="bjnews_media_mute" width="21" height="18"/>
         <image name="bjnews_media_pause" width="29.5" height="34.5"/>
