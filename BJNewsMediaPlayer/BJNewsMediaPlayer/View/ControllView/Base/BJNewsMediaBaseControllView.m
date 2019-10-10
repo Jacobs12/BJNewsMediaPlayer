@@ -206,7 +206,7 @@
     [self showControllViewAnimated:NO];
     [self autoHideControllView];
     float bufferProgress = [player bufferProgress];
-    [self updateBufferProgress:progress animate:NO];
+    [self updateBufferProgress:bufferProgress animate:NO];
 }
 
 /**
