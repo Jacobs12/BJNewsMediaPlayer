@@ -26,7 +26,7 @@
 //    self.view.backgroundColor = [UIColor blackColor];
     // Do any additional setup after loading the view.
     self.player = [BJNewsMediaPlayerView defaultView];
-    [self.player moveToView:self.playerView controllViewtype:MEPControllViewTypePreview sourceType:MCSourceTypeLive];
+    [self.player moveToView:self.playerView controllViewtype:MEPControllViewTypePreview sourceType:MCSourceTypeVideo];
 //    [self.player moveToView:self.playerView type:MEPControllViewTypeList isLive:NO];
     [self.player playWithUrl:@"https://test-bjnews.oss-cn-beijing.aliyuncs.com/video/2019/09/04/4833278034796609767.mp4"];
 //    [self.player playWithUrl:@"http://tb-video.bdstatic.com/tieba-smallvideo-transcode-cae/3721866_1fa5e31aad50cf3eb3b9dd3288cebdae_0_cae.mp4"];
@@ -36,7 +36,7 @@
 //        NSLog(@"sadasdasdasd");
 //        return weak_self;
 //    };
-    self.playerView.frame = CGRectMake(0, 0, 375, 211);
+    self.playerView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 211 * ([UIScreen mainScreen].bounds.size.width / 375.0));
     [self.player redraw];
     self.tableView.tableHeaderView = self.playerView;
     
@@ -178,14 +178,25 @@
 }
 
 - (IBAction)button1Click:(id)sender{
+    [self.player moveToView:self.playerView controllViewtype:MEPControllViewTypePreview sourceType:MCSourceTypePlayback];
     [self.player playWithUrl:@"http://tb-video.bdstatic.com/tieba-smallvideo-transcode-cae/3721866_1fa5e31aad50cf3eb3b9dd3288cebdae_0_cae.mp4"];
 }
 
 - (IBAction)button2Click:(id)sender{
+    [self.player setPlayerTitle:@"CCTV-1高清 直播" coverImage:@"http://wx3.sinaimg.cn/crop.0.0.800.449.1000/007hRVArgy1fyserbavs0j30m80ciaqb.jpg" videoSize:CGSizeMake(100, 200)];
+    [self.player moveToView:self.playerView controllViewtype:MEPControllViewTypePreview sourceType:MCSourceTypeVideo];
     [self.player playWithUrl:@"https://test-bjnews.oss-cn-beijing.aliyuncs.com/video/2019/09/04/4833278034796609767.mp4"];
 }
 
 - (IBAction)button3Click:(id)sender{
+    [self.player setPlayerTitle:@"CCTV-1高清 直播" coverImage:@"http://b-ssl.duitang.com/uploads/item/201808/27/20180827043223_twunu.jpg"];
+    [self.player moveToView:self.playerView controllViewtype:MEPControllViewTypePreview sourceType:MCSourceTypeLive];
+    [self.player playWithUrl:@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"];
+}
+
+- (IBAction)button4Click:(id)sender{
+    [self.player setPlayerTitle:@"CCTV-1高清 直播" coverImage:@"http://img3.imgtn.bdimg.com/it/u=3177821783,3832632740&fm=26&gp=0.jpg"];
+    [self.player moveToView:self.playerView controllViewtype:MEPControllViewTypeList sourceType:MCSourceTypeLive];
     [self.player playWithUrl:@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"];
 }
 

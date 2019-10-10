@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BJNewsMediaPortraitControllView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kX7-mK-DBR">
+                    <rect key="frame" x="15" y="0.0" width="384" height="896"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bjnews_media_errorportrait" translatesAutoresizingMaskIntoConstraints="NO" id="vmv-W7-xcd">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYB-z3-24i">
+                    <rect key="frame" x="0.0" y="44" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="8dF-sQ-UhC"/>
+                        <constraint firstAttribute="width" constant="44" id="E39-h5-ncN"/>
+                    </constraints>
+                    <state key="normal" image="bjnews_media_back"/>
+                    <connections>
+                        <action selector="screenButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="FtE-Gv-ciN"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好新闻 无纸境" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOw-8R-2yt">
+                    <rect key="frame" x="44" y="44" width="96" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="UtM-rF-hff"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbm-Ep-TCj">
+                    <rect key="frame" x="185" y="426" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="PrD-wn-58W"/>
+                        <constraint firstAttribute="width" constant="44" id="b4j-Nn-8yE"/>
+                    </constraints>
+                    <state key="normal" image="bjnews_media_replay"/>
+                    <connections>
+                        <action selector="replayButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="XMG-N2-tcu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOt-yc-lA3">
+                    <rect key="frame" x="185" y="426" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="qAp-kT-HDb"/>
+                        <constraint firstAttribute="height" constant="44" id="vgx-Ws-AtK"/>
+                    </constraints>
+                    <state key="normal" image="bjnews_media_play"/>
+                    <state key="selected" image="bjnews_media_pause"/>
+                    <connections>
+                        <action selector="playButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="cl5-f9-fNK"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uAU-a8-gAV">
+                    <rect key="frame" x="192.66666666666666" y="433.66666666666669" width="28.666666666666657" height="28.666666666666686"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="uAU-a8-gAV" secondAttribute="height" multiplier="1:1" id="PYr-Je-OKq"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6R-ud-pzU">
+                    <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sk0-6K-1Z6">
+                            <rect key="frame" x="370" y="0.0" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="ATE-yi-nTG"/>
+                                <constraint firstAttribute="height" constant="44" id="PFa-GU-x26"/>
+                            </constraints>
+                            <state key="normal" image="bjnews_media_fullscreenpreview"/>
+                            <connections>
+                                <action selector="screenButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="3Ao-zL-GWS"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMB-cX-sQ8">
+                            <rect key="frame" x="328" y="0.0" width="42" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="nej-dt-Y5l"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4V-eD-7Mh">
+                            <rect key="frame" x="44" y="0.0" width="42" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="TLT-Jo-ApA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsG-YN-DN3">
+                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="7nV-tt-sWe"/>
+                                <constraint firstAttribute="width" constant="44" id="QYn-Vu-Zoz"/>
+                            </constraints>
+                            <state key="normal" image="bjnews_media_sound"/>
+                            <state key="selected" image="bjnews_media_mute"/>
+                        </button>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zPa-nW-SiI">
+                            <rect key="frame" x="96" y="7" width="222" height="31"/>
+                        </slider>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="LMB-cX-sQ8" firstAttribute="centerY" secondItem="h6R-ud-pzU" secondAttribute="centerY" id="1vm-jt-XYw"/>
+                        <constraint firstItem="f4V-eD-7Mh" firstAttribute="centerY" secondItem="h6R-ud-pzU" secondAttribute="centerY" id="Kx6-Vb-vzu"/>
+                        <constraint firstAttribute="height" constant="44" id="Zpq-aP-sYb"/>
+                        <constraint firstItem="LMB-cX-sQ8" firstAttribute="leading" secondItem="zPa-nW-SiI" secondAttribute="trailing" constant="12" id="bHB-Zu-UoL"/>
+                        <constraint firstItem="zPa-nW-SiI" firstAttribute="centerY" secondItem="h6R-ud-pzU" secondAttribute="centerY" id="cQQ-nt-gex"/>
+                        <constraint firstItem="zPa-nW-SiI" firstAttribute="leading" secondItem="f4V-eD-7Mh" secondAttribute="trailing" constant="12" id="hPW-3E-QTQ"/>
+                        <constraint firstItem="f4V-eD-7Mh" firstAttribute="leading" secondItem="AsG-YN-DN3" secondAttribute="trailing" id="heq-PZ-c4L"/>
+                        <constraint firstItem="sk0-6K-1Z6" firstAttribute="leading" secondItem="LMB-cX-sQ8" secondAttribute="trailing" id="kSU-9O-7ox"/>
+                        <constraint firstAttribute="trailing" secondItem="sk0-6K-1Z6" secondAttribute="trailing" id="mxF-LB-POE"/>
+                        <constraint firstItem="sk0-6K-1Z6" firstAttribute="centerY" secondItem="h6R-ud-pzU" secondAttribute="centerY" id="n2b-8Z-AXB"/>
+                        <constraint firstItem="AsG-YN-DN3" firstAttribute="centerY" secondItem="h6R-ud-pzU" secondAttribute="centerY" id="tYo-OW-Qp7"/>
+                        <constraint firstItem="AsG-YN-DN3" firstAttribute="leading" secondItem="h6R-ud-pzU" secondAttribute="leading" id="wO9-t7-2LT"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频加载失败，重新加载试试" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Peh-gU-ttw">
+                    <rect key="frame" x="94" y="392.66666666666669" width="226" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTa-L1-BXB">
+                    <rect key="frame" x="146" y="459" width="122" height="38"/>
+                    <color key="backgroundColor" red="0.81568627449999997" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="JC6-aV-Sun"/>
+                        <constraint firstAttribute="width" constant="122" id="ejb-VS-pO4"/>
+                    </constraints>
+                    <state key="normal" title="重新加载">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="replayButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="53i-BU-L3q"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="kX7-mK-DBR" secondAttribute="trailing" constant="15" id="280-Pg-ykU"/>
+                <constraint firstItem="iOw-8R-2yt" firstAttribute="leading" secondItem="HYB-z3-24i" secondAttribute="trailing" id="5Vp-XY-jKF"/>
+                <constraint firstItem="kX7-mK-DBR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6io-8g-3wf"/>
+                <constraint firstItem="uAU-a8-gAV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="99c-4t-0RQ"/>
+                <constraint firstAttribute="bottom" secondItem="kX7-mK-DBR" secondAttribute="bottom" id="D4X-Es-Tbj"/>
+                <constraint firstItem="Peh-gU-ttw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DV9-Ns-Hai"/>
+                <constraint firstItem="lTa-L1-BXB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Kay-1R-Y9L"/>
+                <constraint firstAttribute="bottom" secondItem="vmv-W7-xcd" secondAttribute="bottom" id="Llk-aZ-VkL"/>
+                <constraint firstItem="EOt-yc-lA3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="P19-ND-CPB"/>
+                <constraint firstItem="Fbm-Ep-TCj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Rnk-Co-TfT"/>
+                <constraint firstItem="h6R-ud-pzU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="S11-dT-d9j"/>
+                <constraint firstItem="HYB-z3-24i" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SgB-cN-1yk"/>
+                <constraint firstItem="vmv-W7-xcd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VZn-Tz-zt8"/>
+                <constraint firstItem="h6R-ud-pzU" firstAttribute="width" secondItem="uAU-a8-gAV" secondAttribute="width" multiplier="14.4231" id="Vvx-t3-dde"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="h6R-ud-pzU" secondAttribute="trailing" id="cKR-R9-kES"/>
+                <constraint firstItem="kX7-mK-DBR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="fac-Vj-RLk"/>
+                <constraint firstItem="lTa-L1-BXB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="30" id="gTy-jM-kr7"/>
+                <constraint firstItem="Fbm-Ep-TCj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kUE-E7-dpz"/>
+                <constraint firstItem="HYB-z3-24i" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="lIo-0j-l1l"/>
+                <constraint firstAttribute="bottom" secondItem="h6R-ud-pzU" secondAttribute="bottom" constant="34" id="nKP-zG-ZtS"/>
+                <constraint firstItem="iOw-8R-2yt" firstAttribute="centerY" secondItem="HYB-z3-24i" secondAttribute="centerY" id="olE-iV-M1P"/>
+                <constraint firstAttribute="trailing" secondItem="vmv-W7-xcd" secondAttribute="trailing" id="snn-kI-ZRh"/>
+                <constraint firstItem="vmv-W7-xcd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tSl-mC-ulI"/>
+                <constraint firstItem="Peh-gU-ttw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-45" id="uUn-kP-H5i"/>
+                <constraint firstItem="EOt-yc-lA3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="vSl-Fj-BkP"/>
+                <constraint firstItem="uAU-a8-gAV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="yKh-gB-AYL"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="backButton" destination="HYB-z3-24i" id="Ugf-re-Btd"/>
+                <outlet property="backButtonTop" destination="lIo-0j-l1l" id="rVz-8U-OGR"/>
+                <outlet property="bottomViewBottom" destination="nKP-zG-ZtS" id="LaZ-NX-jll"/>
+                <outlet property="errorBg" destination="kX7-mK-DBR" id="svw-LT-h4M"/>
+                <outlet property="errorButton" destination="lTa-L1-BXB" id="0Sb-Jy-w0S"/>
+                <outlet property="errorImageView" destination="vmv-W7-xcd" id="GTp-UV-XSZ"/>
+                <outlet property="errorLabel" destination="Peh-gU-ttw" id="QsG-x9-SCd"/>
+                <outlet property="loadingView" destination="uAU-a8-gAV" id="oIA-92-1zW"/>
+                <outlet property="muteButton" destination="AsG-YN-DN3" id="v7h-ML-aG1"/>
+                <outlet property="playButton" destination="EOt-yc-lA3" id="Spo-6x-JQW"/>
+                <outlet property="replayButton" destination="Fbm-Ep-TCj" id="G4a-M6-GRd"/>
+                <outlet property="screenButton" destination="sk0-6K-1Z6" id="W2M-Gh-jt9"/>
+                <outlet property="slider" destination="zPa-nW-SiI" id="1Qa-V4-7oj"/>
+                <outlet property="timeLabel" destination="f4V-eD-7Mh" id="SEg-UU-OGY"/>
+                <outlet property="titleLabel" destination="iOw-8R-2yt" id="Mt5-GI-dPb"/>
+                <outlet property="totalLabel" destination="LMB-cX-sQ8" id="dtn-LY-VfI"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="117.48768472906404"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bjnews_media_back" width="9" height="15"/>
+        <image name="bjnews_media_errorportrait" width="375" height="667"/>
+        <image name="bjnews_media_fullscreenpreview" width="16" height="16"/>
+        <image name="bjnews_media_mute" width="21" height="18"/>
+        <image name="bjnews_media_pause" width="29.666666030883789" height="34.666667938232422"/>
+        <image name="bjnews_media_play" width="33" height="37.666667938232422"/>
+        <image name="bjnews_media_replay" width="43.666667938232422" height="43.666667938232422"/>
+        <image name="bjnews_media_sound" width="21" height="18"/>
+    </resources>
+</document>

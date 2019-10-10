@@ -86,12 +86,24 @@ typedef NS_ENUM(NSInteger,MCSourceType){
  */
 @property (nonatomic,strong) IBOutlet UISlider * slider;
 
+/**
+ 错误提示背景
+ */
 @property (nonatomic,strong) IBOutlet UIView * errorBg;
 
+/**
+ 错误提示label
+ */
 @property (nonatomic,strong) IBOutlet UILabel * errorLabel;
 
+/**
+ 重新加载按钮
+ */
 @property (nonatomic,strong) IBOutlet UIButton * errorButton;
 
+/**
+ 错误提示背景
+ */
 @property (nonatomic,strong) IBOutlet UIImageView * errorImageView;
 
 #pragma mark - 播放相关属性
@@ -152,6 +164,11 @@ typedef NS_ENUM(NSInteger,MCSourceType){
   初始化/更新控制面板
  */
 - (void)refreshControllViewWithPlayer:(BJNewsMediaPlayer *)player;
+
+/**
+ 初始化/更新控制面板
+ */
+- (void)updatePlayState:(BJNewsMediaPlayState)playState withMediaPlayer:(BJNewsMediaPlayer *)mediaPlayer;
 
 /**
  设置是否静音

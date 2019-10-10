@@ -39,6 +39,8 @@ static BJNewsMediaPlayerView * player_view = nil;
 
 @property (nonatomic,assign) BOOL isContinuePlay;
 
+@property (nonatomic,strong) UIImageView * coverImageView;
+
 @end
 
 @implementation BJNewsMediaPlayerView
@@ -107,6 +109,15 @@ static BJNewsMediaPlayerView * player_view = nil;
     return _orientationManager;
 }
 
+- (UIImageView *)coverImageView{
+    if(_coverImageView == nil){
+        _coverImageView = [[UIImageView alloc]initWithFrame:self.bounds];
+        _coverImageView.hidden = YES;
+        _coverImageView.backgroundColor = [UIColor orangeColor];
+    }
+    return _coverImageView;
+}
+
 #pragma mark - View
 
 /**
@@ -126,6 +137,7 @@ static BJNewsMediaPlayerView * player_view = nil;
     self.controllView = [self controllViewWithType:controllType];
     if(self.controllView){
         [self addSubview:self.controllView];
+        [self insertSubview:self.coverImageView belowSubview:self.controllView];
     }
     [self resetControllViewWithPlayer:self.player];
     [self redraw];
@@ -140,18 +152,10 @@ static BJNewsMediaPlayerView * player_view = nil;
 - (void)switchFullScreenModeToView:(UIView *)view controllType:(MEPControllViewType)controllType{
     self.baseView = view;
     self.player.playerView = self;
-    if(self.controllView){
-        [self.controllView removeFromSuperview];
-    }
-    self.controllView = [self controllViewWithType:controllType];
-    if(self.controllView){
-        [self addSubview:self.controllView];
-    }
-    
-    [self resetControllViewWithPlayer:self.player];
+    [self replaceControllViewWithType:controllType];
     if(controllType == MEPControllViewTypePortrait){
         [self.orientationManager scaleToPortraitWithView:self completionHandler:^{
-            
+            [self redraw];
         }];
         [self redraw];
     }else if (controllType == MEPControllViewTypeLandScape){
@@ -173,6 +177,18 @@ static BJNewsMediaPlayerView * player_view = nil;
     }
 }
 
+- (void)replaceControllViewWithType:(MEPControllViewType)controllType{
+    if(self.controllView){
+        [self.controllView removeFromSuperview];
+    }
+    self.controllView = [self controllViewWithType:controllType];
+    if(self.controllView){
+        [self addSubview:self.controllView];
+        [self insertSubview:self.coverImageView belowSubview:self.controllView];
+    }
+    [self resetControllViewWithPlayer:self.player];
+}
+
 - (void)resetControllViewWithPlayer:(BJNewsMediaPlayer *)player{
     [self.controllView refreshControllViewWithPlayer:player];
 }
@@ -185,6 +201,29 @@ static BJNewsMediaPlayerView * player_view = nil;
     [self.player redraw];
     if(self.controllView){
         self.controllView.frame = self.bounds;
+    }
+    self.coverImageView.frame = self.bounds;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.player redraw];
+    });
+}
+
+/**
+ 显示预览图
+
+ @param isShow 是否显示
+ */
+- (void)showCoverImage:(BOOL)isShow{
+    if(isShow){
+        if(self.coverImageView.window == nil){
+            [self addSubview:self.coverImageView];
+        }
+        if(self.controllView){
+            [self insertSubview:self.coverImageView belowSubview:self.controllView];
+        }
+        self.coverImageView.hidden = NO;
+    }else{
+        self.coverImageView.hidden = YES;
     }
 }
 
@@ -237,6 +276,7 @@ static BJNewsMediaPlayerView * player_view = nil;
     if(self.controllView){
         [self.controllView setPlayState:MCPlayStateNone];
     }
+    [self showCoverImage:YES];
     self.url = url;
     [self.player playWithUrl:url];
 }
@@ -251,6 +291,9 @@ static BJNewsMediaPlayerView * player_view = nil;
     self.title = title;
     self.controllView.title = title;
     self.coverImage = coverImage;
+    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:coverImage] placeholderImage:[UIImage imageNamed:@""] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        
+    }];
 }
 
 /**
@@ -282,7 +325,7 @@ static BJNewsMediaPlayerView * player_view = nil;
  @param mediaPlayer mediaPlayer description
  */
 - (void)mediaPlayerFirstRenderedStart:(BJNewsMediaPlayer *)mediaPlayer{
-    
+    [self showCoverImage:NO];
 }
 
 /**
@@ -369,13 +412,7 @@ static BJNewsMediaPlayerView * player_view = nil;
  */
 - (void)mediaPlayer:(BJNewsMediaPlayer *)mediaPlayer didUpdatePlayState:(BJNewsMediaPlayState)playState{
     if(self.controllView){
-        if(playState == BJNewsMediaPlayStatePlaying){
-            [self.controllView setPlayState:MCPlayStatePlaying];
-        }else if(playState == BJNewsMediaPlayStateEnded){
-            [self.controllView setPlayState:MCPlayStateEnded];
-        }else if (playState == BJNewsMediaPlayStatePaused){
-            [self.controllView setPlayState:MCPlayStatePaused];
-        }
+        [self.controllView updatePlayState:playState withMediaPlayer:mediaPlayer];
     }
 }
 
@@ -453,6 +490,10 @@ static BJNewsMediaPlayerView * player_view = nil;
  @param progress 指定的播放进度
  */
 - (void)controllView:(BJNewsMediaBaseControllView *)controllView seekToProgress:(float)progress{
+    if(self.player.state == BJNewsMediaPlayStateError){
+        NSLog(@"视频源或网络错误，无法跳转至指定播放时间");
+        return;
+    }
     NSTimeInterval duration = self.player.totalDuration * progress;
     NSLog(@"%f",duration);
     [self.player play];

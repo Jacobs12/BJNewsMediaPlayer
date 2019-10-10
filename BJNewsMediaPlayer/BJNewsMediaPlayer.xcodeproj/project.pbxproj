@@ -90,6 +90,7 @@
 		4F3F128F234C90A80012A018 /* live_00006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = live_00006.png; sourceTree = "<group>"; };
 		4F3F1290234C90A80012A018 /* live_00007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = live_00007.png; sourceTree = "<group>"; };
 		4F3F1291234C90A80012A018 /* live_00013.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = live_00013.png; sourceTree = "<group>"; };
+		4F98228C234F0A0800C236EE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4FAB13152328BF6900BFF7B9 /* AILoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AILoadingView.m; sourceTree = "<group>"; };
 		4FAB13162328BF6900BFF7B9 /* UIView+AISetRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AISetRect.h"; sourceTree = "<group>"; };
 		4FAB13172328BF6900BFF7B9 /* AILoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AILoadingView.h; sourceTree = "<group>"; };
@@ -252,6 +253,7 @@
 				4FC32FFE232736C200D5CA3B /* LaunchScreen.storyboard */,
 				4FC33001232736C200D5CA3B /* Info.plist */,
 				4FC33002232736C200D5CA3B /* main.m */,
+				4F98228C234F0A0800C236EE /* PrefixHeader.pch */,
 			);
 			path = BJNewsMediaPlayer;
 			sourceTree = "<group>";
@@ -300,23 +302,23 @@
 			children = (
 				4FC330522327A81000D5CA3B /* Resource */,
 				4FC330322327A00C00D5CA3B /* Base */,
-				4FC3303123279FEF00D5CA3B /* List */,
-				4FC3303B2327A17900D5CA3B /* ShortVideo */,
-				4FC3303A2327A17200D5CA3B /* LandScape */,
-				4FC330392327A15F00D5CA3B /* Portrait */,
-				4FC330552327A99900D5CA3B /* Preview */,
+				4FC3303123279FEF00D5CA3B /* List-视频列表 */,
+				4FC3303B2327A17900D5CA3B /* ShortVideo-小视频 */,
+				4FC3303A2327A17200D5CA3B /* LandScape-横屏全屏 */,
+				4FC330392327A15F00D5CA3B /* Portrait-竖屏全屏 */,
+				4FC330552327A99900D5CA3B /* Preview-视频详情页预览 */,
 			);
 			path = ControllView;
 			sourceTree = "<group>";
 		};
-		4FC3303123279FEF00D5CA3B /* List */ = {
+		4FC3303123279FEF00D5CA3B /* List-视频列表 */ = {
 			isa = PBXGroup;
 			children = (
 				4FC3303C2327A1AD00D5CA3B /* BJNewsMediaListContollView.h */,
 				4FC3303D2327A1AD00D5CA3B /* BJNewsMediaListContollView.m */,
 				4FC3304A2327A22600D5CA3B /* BJNewsMediaListContollView.xib */,
 			);
-			path = List;
+			path = "List-视频列表";
 			sourceTree = "<group>";
 		};
 		4FC330322327A00C00D5CA3B /* Base */ = {
@@ -328,34 +330,34 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		4FC330392327A15F00D5CA3B /* Portrait */ = {
+		4FC330392327A15F00D5CA3B /* Portrait-竖屏全屏 */ = {
 			isa = PBXGroup;
 			children = (
 				4FC330452327A1F700D5CA3B /* BJNewsMediaPortraitControllView.h */,
 				4FC330462327A1F700D5CA3B /* BJNewsMediaPortraitControllView.m */,
 				4FC330502327A27300D5CA3B /* BJNewsMediaPortraitControllView.xib */,
 			);
-			path = Portrait;
+			path = "Portrait-竖屏全屏";
 			sourceTree = "<group>";
 		};
-		4FC3303A2327A17200D5CA3B /* LandScape */ = {
+		4FC3303A2327A17200D5CA3B /* LandScape-横屏全屏 */ = {
 			isa = PBXGroup;
 			children = (
 				4FC330422327A1EA00D5CA3B /* BJNewsMediaLandScapeControllView.h */,
 				4FC330432327A1EA00D5CA3B /* BJNewsMediaLandScapeControllView.m */,
 				4FC3304E2327A26000D5CA3B /* BJNewsMediaLandScapeControllView.xib */,
 			);
-			path = LandScape;
+			path = "LandScape-横屏全屏";
 			sourceTree = "<group>";
 		};
-		4FC3303B2327A17900D5CA3B /* ShortVideo */ = {
+		4FC3303B2327A17900D5CA3B /* ShortVideo-小视频 */ = {
 			isa = PBXGroup;
 			children = (
 				4FC3303F2327A1DC00D5CA3B /* BJNewsMediaShortVideoControllView.h */,
 				4FC330402327A1DC00D5CA3B /* BJNewsMediaShortVideoControllView.m */,
 				4FC3304C2327A24600D5CA3B /* BJNewsMediaShortVideoControllView.xib */,
 			);
-			path = ShortVideo;
+			path = "ShortVideo-小视频";
 			sourceTree = "<group>";
 		};
 		4FC330522327A81000D5CA3B /* Resource */ = {
@@ -367,14 +369,14 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		4FC330552327A99900D5CA3B /* Preview */ = {
+		4FC330552327A99900D5CA3B /* Preview-视频详情页预览 */ = {
 			isa = PBXGroup;
 			children = (
 				4FC330562327A9BF00D5CA3B /* BJNewsMediaPreviewControllView.h */,
 				4FC330572327A9BF00D5CA3B /* BJNewsMediaPreviewControllView.m */,
 				4FC330592327A9D700D5CA3B /* BJNewsMediaPreviewControllView.xib */,
 			);
-			path = Preview;
+			path = "Preview-视频详情页预览";
 			sourceTree = "<group>";
 		};
 		728259F01A8D4FC792826EF5 /* Frameworks */ = {
@@ -783,6 +785,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42LRDW5LP3;
+				GCC_PREFIX_HEADER = ./BJNewsMediaPlayer/PrefixHeader.pch;
 				INFOPLIST_FILE = BJNewsMediaPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -802,6 +805,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42LRDW5LP3;
+				GCC_PREFIX_HEADER = ./BJNewsMediaPlayer/PrefixHeader.pch;
 				INFOPLIST_FILE = BJNewsMediaPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

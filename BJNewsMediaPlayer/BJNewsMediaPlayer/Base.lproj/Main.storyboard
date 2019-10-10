@@ -58,13 +58,26 @@
                                     <action selector="button3Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WkQ-mf-iGG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOG-Og-u1M">
+                                <rect key="frame" x="133" y="96" width="140" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="AxO-xj-Og1"/>
+                                    <constraint firstAttribute="width" constant="140" id="ziN-23-6Xh"/>
+                                </constraints>
+                                <state key="normal" title="CCTV-1直播列表"/>
+                                <connections>
+                                    <action selector="button4Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yLp-5Y-hfg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tRp-dt-gfT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2ea-vw-TSn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tRp-dt-gfT" secondAttribute="bottom" id="5bp-oJ-DaJ"/>
                             <constraint firstItem="tRp-dt-gfT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="261" id="93M-et-UMi"/>
+                            <constraint firstItem="eOG-Og-u1M" firstAttribute="leading" secondItem="Xec-Il-n3e" secondAttribute="trailing" constant="67" id="CBU-4X-dIZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xec-Il-n3e" secondAttribute="trailing" symbolic="YES" id="CXz-cA-eif"/>
+                            <constraint firstItem="eOG-Og-u1M" firstAttribute="top" secondItem="b84-6B-HbG" secondAttribute="bottom" constant="8" id="Qzq-lQ-W8U"/>
                             <constraint firstItem="6Ev-ev-4du" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SP3-gn-NNM"/>
                             <constraint firstItem="Xec-Il-n3e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bKW-rm-Orj"/>
                             <constraint firstItem="Xec-Il-n3e" firstAttribute="top" secondItem="6Ev-ev-4du" secondAttribute="bottom" constant="19" id="eVi-KT-MqY"/>

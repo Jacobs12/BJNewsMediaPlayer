@@ -82,12 +82,17 @@
  */
 - (void)resumeWithView:(UIView *)resumeView toView:(UIView *)toView completionHandler:(void (^) (void))handler{
     if(UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation) == NO){
+//        竖屏全屏恢复到预览模式
         [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
         [toView addSubview:resumeView];
+        NSLog(@"%@     %f    %f",toView.class,toView.bounds.size.width,toView.bounds.size.height);
         [UIView animateWithDuration:0.3 animations:^{
 //            必须是修改transform在前，修改frame在后
             resumeView.transform = CGAffineTransformMakeRotation(0);
             resumeView.frame = toView.bounds;
+            for (UIView * subView in resumeView.subviews) {
+                subView.frame = toView.bounds;
+            }
         } completion:^(BOOL finished) {
             if(handler){
                 handler();
@@ -103,7 +108,8 @@
         UIView * tempView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, resumeView.bounds.size.width, resumeView.bounds.size.height)];
         tempView.layer.masksToBounds = YES;
         [windowView addSubview:tempView];
-        
+        tempView.backgroundColor = [UIColor blackColor];
+
         [tempView addSubview:resumeView];
         resumeView.center = CGPointMake(tempView.bounds.size.width / 2.0, tempView.bounds.size.height / 2.0);
         
@@ -111,6 +117,9 @@
             tempView.frame = toView.bounds;
             tempView.center = CGPointMake(center.x, center.y);
             resumeView.center = CGPointMake(tempView.bounds.size.width / 2.0, tempView.bounds.size.height / 2.0);
+            for (UIView * subView in resumeView.subviews) {
+                subView.frame = resumeView.bounds;
+            }
         } completion:^(BOOL finished) {
             resumeView.bounds = toView.bounds;
             [toView addSubview:resumeView];

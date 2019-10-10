@@ -73,7 +73,9 @@ static BJNewsMediaPlayer * media_player = nil;
  开始播放
  */
 - (void)play{
-    [self setPlayState:BJNewsMediaPlayStatePlaying];
+    if(self.state != BJNewsMediaPlayStateLoading && self.state != BJNewsMediaPlayStateError){
+        [self setPlayState:BJNewsMediaPlayStatePlaying];
+    }
     [self.player start];
 }
 
@@ -81,7 +83,9 @@ static BJNewsMediaPlayer * media_player = nil;
  暂停播放
  */
 - (void)pause{
-    [self setPlayState:BJNewsMediaPlayStatePaused];
+    if(self.state != BJNewsMediaPlayStateLoading && self.state != BJNewsMediaPlayStateError){
+        [self setPlayState:BJNewsMediaPlayStatePaused];
+    }
     [self.player pause];
 }
 
@@ -307,8 +311,10 @@ static BJNewsMediaPlayer * media_player = nil;
                 [self.delegate mediaPlayerWillStartLoading:self];
             }
             break;
+//            缓冲结束
         case AVPEventLoadingEnd:
             [self setPlayState:BJNewsMediaPlayStatePlaying];
+            [self play];
             if(self.delegate && [self.delegate respondsToSelector:@selector(mediaPlayerDidStopLoading:)]){
                 [self.delegate mediaPlayerDidStopLoading:self];
             }

@@ -117,6 +117,27 @@
  */
 - (void)setVideoSourceType:(MCSourceType)sourceType{
     self.sourceType = sourceType;
+    if(sourceType == MCSourceTypeLive){
+        if(self.slider){
+            self.slider.hidden = YES;
+        }
+        if(self.timeLabel){
+            self.timeLabel.hidden = YES;
+        }
+        if(self.totalLabel){
+            self.totalLabel.hidden = YES;
+        }
+    }else{
+        if(self.slider){
+            self.slider.hidden = NO;
+        }
+        if(self.timeLabel){
+            self.timeLabel.hidden = NO;
+        }
+        if(self.totalLabel){
+            self.totalLabel.hidden = NO;
+        }
+    }
 }
 
 - (void)setReplayMode:(BOOL)isReplay{
@@ -164,11 +185,26 @@
  更新控制面板
  */
 - (void)refreshControllViewWithPlayer:(BJNewsMediaPlayer *)player{
-    BJNewsMediaPlayState state = player.state;
+    [self updatePlayState:player.state withMediaPlayer:player];
+    float progress = 0.0f;
+    if(player.totalDuration > 0){
+        progress = player.duration / player.totalDuration;
+    }
+    [self updateProgress:progress duration:player.duration totalDuration:player.totalDuration];
+    [self setMuteMode:player.isMuted];
+    [self showControllViewAnimated:NO];
+    [self autoHideControllView];
+}
+
+/**
+ 初始化/更新控制面板
+ */
+- (void)updatePlayState:(BJNewsMediaPlayState)playState withMediaPlayer:(BJNewsMediaPlayer *)mediaPlayer{
+    BJNewsMediaPlayState state = mediaPlayer.state;
     switch (state) {
         case BJNewsMediaPlayStateNone:{
             [self setPlayState:MCPlayStateLoadingStart];
-            }
+        }
             break;
         case BJNewsMediaPlayStatePrepared:{
             
@@ -197,14 +233,6 @@
         default:
             break;
     }
-    float progress = 0.0f;
-    if(player.totalDuration > 0){
-        progress = player.duration / player.totalDuration;
-    }
-    [self updateProgress:progress duration:player.duration totalDuration:player.totalDuration];
-    [self setMuteMode:player.isMuted];
-    [self showControllViewAnimated:NO];
-    [self autoHideControllView];
 }
 
 #pragma mark - setter
@@ -411,13 +439,19 @@
     }else{
         self.playButton.hidden = isHidden;
     }
+    if(self.sourceType == MCSourceTypeLive){
+        self.timeLabel.hidden = YES;
+        self.totalLabel.hidden = YES;
+        self.slider.hidden = YES;
+    }else{
+        self.timeLabel.hidden = isHidden;
+        self.totalLabel.hidden = isHidden;
+        self.slider.hidden = isHidden;
+    }
     self.muteButton.hidden = isHidden;
-    self.timeLabel.hidden = isHidden;
-    self.totalLabel.hidden = isHidden;
     self.screenButton.hidden = isHidden;
     self.backButton.hidden = isHidden;
     self.titleLabel.hidden = isHidden;
-    self.slider.hidden = isHidden;
 }
 
 /**
