@@ -363,8 +363,8 @@
 		4FC330522327A81000D5CA3B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				4F3F1281234C90A80012A018 /* live ios */,
 				4FC330532327A81000D5CA3B /* BJNewsMediaPlayerSource.xcassets */,
+				4F3F1281234C90A80012A018 /* live ios */,
 			);
 			path = Resource;
 			sourceTree = "<group>";

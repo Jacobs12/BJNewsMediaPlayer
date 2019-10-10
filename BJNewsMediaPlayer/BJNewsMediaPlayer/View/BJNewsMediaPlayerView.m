@@ -288,12 +288,7 @@ static BJNewsMediaPlayerView * player_view = nil;
  @param coverImage 预览图
  */
 - (void)setPlayerTitle:(NSString *)title coverImage:(NSString *)coverImage{
-    self.title = title;
-    self.controllView.title = title;
-    self.coverImage = coverImage;
-    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:coverImage] placeholderImage:[UIImage imageNamed:@""] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        
-    }];
+    [self setPlayerTitle:title coverImage:coverImage videoSize:CGSizeZero];
 }
 
 /**
@@ -304,8 +299,13 @@ static BJNewsMediaPlayerView * player_view = nil;
  @param videoSize 视频大小
  */
 - (void)setPlayerTitle:(NSString *)title coverImage:(NSString *)coverImage videoSize:(CGSize)videoSize{
+    self.title = title;
+    self.controllView.title = title;
+    self.coverImage = coverImage;
     self.videoSize = videoSize;
-    [self setPlayerTitle:title coverImage:coverImage];
+    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:coverImage] placeholderImage:[UIImage imageNamed:@""] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        
+    }];
 }
 
 #pragma mark - delegate 播放器回调
@@ -449,7 +449,10 @@ static BJNewsMediaPlayerView * player_view = nil;
  @param isMute 是否静音
  */
 - (void)controllView:(BJNewsMediaBaseControllView *)controllView muteButtonClick:(BOOL)isMute{
-    [self.player setMuteMode:isMute];
+    isMute = !self.player.isMuted;
+    [self.player setMuteMode:isMute completionHandler:^(BOOL isMuted) {
+        [controllView setMuteMode:isMuted];
+    }];
 }
 
 /**

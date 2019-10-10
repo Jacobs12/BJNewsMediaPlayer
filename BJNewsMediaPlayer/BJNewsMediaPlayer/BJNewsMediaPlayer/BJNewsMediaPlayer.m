@@ -153,8 +153,12 @@ static BJNewsMediaPlayer * media_player = nil;
  
  @param isMute 是否静音
  */
-- (void)setMuteMode:(BOOL)isMute{
+- (void)setMuteMode:(BOOL)isMute completionHandler:(void (^) (BOOL isMuted))handler{
     [self.player setMuted:isMute];
+    BOOL isMuted = self.player.isMuted;
+    if(handler){
+        handler(isMuted);
+    }
 }
 
 - (void)setPlayState:(BJNewsMediaPlayState)state{

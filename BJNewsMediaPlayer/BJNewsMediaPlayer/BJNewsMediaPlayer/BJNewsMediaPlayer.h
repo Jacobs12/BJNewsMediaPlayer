@@ -110,7 +110,7 @@ typedef NS_ENUM(NSInteger,BJNewsMediaPlayState){
 
  @param isMute 是否静音
  */
-- (void)setMuteMode:(BOOL)isMute;
+- (void)setMuteMode:(BOOL)isMute completionHandler:(void (^) (BOOL isMuted))handler;
 
 #pragma mark - getter
 
