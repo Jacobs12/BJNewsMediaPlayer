@@ -193,7 +193,7 @@
 }
 
 /**
- 更新控制面板
+  初始化/更新控制面板
  */
 - (void)refreshControllViewWithPlayer:(BJNewsMediaPlayer *)player{
     [self updatePlayState:player.state withMediaPlayer:player];
@@ -210,7 +210,7 @@
 }
 
 /**
- 初始化/更新控制面板
+ 更新播放状态
  */
 - (void)updatePlayState:(BJNewsMediaPlayState)playState withMediaPlayer:(BJNewsMediaPlayer *)mediaPlayer{
     BJNewsMediaPlayState state = mediaPlayer.state;

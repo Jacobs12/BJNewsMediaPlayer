@@ -200,4 +200,9 @@
     [self.player playWithUrl:@"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"];
 }
 
+- (IBAction)button5Click:(id)sender{
+    [self.player moveToView:self.playerView controllViewtype:MEPControllViewTypeList sourceType:MCSourceTypePlayback];
+    [self.player playWithUrl:@"http://tb-video.bdstatic.com/tieba-smallvideo-transcode-cae/3721866_1fa5e31aad50cf3eb3b9dd3288cebdae_0_cae.mp4"];
+}
+
 @end

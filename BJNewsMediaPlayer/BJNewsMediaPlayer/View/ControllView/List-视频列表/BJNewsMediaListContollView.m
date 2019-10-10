@@ -46,7 +46,7 @@
  @param sourceType 播放源属性
  */
 - (void)setVideoSourceType:(MCSourceType)sourceType{
-    [super setSourceType:sourceType];
+    [super setVideoSourceType:sourceType];
     if(sourceType == MCSourceTypeVideo){
         if(self.liveImageView.isAnimating){
             [self.liveImageView stopAnimating];
@@ -58,6 +58,7 @@
         self.liveBgView.backgroundColor = [BJNewsMediaUtils colorWithHex:0xD12D2B alpha:1.0];
         self.liveLabel.text = @"直播中";
         self.timeBgView.hidden = YES;
+        self.liveBgView.hidden = NO;
         dispatch_async(dispatch_get_global_queue(0, DISPATCH_QUEUE_PRIORITY_HIGH), ^{
             if(self->_imagesArray == nil){
                 NSMutableArray * imageArray = [[NSMutableArray alloc]init];
@@ -80,6 +81,8 @@
         if(self.liveImageView.isAnimating){
             [self.liveImageView stopAnimating];
         }
+        self.liveBgView.hidden = NO;
+        self.timeBgView.hidden = NO;
         self.liveImageView.image = [UIImage imageNamed:@"bjnews_media_playback"];
         self.liveLabel.text = @"回放";
         self.liveBgView.backgroundColor = [BJNewsMediaUtils colorWithHex:0x5D73FF alpha:0.9];
