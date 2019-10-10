@@ -55,7 +55,6 @@
     self.playButton.frame = CGRectMake(0, 0, 44, 44);
     self.replayButton.frame = CGRectMake(0, 0, 44, 44);
     self.loadingView.frame = CGRectMake(0, 0, 26.0 * BJNEWS_MEDIA_SCALE, 26.0 * BJNEWS_MEDIA_SCALE);
-    NSLog(@"self.loadingView.frame.size.width%f",self.loadingView.frame.size.width);
     self.playButton.center = center;
     self.replayButton.center = center;
     self.loadingView.center = center;
@@ -65,6 +64,9 @@
     self.screenButton.frame = CGRectMake(self.bottomView.bounds.size.width - 44 ,0 , 44, 44);
     self.totalLabel.frame = CGRectMake(self.screenButton.frame.origin.x - timeWidth, 0,timeWidth, 44);
     self.slider.frame = CGRectMake(self.timeLabel.frame.origin.x + self.timeLabel.bounds.size.width - 18, 0, self.totalLabel.frame.origin.x - (self.timeLabel.frame.origin.x + self.timeLabel.bounds.size.width) + 18 * 2, 44);
+    self.bufferProgress.frame = CGRectMake(0, 0, self.slider.bounds.size.width - 4, 2);
+    self.bufferProgress.center = self.slider.center;
+    [self.bottomView sendSubviewToBack:self.bufferProgress];
 //    错误提示
     self.errorImageView.frame = self.bgView.bounds;
     self.errorLabel.center = CGPointMake(frame.size.width / 2.0, frame.size.height / 2.0 - 35);

@@ -33,12 +33,24 @@ static BJNewsMediaPlayerView * player_view = nil;
  */
 @property (nonatomic,strong) BJNewsMediaOrientationManager * orientationManager;
 
+/**
+ 原始的容器view
+ */
 @property (nonatomic,strong) UIView * containerView;
 
+/**
+ 当前的父视图
+ */
 @property (nonatomic,strong) UIView * baseView;
 
+/**
+ App恢复运行时，视频是否继续播放
+ */
 @property (nonatomic,assign) BOOL isContinuePlay;
 
+/**
+ 视频预览图片
+ */
 @property (nonatomic,strong) UIImageView * coverImageView;
 
 @end
@@ -401,7 +413,11 @@ static BJNewsMediaPlayerView * player_view = nil;
  @param progress 缓冲进度
  */
 - (void)mediaPlayer:(BJNewsMediaPlayer *)mediaPlayer updateBufferProgress:(float)progress bufferDuration:(NSTimeInterval)duration{
- 
+    if(self.controllView){
+        if(progress > self.controllView.bufferProgress.progress){
+            [self.controllView updateBufferProgress:progress animate:YES];
+        }
+    }
 }
 
 /**

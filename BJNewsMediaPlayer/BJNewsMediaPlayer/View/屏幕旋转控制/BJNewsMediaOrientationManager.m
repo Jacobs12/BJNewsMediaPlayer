@@ -85,7 +85,6 @@
 //        竖屏全屏恢复到预览模式
         [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
         [toView addSubview:resumeView];
-        NSLog(@"%@     %f    %f",toView.class,toView.bounds.size.width,toView.bounds.size.height);
         [UIView animateWithDuration:0.3 animations:^{
 //            必须是修改transform在前，修改frame在后
             resumeView.transform = CGAffineTransformMakeRotation(0);

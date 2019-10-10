@@ -117,14 +117,24 @@
                                 <action selector="muteButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="kza-Rv-bjq"/>
                             </connections>
                         </button>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bU2-YE-6vi">
+                            <rect key="frame" x="98" y="22" width="218" height="2"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="ib3-MC-mBY"/>
+                            </constraints>
+                            <color key="progressTintColor" red="0.98431372549019602" green="0.50196078431372548" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                        </progressView>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zPa-nW-SiI">
                             <rect key="frame" x="96" y="7" width="222" height="31"/>
+                            <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </slider>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="bU2-YE-6vi" firstAttribute="centerY" secondItem="zPa-nW-SiI" secondAttribute="centerY" constant="1" id="0bV-sY-uaG"/>
                         <constraint firstItem="LMB-cX-sQ8" firstAttribute="centerY" secondItem="h6R-ud-pzU" secondAttribute="centerY" id="1vm-jt-XYw"/>
                         <constraint firstItem="f4V-eD-7Mh" firstAttribute="centerY" secondItem="h6R-ud-pzU" secondAttribute="centerY" id="Kx6-Vb-vzu"/>
+                        <constraint firstItem="bU2-YE-6vi" firstAttribute="centerX" secondItem="zPa-nW-SiI" secondAttribute="centerX" id="LIq-T3-82c"/>
                         <constraint firstAttribute="height" constant="44" id="Zpq-aP-sYb"/>
                         <constraint firstItem="LMB-cX-sQ8" firstAttribute="leading" secondItem="zPa-nW-SiI" secondAttribute="trailing" constant="12" id="bHB-Zu-UoL"/>
                         <constraint firstItem="zPa-nW-SiI" firstAttribute="centerY" secondItem="h6R-ud-pzU" secondAttribute="centerY" id="cQQ-nt-gex"/>
@@ -133,6 +143,7 @@
                         <constraint firstItem="sk0-6K-1Z6" firstAttribute="leading" secondItem="LMB-cX-sQ8" secondAttribute="trailing" id="kSU-9O-7ox"/>
                         <constraint firstAttribute="trailing" secondItem="sk0-6K-1Z6" secondAttribute="trailing" id="mxF-LB-POE"/>
                         <constraint firstItem="sk0-6K-1Z6" firstAttribute="centerY" secondItem="h6R-ud-pzU" secondAttribute="centerY" id="n2b-8Z-AXB"/>
+                        <constraint firstItem="bU2-YE-6vi" firstAttribute="width" secondItem="zPa-nW-SiI" secondAttribute="width" id="pCT-qx-7fv"/>
                         <constraint firstItem="AsG-YN-DN3" firstAttribute="centerY" secondItem="h6R-ud-pzU" secondAttribute="centerY" id="tYo-OW-Qp7"/>
                         <constraint firstItem="AsG-YN-DN3" firstAttribute="leading" secondItem="h6R-ud-pzU" secondAttribute="leading" id="wO9-t7-2LT"/>
                     </constraints>
@@ -193,6 +204,7 @@
                 <outlet property="backButton" destination="HYB-z3-24i" id="Ugf-re-Btd"/>
                 <outlet property="backButtonTop" destination="lIo-0j-l1l" id="rVz-8U-OGR"/>
                 <outlet property="bottomViewBottom" destination="nKP-zG-ZtS" id="LaZ-NX-jll"/>
+                <outlet property="bufferProgress" destination="bU2-YE-6vi" id="L8X-IJ-1CE"/>
                 <outlet property="errorBg" destination="kX7-mK-DBR" id="svw-LT-h4M"/>
                 <outlet property="errorButton" destination="lTa-L1-BXB" id="0Sb-Jy-w0S"/>
                 <outlet property="errorImageView" destination="vmv-W7-xcd" id="GTp-UV-XSZ"/>

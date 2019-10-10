@@ -87,6 +87,11 @@ typedef NS_ENUM(NSInteger,MCSourceType){
 @property (nonatomic,strong) IBOutlet UISlider * slider;
 
 /**
+ 缓冲进度条
+ */
+@property (nonatomic,strong) IBOutlet UIProgressView * bufferProgress;
+
+/**
  错误提示背景
  */
 @property (nonatomic,strong) IBOutlet UIView * errorBg;
@@ -159,6 +164,13 @@ typedef NS_ENUM(NSInteger,MCSourceType){
  @param totalDuration 总播放时间
  */
 - (void)updateProgress:(float)progress duration:(NSTimeInterval)duration totalDuration:(NSTimeInterval)totalDuration;
+
+/**
+ 更新缓冲进度
+
+ @param progress 缓冲进度
+ */
+- (void)updateBufferProgress:(float)progress animate:(BOOL)isAnimated;
 
 /**
   初始化/更新控制面板

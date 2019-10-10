@@ -182,6 +182,17 @@
 }
 
 /**
+ 更新缓冲进度
+ 
+ @param progress 缓冲进度
+ */
+- (void)updateBufferProgress:(float)progress animate:(BOOL)isAnimated{
+    if(self.bufferProgress){
+        [self.bufferProgress setProgress:progress animated:isAnimated];
+    }
+}
+
+/**
  更新控制面板
  */
 - (void)refreshControllViewWithPlayer:(BJNewsMediaPlayer *)player{
@@ -194,6 +205,8 @@
     [self setMuteMode:player.isMuted];
     [self showControllViewAnimated:NO];
     [self autoHideControllView];
+    float bufferProgress = [player bufferProgress];
+    [self updateBufferProgress:progress animate:NO];
 }
 
 /**
@@ -448,6 +461,7 @@
         self.totalLabel.hidden = isHidden;
         self.slider.hidden = isHidden;
     }
+    self.bufferProgress.hidden = self.slider.hidden;
     self.muteButton.hidden = isHidden;
     self.screenButton.hidden = isHidden;
     self.backButton.hidden = isHidden;
@@ -468,6 +482,7 @@
     self.backButton.alpha = alpha;
     self.titleLabel.alpha = alpha;
     self.slider.alpha = alpha;
+    self.bufferProgress.alpha = alpha;
 }
 
 #pragma mark - 按钮点击事件

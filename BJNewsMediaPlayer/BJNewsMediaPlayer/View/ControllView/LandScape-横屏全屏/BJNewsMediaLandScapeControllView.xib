@@ -107,6 +107,7 @@
                         <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1hy-RL-keb">
                             <rect key="frame" x="94" y="7" width="214" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </slider>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qo-r0-uTI">
                             <rect key="frame" x="369" y="11" width="44" height="22"/>
@@ -123,6 +124,11 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6FH-vh-5mu">
+                            <rect key="frame" x="141" y="0.0" width="150" height="2"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="progressTintColor" red="0.98431372549019602" green="0.50196078431372548" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                        </progressView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
@@ -134,6 +140,7 @@
                 <outlet property="backButton" destination="Efz-IS-nf3" id="SzD-l8-HZy"/>
                 <outlet property="bgView" destination="JHN-lb-ZsP" id="oZt-RT-dG7"/>
                 <outlet property="bottomView" destination="UNw-cB-nEo" id="gTT-ON-z3C"/>
+                <outlet property="bufferProgress" destination="6FH-vh-5mu" id="0JX-iZ-Tb0"/>
                 <outlet property="errorButton" destination="fWI-P2-ndB" id="XIX-pe-WkE"/>
                 <outlet property="errorImageView" destination="tQe-8y-fY9" id="La8-Tx-DMR"/>
                 <outlet property="errorLabel" destination="zoO-5a-eig" id="Aty-2W-sT8"/>
